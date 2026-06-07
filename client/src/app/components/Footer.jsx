@@ -3,6 +3,7 @@
 import Link from "next/link";
 import { Menu, X } from "lucide-react";
 import { useState } from "react";
+import Image from "next/image";
 
 export default function Navbar() {
   const [isOpen, setIsOpen] = useState(false);
@@ -20,12 +21,16 @@ export default function Navbar() {
       <div className="container mx-auto px-6">
         <div className="flex items-center justify-between h-20">
           {/* Logo */}
-          <Link href="/">
-            <div>
-              <h1 className="text-2xl font-bold text-[#14532D]">GreenTech</h1>
-              <p className="text-xs text-[#6B7280]">Engineering Solutions</p>
-            </div>
-          </Link>
+          <Link href="/" className="flex items-center">
+  <Image
+    src="/pentaauto.png"
+    alt="Penta Auto Logo"
+    width={180}
+    height={60}
+    priority
+    className="h-auto w-auto max-h-14"
+  />
+</Link>
 
           {/* Desktop Menu */}
           <nav className="hidden lg:flex items-center gap-8">
