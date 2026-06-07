@@ -17,7 +17,7 @@ export default function Navbar() {
   ];
 
   return (
-    <header className="sticky top-0 z-50 bg-white shadow-sm border-b border-gray-100">
+    <header className="sticky top-0 z-50 bg-gradient-to-r from-[#06903A] via-[#A3E769] to-[#01652B] shadow-sm border-b border-gray-100">
       <div className="container mx-auto px-6">
         <div className="flex items-center justify-between h-20">
           {/* Logo */}
@@ -50,7 +50,7 @@ export default function Navbar() {
             href="/contact"
             className="hidden lg:flex bg-[#16A34A] hover:bg-[#14532D] text-white px-6 py-3 rounded-lg transition"
           >
-            Get Quote
+            Enquiry
           </Link>
 
           {/* Mobile Menu */}
