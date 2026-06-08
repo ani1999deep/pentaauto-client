@@ -102,7 +102,7 @@ export default function Home() {
               >
                 Trusted Industry Partner
               </motion.span>
-              <h1 className="text-4xl md:text-5xl lg:text-[3.3rem] font-bold mt-6 leading-tight bg-gradient-to-r from-[#06903A] via-[#7cbc45] to-[#01652B] bg-clip-text text-transparent">
+              <h1 className="text-4xl md:text-5xl lg:text-[3.3rem] font-bold text-[#14532D] mt-6 leading-tight">
                 Trusted and Reliable Solution Provider, Serving as an Innovative
                 Industry Partner Since 2012.
               </h1>
