@@ -203,8 +203,8 @@ export default function Home() {
               >
                 {[
                   { number: "14+", label: "Years Experience" },
-                  { number: "100+", label: "Projects Delivered" },
-                  { number: "500+", label: "Satisfied Clients" },
+                  { number: "500+", label: "Projects Delivered" },
+                  { number: "100+", label: "Satisfied Clients" },
                 ].map((stat, i) => (
                   <motion.div key={i} variants={fadeInUp}>
                     <h3 className="text-3xl font-bold text-[#16A34A]">
