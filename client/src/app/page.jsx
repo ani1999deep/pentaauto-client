@@ -299,48 +299,323 @@ export default function Home() {
       </section>
 
       {/* Services Section */}
-      <section className="py-24">
+      <section className="py-24 bg-white">
         <div className="container mx-auto px-6">
-          <motion.div
-            className="text-center mb-16"
-            initial="initial"
-            whileInView="animate"
-            viewport={{ once: true }}
-            variants={fadeInUp}
-          >
-            <h2 className="text-4xl font-bold text-[#14532D]">Our Services</h2>
-            <p className="text-[#6B7280] mt-4">
-              Comprehensive solutions tailored for industry needs.
-            </p>
-          </motion.div>
+          <div className="grid lg:grid-cols-2 gap-16 items-center">
+            {/* Left Column - About Content */}
+            <motion.div
+              initial="initial"
+              whileInView="animate"
+              viewport={{ once: true }}
+              variants={fadeInUp}
+            >
+              <span className="inline-block bg-[#DCFCE7] text-[#14532D] px-4 py-2 rounded-full text-sm font-semibold">
+                About Penta Automation
+              </span>
+              <h2 className="text-4xl md:text-5xl font-bold text-[#14532D] mt-6">
+                Delivering Smart Automation Solutions Since 2012
+              </h2>
+              <p className="mt-6 text-[#6B7280] leading-8">
+                Founded in 2012, <strong>Penta Automation</strong> is committed
+                to delivering high-quality automation products, technical
+                excellence, timely project execution, and precision control
+                solutions across diverse industrial sectors. Our mission is to
+                bring advanced Electrical and Electronics technologies to
+                industries, enabling businesses to improve productivity,
+                efficiency, and operational reliability.
+              </p>
+              <p className="mt-4 text-[#6B7280] leading-8">
+                We specialize in the manufacturing, assembly, sales, servicing,
+                and implementation of Electrical & Electronic Control Systems
+                while providing complete engineering, design, and fabrication
+                solutions tailored to customer requirements.
+              </p>
 
-          <motion.div
-            className="grid md:grid-cols-3 gap-8"
-            initial="initial"
-            whileInView="animate"
-            viewport={{ once: true }}
-            variants={staggerContainer}
-          >
-            {services.map((service, index) => {
-              const Icon = service.icon;
-              return (
-                <motion.div
-                  key={index}
-                  variants={fadeInUp}
-                  whileHover={{ y: -12 }}
-                  className="bg-white p-8 rounded-2xl shadow-lg hover:shadow-xl transition-all duration-300 group"
-                >
-                  <div className="w-14 h-14 flex items-center justify-center bg-[#DCFCE7] rounded-2xl mb-6 group-hover:scale-110 transition-transform duration-300">
-                    <Icon size={32} className="text-[#16A34A]" />
+              {/* Stats */}
+              <motion.div
+                className="grid grid-cols-3 gap-6 mt-10"
+                initial="initial"
+                whileInView="animate"
+                viewport={{ once: true }}
+                variants={staggerContainer}
+              >
+                {[
+                  { number: "14+", label: "Years Experience" },
+                  { number: "100+", label: "Projects Delivered" },
+                  { number: "500+", label: "Satisfied Clients" },
+                ].map((stat, i) => (
+                  <motion.div key={i} variants={fadeInUp}>
+                    <h3 className="text-3xl font-bold text-[#16A34A]">
+                      {stat.number}
+                    </h3>
+                    <p className="text-[#6B7280] text-sm">{stat.label}</p>
+                  </motion.div>
+                ))}
+              </motion.div>
+            </motion.div>
+
+            {/* Right Column - Cards */}
+            <motion.div
+              className="grid gap-5"
+              initial="initial"
+              whileInView="animate"
+              viewport={{ once: true }}
+              variants={staggerContainer}
+            >
+              {/* Existing Cards */}
+              <motion.div
+                variants={fadeInUp}
+                className="bg-[#F8FAFC] p-6 rounded-2xl border border-gray-100 shadow-sm group hover:-translate-y-1 transition-all duration-300"
+              >
+                <div className="flex items-start gap-4">
+                  <div className="w-12 h-12 flex-shrink-0 bg-[#DCFCE7] rounded-2xl flex items-center justify-center">
+                    <Settings size={28} className="text-[#16A34A]" />
                   </div>
-                  <h3 className="text-xl font-semibold text-[#14532D]">
-                    {service.title}
-                  </h3>
-                  <p className="text-[#6B7280] mt-3">{service.desc}</p>
-                </motion.div>
-              );
-            })}
-          </motion.div>
+                  <div className="flex-1">
+                    <h3 className="text-xl font-semibold text-[#14532D] mb-3">
+                      Our Expertise
+                    </h3>
+                    <div className="grid grid-cols-2 gap-3 text-[#6B7280]">
+                      <span>✓ PLC & DCS Systems</span>
+                      <span>✓ VVVF Inverter Drives</span>
+                      <span>✓ Industrial Sensors</span>
+                      <span>✓ Field Instruments</span>
+                      <span>✓ Power Distribution</span>
+                      <span>✓ Motor Control Systems</span>
+                      <span>✓ Automation Solutions</span>
+                      <span>✓ Control Panels</span>
+                    </div>
+                  </div>
+                </div>
+              </motion.div>
+
+              <motion.div
+                variants={fadeInUp}
+                className="bg-[#F8FAFC] p-6 rounded-2xl border border-gray-100 shadow-sm group hover:-translate-y-1 transition-all duration-300"
+              >
+                <div className="flex items-start gap-4">
+                  <div className="w-12 h-12 flex-shrink-0 bg-[#DCFCE7] rounded-2xl flex items-center justify-center">
+                    <Users size={28} className="text-[#16A34A]" />
+                  </div>
+                  <div className="flex-1">
+                    <h3 className="text-xl font-semibold text-[#14532D] mb-3">
+                      Firm Overview
+                    </h3>
+                    <p className="text-[#6B7280] leading-7">
+                      Established as a Partnership Firm on 3rd December 2012,
+                      Penta Automation has earned a reputation for delivering
+                      reliable, efficient, and customer-focused automation
+                      solutions. Supported by experienced leadership and skilled
+                      professionals, we serve MNCs, corporate organizations,
+                      SMEs, and owner-managed businesses.
+                    </p>
+                  </div>
+                </div>
+              </motion.div>
+
+              <motion.div
+                variants={fadeInUp}
+                className="bg-[#14532D] text-white p-6 rounded-2xl group hover:-translate-y-1 transition-all duration-300"
+              >
+                <div className="flex items-start gap-4">
+                  <div className="w-12 h-12 flex-shrink-0 bg-white/10 rounded-2xl flex items-center justify-center">
+                    <Target size={28} className="text-[#86EFAC]" />
+                  </div>
+                  <div className="flex-1">
+                    <h3 className="text-xl font-semibold mb-4">
+                      Our Commitment
+                    </h3>
+                    <div className="grid grid-cols-2 gap-3 text-green-100">
+                      <span>✓ Quality Solutions</span>
+                      <span>✓ Technical Innovation</span>
+                      <span>✓ Timely Delivery</span>
+                      <span>✓ Reliable Support</span>
+                      <span>✓ Custom Engineering</span>
+                      <span>✓ Long-Term Partnerships</span>
+                    </div>
+                  </div>
+                </div>
+              </motion.div>
+            </motion.div>
+          </div>
+
+          {/* ====================== NEW: Key Persons Section ====================== */}
+          {/* ====================== NEW: Key Persons Section ====================== */}
+          {/* ====================== NEW: Key Persons Section ====================== */}
+          <div className="mt-20">
+            <motion.div
+              initial="initial"
+              whileInView="animate"
+              viewport={{ once: true }}
+              variants={fadeInUp}
+              className="text-center mb-12"
+            >
+              <span className="inline-block bg-[#DCFCE7] text-[#14532D] px-4 py-2 rounded-full text-sm font-semibold">
+                Our Leadership
+              </span>
+              <h3 className="text-4xl md:text-5xl font-bold text-[#14532D] mt-4">
+                Key Persons
+              </h3>
+              <p className="mt-3 text-[#6B7280] max-w-2xl mx-auto">
+                Meet the visionaries driving innovation and excellence at Penta
+                Automation
+              </p>
+            </motion.div>
+
+            <motion.div
+              className="grid md:grid-cols-2 lg:grid-cols-3 gap-8"
+              initial="initial"
+              whileInView="animate"
+              viewport={{ once: true }}
+              variants={staggerContainer}
+            >
+              {/* Person 1 - Smaller Card */}
+              <motion.div
+                variants={fadeInUp}
+                whileHover={{ y: -8, transition: { duration: 0.3 } }}
+                className="group relative bg-white rounded-3xl overflow-hidden shadow-sm hover:shadow-xl transition-all duration-500"
+              >
+                <div className="relative h-64 overflow-hidden">
+                  {" "}
+                  {/* Reduced height */}
+                  <img
+                    src="https://via.placeholder.com/600x800/14532D/ffffff?text=Mr.+Rajesh+Sharma"
+                    alt="Nihar Roy"
+                    className="w-full h-full object-cover transition-transform duration-700 group-hover:scale-110"
+                  />
+                  <div className="absolute inset-0 bg-gradient-to-t from-black/70 via-black/30 to-transparent" />
+                  <div className="absolute top-5 right-5 bg-white/90 text-[#14532D] px-3 py-1 rounded-2xl text-xs font-semibold backdrop-blur-md">
+                    Application & Design Head
+                  </div>
+                </div>
+
+                <div className="p-6">
+                  {" "}
+                  {/* Reduced padding */}
+                  <div className="absolute -top-5 left-6 w-10 h-10 bg-[#16A34A] rounded-2xl flex items-center justify-center text-white shadow-lg text-sm font-bold">
+                    01
+                  </div>
+                  <h4 className="text-xl font-bold text-[#14532D] mt-6">
+                    Mr. Nihar Roy
+                  </h4>
+                  <p className="text-[#16A34A] font-medium">
+                    Application & Design Head
+                  </p>
+                  <div className="mt-5 space-y-2.5 text-sm text-[#6B7280]">
+                    <a
+                      href="tel:+919876543210"
+                      className="flex items-center gap-3 hover:text-[#14532D] transition-colors"
+                    >
+                      <span className="text-[#16A34A]">📞</span> +91 9836680055
+                    </a>
+                    <a
+                      href="mailto:rajesh@pentaautomation.com"
+                      className="flex items-center gap-3 hover:text-[#14532D] transition-colors"
+                    >
+                      <span className="text-[#16A34A]">✉️</span>{" "}
+                      niharroy@pentaauto.co.in
+                    </a>
+                  </div>
+                </div>
+              </motion.div>
+
+              {/* Person 2 - Smaller Card */}
+              <motion.div
+                variants={fadeInUp}
+                whileHover={{ y: -8, transition: { duration: 0.3 } }}
+                className="group relative bg-white rounded-3xl overflow-hidden shadow-sm hover:shadow-xl transition-all duration-500"
+              >
+                <div className="relative h-64 overflow-hidden">
+                  <img
+                    src="https://via.placeholder.com/600x800/14532D/ffffff?text=Ms.+Priya+Nair"
+                    alt="Monotosh Halder"
+                    className="w-full h-full object-cover transition-transform duration-700 group-hover:scale-110"
+                  />
+                  <div className="absolute inset-0 bg-gradient-to-t from-black/70 via-black/30 to-transparent" />
+
+                  <div className="absolute top-5 right-5 bg-white/90 text-[#14532D] px-3 py-1 rounded-2xl text-xs font-semibold backdrop-blur-md">
+                    Technical Head
+                  </div>
+                </div>
+
+                <div className="p-6">
+                  <div className="absolute -top-5 left-6 w-10 h-10 bg-[#16A34A] rounded-2xl flex items-center justify-center text-white shadow-lg text-sm font-bold">
+                    02
+                  </div>
+
+                  <h4 className="text-xl font-bold text-[#14532D] mt-6">
+                    Ms. Monotosh Halder
+                  </h4>
+                  <p className="text-[#16A34A] font-medium">Marketing Head</p>
+
+                  <div className="mt-5 space-y-2.5 text-sm text-[#6B7280]">
+                    <a
+                      href="tel:+919876543211"
+                      className="flex items-center gap-3 hover:text-[#14532D] transition-colors"
+                    >
+                      <span className="text-[#16A34A]">📞</span> +91 9836685823
+                    </a>
+                    <a
+                      href="mailto:priya@pentaautomation.com"
+                      className="flex items-center gap-3 hover:text-[#14532D] transition-colors"
+                    >
+                      <span className="text-[#16A34A]">✉️</span>{" "}
+                      monotosh.penta@gmail.com
+                    </a>
+                  </div>
+                </div>
+              </motion.div>
+
+              {/* Person 3 - Smaller Card */}
+              <motion.div
+                variants={fadeInUp}
+                whileHover={{ y: -8, transition: { duration: 0.3 } }}
+                className="group relative bg-white rounded-3xl overflow-hidden shadow-sm hover:shadow-xl transition-all duration-500"
+              >
+                <div className="relative h-64 overflow-hidden">
+                  <img
+                    src="https://via.placeholder.com/600x800/14532D/ffffff?text=Mr.+Amit+Verma"
+                    alt="Amit Verma"
+                    className="w-full h-full object-cover transition-transform duration-700 group-hover:scale-110"
+                  />
+                  <div className="absolute inset-0 bg-gradient-to-t from-black/70 via-black/30 to-transparent" />
+
+                  <div className="absolute top-5 right-5 bg-white/90 text-[#14532D] px-3 py-1 rounded-2xl text-xs font-semibold backdrop-blur-md">
+                    Operations
+                  </div>
+                </div>
+
+                <div className="p-6">
+                  <div className="absolute -top-5 left-6 w-10 h-10 bg-[#16A34A] rounded-2xl flex items-center justify-center text-white shadow-lg text-sm font-bold">
+                    03
+                  </div>
+
+                  <h4 className="text-xl font-bold text-[#14532D] mt-6">
+                    Mr. Amit Verma
+                  </h4>
+                  <p className="text-[#16A34A] font-medium">
+                    Director - Operations
+                  </p>
+
+                  <div className="mt-5 space-y-2.5 text-sm text-[#6B7280]">
+                    <a
+                      href="tel:+919876543212"
+                      className="flex items-center gap-3 hover:text-[#14532D] transition-colors"
+                    >
+                      <span className="text-[#16A34A]">📞</span> +91 98765 43212
+                    </a>
+                    <a
+                      href="mailto:amit@pentaautomation.com"
+                      className="flex items-center gap-3 hover:text-[#14532D] transition-colors"
+                    >
+                      <span className="text-[#16A34A]">✉️</span>{" "}
+                      amit@pentaautomation.com
+                    </a>
+                  </div>
+                </div>
+              </motion.div>
+            </motion.div>
+          </div>
         </div>
       </section>
 
