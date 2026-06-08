@@ -44,7 +44,7 @@ export default function Home() {
   return (
     <main className="bg-[#F8FAFC]">
       {/* Hero Section */}
-      <section className="relative py-28 overflow-hidden">
+      <section className="relative py-15 overflow-hidden">
         <div className="container mx-auto px-6">
           <div className="grid lg:grid-cols-2 gap-12 items-center">
             <div>
@@ -52,7 +52,7 @@ export default function Home() {
                 Trusted Industry Partner
               </span>
 
-              <h1 className="text-5xl lg:text-6xl font-bold text-[#14532D] mt-6 leading-tight">
+              <h1 className="text-4xl md:text-5xl lg:text-[3.3rem] font-bold text-[#14532D] mt-6 leading-tight">
                 Trusted and Reliable Solution Provider, Serving as an Innovative
                 Industry Partner Since 2012.
               </h1>
@@ -74,13 +74,14 @@ export default function Home() {
               </div>
             </div>
 
-            <div>
+            <div className="relative w-full aspect-[16/9] overflow-hidden rounded-3xl shadow-xl">
               <Image
-                src="/penta-banner.png"
+                src="/penta-banner2.png"
                 alt="Industry"
-                width={600}
-                height={400}
-                className="rounded-3xl shadow-xl"
+                fill
+                priority
+                sizes="(max-width: 768px) 100vw, (max-width: 1200px) 50vw, 50vw"
+                className="object-cover"
               />
             </div>
           </div>
@@ -88,17 +89,104 @@ export default function Home() {
       </section>
 
       {/* Company Introduction */}
+      {/* About Company */}
       <section className="py-24 bg-white">
-        <div className="container mx-auto px-6 text-center max-w-4xl">
-          <h2 className="text-4xl font-bold text-[#14532D]">
-            About Our Company
-          </h2>
+        <div className="container mx-auto px-6">
+          <div className="grid lg:grid-cols-2 gap-16 items-center">
+            {/* Left Content */}
+            <div>
+              <span className="inline-block bg-[#DCFCE7] text-[#14532D] px-4 py-2 rounded-full text-sm font-semibold">
+                About Penta Automation
+              </span>
 
-          <p className="mt-6 text-[#6B7280] leading-8">
-            We are a leading provider of engineering, industrial automation, and
-            infrastructure solutions. Our mission is to empower businesses
-            through innovation, quality, and sustainable development.
-          </p>
+              <h2 className="text-4xl md:text-5xl font-bold text-[#14532D] mt-6">
+                Delivering Smart Automation Solutions Since 2012
+              </h2>
+
+              <p className="mt-6 text-[#6B7280] leading-8">
+                Founded in 2012, <strong>Penta Automation</strong> is committed
+                to delivering high-quality automation products, technical
+                excellence, timely project execution, and precision control
+                solutions across diverse industrial sectors. Our mission is to
+                bring advanced Electrical and Electronics technologies to
+                industries, enabling businesses to improve productivity,
+                efficiency, and operational reliability.
+              </p>
+
+              <p className="mt-4 text-[#6B7280] leading-8">
+                We specialize in the manufacturing, assembly, sales, servicing,
+                and implementation of Electrical & Electronic Control Systems
+                while providing complete engineering, design, and fabrication
+                solutions tailored to customer requirements.
+              </p>
+
+              {/* Stats */}
+              <div className="grid grid-cols-3 gap-6 mt-10">
+                <div>
+                  <h3 className="text-3xl font-bold text-[#16A34A]">14+</h3>
+                  <p className="text-[#6B7280] text-sm">Years Experience</p>
+                </div>
+
+                <div>
+                  <h3 className="text-3xl font-bold text-[#16A34A]">100+</h3>
+                  <p className="text-[#6B7280] text-sm">Projects Delivered</p>
+                </div>
+
+                <div>
+                  <h3 className="text-3xl font-bold text-[#16A34A]">500+</h3>
+                  <p className="text-[#6B7280] text-sm">Satisfied Clients</p>
+                </div>
+              </div>
+            </div>
+
+            {/* Right Cards */}
+            <div className="grid gap-5">
+              <div className="bg-[#F8FAFC] p-6 rounded-2xl border border-gray-100 shadow-sm">
+                <h3 className="text-xl font-semibold text-[#14532D] mb-3">
+                  Our Expertise
+                </h3>
+
+                <div className="grid grid-cols-2 gap-3 text-[#6B7280]">
+                  <span>✓ PLC & DCS Systems</span>
+                  <span>✓ VVVF Inverter Drives</span>
+                  <span>✓ Industrial Sensors</span>
+                  <span>✓ Field Instruments</span>
+                  <span>✓ Power Distribution</span>
+                  <span>✓ Motor Control Systems</span>
+                  <span>✓ Automation Solutions</span>
+                  <span>✓ Control Panels</span>
+                </div>
+              </div>
+
+              <div className="bg-[#F8FAFC] p-6 rounded-2xl border border-gray-100 shadow-sm">
+                <h3 className="text-xl font-semibold text-[#14532D] mb-3">
+                  Firm Overview
+                </h3>
+
+                <p className="text-[#6B7280] leading-7">
+                  Established as a Partnership Firm on 3rd December 2012, Penta
+                  Automation has earned a reputation for delivering reliable,
+                  efficient, and customer-focused automation solutions.
+                  Supported by experienced leadership and skilled professionals,
+                  we serve MNCs, corporate organizations, SMEs, and
+                  owner-managed businesses.
+                </p>
+              </div>
+
+              <div className="bg-[#14532D] text-white p-6 rounded-2xl">
+                <h3 className="text-xl font-semibold mb-4">Our Commitment</h3>
+
+                <div className="grid grid-cols-2 gap-3 text-green-100">
+                  <span>✓ Quality Solutions</span>
+                  <span>✓ Technical Innovation</span>
+                  <span>✓ Timely Delivery</span>
+                  <span>✓ Reliable Support</span>
+                  <span>✓ Custom Engineering</span>
+                  <span>✓ Long-Term Partnerships</span>
+                </div>
+              </div>
+            </div>
+          </div>
         </div>
       </section>
 
