@@ -509,7 +509,7 @@ export default function Home() {
                       <span className="text-[#16A34A]">📞</span> +91 9836680055
                     </a>
                     <a
-                      href="mailto:rajesh@pentaautomation.com"
+                      href="mailto:niharroy@pentaauto.co.in"
                       className="flex items-center gap-3 hover:text-[#14532D] transition-colors"
                     >
                       <span className="text-[#16A34A]">✉️</span>{" "}
@@ -556,7 +556,7 @@ export default function Home() {
                       <span className="text-[#16A34A]">📞</span> +91 9836685823
                     </a>
                     <a
-                      href="mailto:priya@pentaautomation.com"
+                      href="mailto:monotosh.penta@gmail.com"
                       className="flex items-center gap-3 hover:text-[#14532D] transition-colors"
                     >
                       <span className="text-[#16A34A]">✉️</span>{" "}
