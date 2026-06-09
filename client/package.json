@@ -16,7 +16,8 @@
     "react-dom": "19.1.0",
     "react-parallax-tilt": "^1.7.303",
     "react-slick": "^0.30.3",
-    "slick-carousel": "^1.8.1"
+    "slick-carousel": "^1.8.1",
+    "swiper": "^12.2.0"
   },
   "devDependencies": {
     "@eslint/eslintrc": "^3",

@@ -18,6 +18,11 @@ import {
 } from "lucide-react";
 import Image from "next/image";
 import { motion } from "framer-motion";
+import { Swiper, SwiperSlide } from "swiper/react";
+import { Autoplay, Pagination } from "swiper/modules";
+
+import "swiper/css";
+import "swiper/css/pagination";
 
 export default function Home() {
   const services = [
@@ -59,6 +64,49 @@ export default function Home() {
     {
       title: "Infrastructure Development",
       category: "Construction",
+    },
+  ];
+
+  const keyPersons = [
+    {
+      id: "01",
+      name: "Mr. Nihar Roy",
+      role: "Application MD",
+      phone: "+91 9836680055",
+      email: "niharroy@pentaauto.co.in",
+      photo: "/team/nihar-roy.jpeg",
+    },
+    {
+      id: "02",
+      name: "Mr. Monotosh Halder",
+      role: "Marketing Head",
+      phone: "+91 9836685823",
+      email: "monotosh.penta@gmail.com",
+      photo: "/team/monotosh-halder.jpg",
+    },
+    {
+      id: "03",
+      name: "Mr. Tapan Metya",
+      role: "Application & Design Head",
+      phone: "+91 9836680717",
+      email: "penta.tapan@gmail.com",
+      photo: "/team/tapan-metya.jpeg",
+    },
+    {
+      id: "04",
+      name: "Mr. Abhisek Paul",
+      role: "Senior Accountant",
+      phone: "+91 9836681900",
+      email: "abhisek@pentaauto.co.in",
+      photo: "/team/abhisek-paul.jpeg",
+    },
+    {
+      id: "05",
+      name: "Mr. Gopal Sau",
+      role: "Administrative Manager",
+      phone: "+91 9836688442",
+      email: "gopalsau.penta@gmail.com",
+      photo: "/team/gopal-sau.jpeg",
     },
   ];
 
@@ -301,179 +349,90 @@ export default function Home() {
             </motion.div>
           </div>
           {/* ====================== NEW: Key Persons Section ====================== */}
-          <div className="mt-20">
-            <motion.div
-              initial="initial"
-              whileInView="animate"
-              viewport={{ once: true }}
-              variants={fadeInUp}
-              className="text-center mb-12"
-            >
+          <div className="mt-16">
+            <div className="text-center mb-10">
               <span className="inline-block bg-[#DCFCE7] text-[#14532D] px-4 py-2 rounded-full text-sm font-semibold">
-                Our Leadership
-              </span>
-              <h3 className="text-4xl md:text-5xl font-bold text-[#14532D] mt-4">
                 Key Persons
-              </h3>
-              <p className="mt-3 text-[#6B7280] max-w-2xl mx-auto">
-                Meet the visionaries driving innovation and excellence at Penta
-                Automation
-              </p>
-            </motion.div>
+              </span>
 
-            <motion.div
-              className="grid md:grid-cols-2 lg:grid-cols-3 gap-8"
-              initial="initial"
-              whileInView="animate"
-              viewport={{ once: true }}
-              variants={staggerContainer}
+              <h2 className="text-4xl font-bold text-[#14532D] mt-4">
+                Meet Our Leadership Team
+              </h2>
+            </div>
+
+            <Swiper
+              modules={[Autoplay, Pagination]}
+              spaceBetween={24}
+              loop={true}
+              autoplay={{
+                delay: 2500,
+                disableOnInteraction: false,
+              }}
+              pagination={{ clickable: true }}
+              breakpoints={{
+                320: {
+                  slidesPerView: 1,
+                },
+                768: {
+                  slidesPerView: 2,
+                },
+                1024: {
+                  slidesPerView: 3,
+                },
+              }}
+              className="pb-12"
             >
-              {/* Person 1 - Smaller Card */}
-              <motion.div
-                variants={fadeInUp}
-                whileHover={{ y: -8, transition: { duration: 0.3 } }}
-                className="group relative bg-white rounded-3xl overflow-hidden shadow-sm hover:shadow-xl transition-all duration-500"
-              >
-                <div className="relative h-64 overflow-hidden">
-                  {" "}
-                  {/* Reduced height */}
-                  <img
-                    src="https://via.placeholder.com/600x800/14532D/ffffff?text=Mr.+Rajesh+Sharma"
-                    alt="Nihar Roy"
-                    className="w-full h-full object-cover transition-transform duration-700 group-hover:scale-110"
-                  />
-                  <div className="absolute inset-0 bg-gradient-to-t from-black/70 via-black/30 to-transparent" />
-                  <div className="absolute top-5 right-5 bg-white/90 text-[#14532D] px-3 py-1 rounded-2xl text-xs font-semibold backdrop-blur-md">
-                    Application & Design Head
-                  </div>
-                </div>
+              {keyPersons.map((person) => (
+                <SwiperSlide key={person.id}>
+                  <motion.div
+                    whileHover={{ y: -8 }}
+                    className="group bg-white rounded-3xl border border-gray-100 shadow-md hover:shadow-2xl transition-all duration-300 overflow-hidden"
+                  >
+                    {/* Top Gradient */}
+                    <div className="h-20 bg-gradient-to-r from-[#16A34A] to-[#86EFAC]" />
 
-                <div className="p-6">
-                  {" "}
-                  {/* Reduced padding */}
-                  <div className="absolute -top-5 left-6 w-10 h-10 bg-[#16A34A] rounded-2xl flex items-center justify-center text-white shadow-lg text-sm font-bold">
-                    01
-                  </div>
-                  <h4 className="text-xl font-bold text-[#14532D] mt-6">
-                    Mr. Nihar Roy
-                  </h4>
-                  <p className="text-[#16A34A] font-medium">
-                    Application & Design Head
-                  </p>
-                  <div className="mt-5 space-y-2.5 text-sm text-[#6B7280]">
-                    <a
-                      href="tel:+919876543210"
-                      className="flex items-center gap-3 hover:text-[#14532D] transition-colors"
-                    >
-                      <span className="text-[#16A34A]">📞</span> +91 9836680055
-                    </a>
-                    <a
-                      href="mailto:niharroy@pentaauto.co.in"
-                      className="flex items-center gap-3 hover:text-[#14532D] transition-colors"
-                    >
-                      <span className="text-[#16A34A]">✉️</span>{" "}
-                      niharroy@pentaauto.co.in
-                    </a>
-                  </div>
-                </div>
-              </motion.div>
+                    {/* Profile */}
+                    <div className="relative flex flex-col items-center px-6 pb-6">
+                      <Image
+                        src={person.photo}
+                        alt={person.name}
+                        width={100}
+                        height={100}
+                        className="w-24 h-24 rounded-full border-4 border-white object-cover -mt-12 shadow-lg"
+                      />
 
-              {/* Person 2 - Smaller Card */}
-              <motion.div
-                variants={fadeInUp}
-                whileHover={{ y: -8, transition: { duration: 0.3 } }}
-                className="group relative bg-white rounded-3xl overflow-hidden shadow-sm hover:shadow-xl transition-all duration-500"
-              >
-                <div className="relative h-64 overflow-hidden">
-                  <img
-                    src="https://via.placeholder.com/600x800/14532D/ffffff?text=Ms.+Priya+Nair"
-                    alt="Monotosh Halder"
-                    className="w-full h-full object-cover transition-transform duration-700 group-hover:scale-110"
-                  />
-                  <div className="absolute inset-0 bg-gradient-to-t from-black/70 via-black/30 to-transparent" />
+                      <h4 className="mt-4 text-xl font-bold text-gray-900">
+                        {person.name}
+                      </h4>
 
-                  <div className="absolute top-5 right-5 bg-white/90 text-[#14532D] px-3 py-1 rounded-2xl text-xs font-semibold backdrop-blur-md">
-                    Technical Head
-                  </div>
-                </div>
+                      <p className="text-[#16A34A] font-medium">
+                        {person.role}
+                      </p>
 
-                <div className="p-6">
-                  <div className="absolute -top-5 left-6 w-10 h-10 bg-[#16A34A] rounded-2xl flex items-center justify-center text-white shadow-lg text-sm font-bold">
-                    02
-                  </div>
+                      <div className="w-full mt-5 space-y-3">
+                        <a
+                          href={`tel:${person.phone}`}
+                          className="flex items-center gap-3 p-3 rounded-xl bg-gray-50 hover:bg-green-50 transition"
+                        >
+                          <span>📞</span>
+                          <span className="text-sm">{person.phone}</span>
+                        </a>
 
-                  <h4 className="text-xl font-bold text-[#14532D] mt-6">
-                    Ms. Monotosh Halder
-                  </h4>
-                  <p className="text-[#16A34A] font-medium">Marketing Head</p>
-
-                  <div className="mt-5 space-y-2.5 text-sm text-[#6B7280]">
-                    <a
-                      href="tel:+919876543211"
-                      className="flex items-center gap-3 hover:text-[#14532D] transition-colors"
-                    >
-                      <span className="text-[#16A34A]">📞</span> +91 9836685823
-                    </a>
-                    <a
-                      href="mailto:monotosh.penta@gmail.com"
-                      className="flex items-center gap-3 hover:text-[#14532D] transition-colors"
-                    >
-                      <span className="text-[#16A34A]">✉️</span>{" "}
-                      monotosh.penta@gmail.com
-                    </a>
-                  </div>
-                </div>
-              </motion.div>
-
-              {/* Person 3 - Smaller Card */}
-              <motion.div
-                variants={fadeInUp}
-                whileHover={{ y: -8, transition: { duration: 0.3 } }}
-                className="group relative bg-white rounded-3xl overflow-hidden shadow-sm hover:shadow-xl transition-all duration-500"
-              >
-                <div className="relative h-64 overflow-hidden">
-                  <img
-                    src="https://via.placeholder.com/600x800/14532D/ffffff?text=Mr.+Amit+Verma"
-                    alt="Amit Verma"
-                    className="w-full h-full object-cover transition-transform duration-700 group-hover:scale-110"
-                  />
-                  <div className="absolute inset-0 bg-gradient-to-t from-black/70 via-black/30 to-transparent" />
-
-                  <div className="absolute top-5 right-5 bg-white/90 text-[#14532D] px-3 py-1 rounded-2xl text-xs font-semibold backdrop-blur-md">
-                    Operations
-                  </div>
-                </div>
-
-                <div className="p-6">
-                  <div className="absolute -top-5 left-6 w-10 h-10 bg-[#16A34A] rounded-2xl flex items-center justify-center text-white shadow-lg text-sm font-bold">
-                    03
-                  </div>
-
-                  <h4 className="text-xl font-bold text-[#14532D] mt-6">
-                    Mr. Amit Verma
-                  </h4>
-                  <p className="text-[#16A34A] font-medium">
-                    Director - Operations
-                  </p>
-
-                  <div className="mt-5 space-y-2.5 text-sm text-[#6B7280]">
-                    <a
-                      href="tel:+919876543212"
-                      className="flex items-center gap-3 hover:text-[#14532D] transition-colors"
-                    >
-                      <span className="text-[#16A34A]">📞</span> +91 98765 43212
-                    </a>
-                    <a
-                      href="mailto:amit@pentaautomation.com"
-                      className="flex items-center gap-3 hover:text-[#14532D] transition-colors"
-                    >
-                      <span className="text-[#16A34A]">✉️</span>{" "}
-                      amit@pentaautomation.com
-                    </a>
-                  </div>
-                </div>
-              </motion.div>
-            </motion.div>
+                        <a
+                          href={`mailto:${person.email}`}
+                          className="flex items-center gap-3 p-3 rounded-xl bg-gray-50 hover:bg-green-50 transition"
+                        >
+                          <span>✉️</span>
+                          <span className="text-sm truncate">
+                            {person.email}
+                          </span>
+                        </a>
+                      </div>
+                    </div>
+                  </motion.div>
+                </SwiperSlide>
+              ))}
+            </Swiper>
           </div>
         </div>
       </section>
