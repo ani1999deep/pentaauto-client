@@ -108,6 +108,14 @@ export default function Home() {
       email: "gopalsau.penta@gmail.com",
       photo: "/team/gopal-sau.png",
     },
+    {
+      id: "06",
+      name: "Mr. Srinjoy Dey",
+      role: "Execution Engineer",
+      phone: "+91 9836680288",
+      email: "srinjoy7.penta@gmail.com",
+      photo: "/team/srinjoy-dey.png",
+    },
   ];
 
   // Animation Variants

@@ -1,38 +1,81 @@
-import { Mail, Phone, MapPin, Clock } from "lucide-react";
+"use client";
+
+import { motion } from "framer-motion";
+import { Mail, Phone, MapPin, Clock, Send } from "lucide-react";
+
+const fadeUp = {
+  hidden: { opacity: 0, y: 40 },
+  visible: {
+    opacity: 1,
+    y: 0,
+    transition: {
+      duration: 0.7,
+    },
+  },
+};
+
+const staggerContainer = {
+  hidden: {},
+  visible: {
+    transition: {
+      staggerChildren: 0.15,
+    },
+  },
+};
 
 export default function Contact() {
   return (
-    <main className="min-h-screen bg-[#F8FAFC] py-25">
+    <motion.main
+      initial={{ opacity: 0 }}
+      animate={{ opacity: 1 }}
+      transition={{ duration: 0.8 }}
+      className="min-h-screen bg-gradient-to-b from-[#F8FAFC] to-[#ECFDF5] py-24 overflow-hidden"
+    >
       <div className="container mx-auto px-6">
-
         {/* Heading */}
-        <div className="text-center mb-16">
-          <span className="bg-[#86EFAC] text-[#14532D] px-4 py-2 rounded-full text-sm font-semibold">
+        <motion.div
+          initial="hidden"
+          whileInView="visible"
+          viewport={{ once: true }}
+          variants={fadeUp}
+          className="text-center mb-16"
+        >
+          <span className="bg-[#86EFAC] text-[#14532D] px-5 py-2 rounded-full text-sm font-semibold shadow-sm">
             Get In Touch
           </span>
 
-          <h1 className="mt-6 text-5xl font-bold text-[#14532D]">
+          <h1 className="mt-6 text-4xl md:text-5xl lg:text-6xl font-bold text-[#14532D]">
             Contact Us
           </h1>
 
-          <p className="mt-4 text-lg text-[#6B7280] max-w-2xl mx-auto">
-            Have questions about our services or projects? Our team is ready
-            to help and provide the best solutions for your business.
+          <p className="mt-5 text-lg text-[#6B7280] max-w-2xl mx-auto">
+            Have questions about our services or projects? Our team is ready to
+            help and provide the best solutions for your business.
           </p>
-        </div>
+        </motion.div>
 
-        <div className="grid lg:grid-cols-2 gap-10">
-
+        <div className="grid lg:grid-cols-2 gap-10 items-start">
           {/* Contact Form */}
-          <div className="bg-white rounded-3xl shadow-lg p-8">
-
+          <motion.div
+            initial={{ opacity: 0, x: -80 }}
+            whileInView={{ opacity: 1, x: 0 }}
+            viewport={{ once: true }}
+            transition={{ duration: 0.8 }}
+            whileHover={{ y: -5 }}
+            className="bg-white rounded-3xl shadow-xl border border-green-100 p-8"
+          >
             <h2 className="text-2xl font-bold text-[#14532D] mb-6">
               Send Us a Message
             </h2>
 
-            <form className="space-y-5">
-
-              <div>
+            <motion.form
+              variants={staggerContainer}
+              initial="hidden"
+              whileInView="visible"
+              viewport={{ once: true }}
+              className="space-y-5"
+            >
+              <motion.div variants={fadeUp}>
                 <label className="block mb-2 font-medium text-[#1F2937]">
                   Full Name
                 </label>
@@ -40,11 +83,11 @@ export default function Contact() {
                 <input
                   type="text"
                   placeholder="Enter your name"
-                  className="w-full border border-gray-200 rounded-xl p-4 focus:outline-none focus:ring-2 focus:ring-[#16A34A]"
+                  className="w-full border border-gray-200 rounded-xl p-4 focus:outline-none focus:ring-2 focus:ring-[#16A34A] transition"
                 />
-              </div>
+              </motion.div>
 
-              <div>
+              <motion.div variants={fadeUp}>
                 <label className="block mb-2 font-medium text-[#1F2937]">
                   Email Address
                 </label>
@@ -52,11 +95,11 @@ export default function Contact() {
                 <input
                   type="email"
                   placeholder="Enter your email"
-                  className="w-full border border-gray-200 rounded-xl p-4 focus:outline-none focus:ring-2 focus:ring-[#16A34A]"
+                  className="w-full border border-gray-200 rounded-xl p-4 focus:outline-none focus:ring-2 focus:ring-[#16A34A] transition"
                 />
-              </div>
+              </motion.div>
 
-              <div>
+              <motion.div variants={fadeUp}>
                 <label className="block mb-2 font-medium text-[#1F2937]">
                   Subject
                 </label>
@@ -64,11 +107,11 @@ export default function Contact() {
                 <input
                   type="text"
                   placeholder="Subject"
-                  className="w-full border border-gray-200 rounded-xl p-4 focus:outline-none focus:ring-2 focus:ring-[#16A34A]"
+                  className="w-full border border-gray-200 rounded-xl p-4 focus:outline-none focus:ring-2 focus:ring-[#16A34A] transition"
                 />
-              </div>
+              </motion.div>
 
-              <div>
+              <motion.div variants={fadeUp}>
                 <label className="block mb-2 font-medium text-[#1F2937]">
                   Message
                 </label>
@@ -76,113 +119,142 @@ export default function Contact() {
                 <textarea
                   rows="5"
                   placeholder="Write your message..."
-                  className="w-full border border-gray-200 rounded-xl p-4 focus:outline-none focus:ring-2 focus:ring-[#16A34A]"
+                  className="w-full border border-gray-200 rounded-xl p-4 focus:outline-none focus:ring-2 focus:ring-[#16A34A] transition resize-none"
                 ></textarea>
-              </div>
+              </motion.div>
 
-              <button
+              <motion.button
+                variants={fadeUp}
+                whileHover={{
+                  scale: 1.02,
+                  boxShadow: "0px 15px 30px rgba(22,163,74,0.25)",
+                }}
+                whileTap={{ scale: 0.97 }}
                 type="submit"
-                className="w-full bg-[#16A34A] hover:bg-[#14532D] text-white font-semibold py-4 rounded-xl transition duration-300"
+                className="w-full bg-[#16A34A] hover:bg-[#14532D] text-white font-semibold py-4 rounded-xl transition-all duration-300 flex items-center justify-center gap-2"
               >
+                <Send size={18} />
                 Send Message
-              </button>
-
-            </form>
-          </div>
+              </motion.button>
+            </motion.form>
+          </motion.div>
 
           {/* Contact Info */}
-          <div className="space-y-6">
-
-            <div className="bg-white rounded-3xl shadow-lg p-8">
-              <h2 className="text-2xl font-bold text-[#14532D] mb-6">
+          <motion.div
+            initial={{ opacity: 0, x: 80 }}
+            whileInView={{ opacity: 1, x: 0 }}
+            viewport={{ once: true }}
+            transition={{ duration: 0.8 }}
+            className="space-y-6"
+          >
+            {/* Contact Information Card */}
+            <motion.div
+              whileHover={{
+                y: -8,
+                boxShadow: "0px 20px 40px rgba(0,0,0,0.08)",
+              }}
+              className="bg-white rounded-3xl shadow-xl border border-green-100 p-8"
+            >
+              <h2 className="text-2xl font-bold text-[#14532D] mb-8">
                 Contact Information
               </h2>
 
-              <div className="space-y-6">
+              <div className="space-y-7">
+                {[
+                  {
+                    icon: Phone,
+                    title: "Phone",
+                    value: "+91 98765 43210",
+                  },
+                  {
+                    icon: Mail,
+                    title: "Email",
+                    value: "info@pentaauto.co.in",
+                  },
+                  {
+                    icon: MapPin,
+                    title: "Address",
+                    value: "Kolkata, West Bengal, India",
+                  },
+                  {
+                    icon: Clock,
+                    title: "Working Hours",
+                    value: "Mon - Sat : 9:00 AM - 6:00 PM",
+                  },
+                ].map((item, index) => {
+                  const Icon = item.icon;
 
-                <div className="flex items-start gap-4">
-                  <div className="bg-[#86EFAC] p-3 rounded-xl">
-                    <Phone className="text-[#14532D]" />
-                  </div>
+                  return (
+                    <motion.div
+                      key={index}
+                      whileHover={{ x: 6 }}
+                      className="flex items-start gap-4"
+                    >
+                      <motion.div
+                        animate={{ y: [0, -4, 0] }}
+                        transition={{
+                          duration: 2,
+                          repeat: Infinity,
+                          delay: index * 0.3,
+                        }}
+                        className="bg-[#86EFAC] p-3 rounded-xl shadow-sm"
+                      >
+                        <Icon className="text-[#14532D]" size={22} />
+                      </motion.div>
 
-                  <div>
-                    <h4 className="font-semibold text-[#1F2937]">
-                      Phone
-                    </h4>
-                    <p className="text-[#6B7280]">
-                      +91 98765 43210
-                    </p>
-                  </div>
-                </div>
+                      <div>
+                        <h4 className="font-semibold text-[#1F2937]">
+                          {item.title}
+                        </h4>
 
-                <div className="flex items-start gap-4">
-                  <div className="bg-[#86EFAC] p-3 rounded-xl">
-                    <Mail className="text-[#14532D]" />
-                  </div>
-
-                  <div>
-                    <h4 className="font-semibold text-[#1F2937]">
-                      Email
-                    </h4>
-                    <p className="text-[#6B7280]">
-                      info@pentaauto.co.in
-                    </p>
-                  </div>
-                </div>
-
-                <div className="flex items-start gap-4">
-                  <div className="bg-[#86EFAC] p-3 rounded-xl">
-                    <MapPin className="text-[#14532D]" />
-                  </div>
-
-                  <div>
-                    <h4 className="font-semibold text-[#1F2937]">
-                      Address
-                    </h4>
-                    <p className="text-[#6B7280]">
-                      Kolkata, West Bengal, India
-                    </p>
-                  </div>
-                </div>
-
-                <div className="flex items-start gap-4">
-                  <div className="bg-[#86EFAC] p-3 rounded-xl">
-                    <Clock className="text-[#14532D]" />
-                  </div>
-
-                  <div>
-                    <h4 className="font-semibold text-[#1F2937]">
-                      Working Hours
-                    </h4>
-                    <p className="text-[#6B7280]">
-                      Mon - Sat : 9:00 AM - 6:00 PM
-                    </p>
-                  </div>
-                </div>
-
+                        <p className="text-[#6B7280]">{item.value}</p>
+                      </div>
+                    </motion.div>
+                  );
+                })}
               </div>
-            </div>
+            </motion.div>
 
             {/* CTA Card */}
-            <div className="bg-[#14532D] rounded-3xl p-8 text-white">
-              <h3 className="text-2xl font-bold">
-                Need Immediate Assistance?
-              </h3>
+            <motion.div
+              initial={{ opacity: 0, y: 40 }}
+              whileInView={{ opacity: 1, y: 0 }}
+              viewport={{ once: true }}
+              transition={{ duration: 0.8 }}
+              whileHover={{ scale: 1.02 }}
+              className="relative overflow-hidden bg-[#14532D] rounded-3xl p-8 text-white shadow-xl"
+            >
+              {/* Glow Effects */}
+              <div className="absolute -top-20 -right-20 w-48 h-48 bg-green-400/20 rounded-full blur-3xl"></div>
 
-              <p className="mt-3 text-green-100">
-                Contact our team today and discover how Penta Auto can help
-                your business achieve operational excellence.
-              </p>
+              <div className="absolute -bottom-20 -left-20 w-48 h-48 bg-green-300/10 rounded-full blur-3xl"></div>
 
-              <button className="mt-6 bg-white text-[#14532D] px-6 py-3 rounded-xl font-semibold hover:bg-[#86EFAC] transition">
-                Call Now
-              </button>
-            </div>
+              <div className="relative z-10">
+                <h3 className="text-3xl font-bold">
+                  Need Immediate Assistance?
+                </h3>
 
-          </div>
+                <p className="mt-4 text-green-100 leading-relaxed">
+                  Contact our team today and discover how Penta Auto can help
+                  your business achieve operational excellence and sustainable
+                  growth.
+                </p>
 
+                <motion.button
+                  whileHover={{
+                    scale: 1.05,
+                    backgroundColor: "#86EFAC",
+                  }}
+                  whileTap={{ scale: 0.95 }}
+                  className="mt-6 bg-white text-[#14532D] px-6 py-3 rounded-xl font-semibold transition-all duration-300"
+                >
+                  Call Now
+                </motion.button>
+              </div>
+            </motion.div>
+          </motion.div>
         </div>
       </div>
-    </main>
+    </motion.main>
   );
 }
