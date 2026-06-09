@@ -98,7 +98,7 @@ export default function Home() {
       role: "Senior Accountant",
       phone: "+91 9836681900",
       email: "abhisek@pentaauto.co.in",
-      photo: "/team/abhisek-paul.jpeg",
+      photo: "/team/abhisek-paul.png",
     },
     {
       id: "05",
@@ -106,7 +106,7 @@ export default function Home() {
       role: "Administrative Manager",
       phone: "+91 9836688442",
       email: "gopalsau.penta@gmail.com",
-      photo: "/team/gopal-sau.jpeg",
+      photo: "/team/gopal-sau.png",
     },
   ];
 
