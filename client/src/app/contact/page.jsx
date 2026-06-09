@@ -1,7 +1,7 @@
 "use client";
 
 import { motion } from "framer-motion";
-import { Mail, Phone, MapPin, Clock, Send } from "lucide-react";
+import { Mail, Phone, MapPin, Clock, Send, PhoneCall } from "lucide-react";
 
 const fadeUp = {
   hidden: { opacity: 0, y: 40 },
@@ -164,17 +164,48 @@ export default function Contact() {
                   {
                     icon: Phone,
                     title: "Phone",
-                    value: "+91 98765 43210",
+                    value: (
+                      <div className="flex flex-col">
+                        <a
+                          href="tel:+919836688442"
+                          className="text-[#6B7280] hover:text-[#16A34A] transition"
+                        >
+                          +91 9836688442
+                        </a>
+                        <a
+                          href="tel:+919836681900"
+                          className="text-[#6B7280] hover:text-[#16A34A] transition"
+                        >
+                          +91 9836681900
+                        </a>
+                      </div>
+                    ),
                   },
                   {
                     icon: Mail,
                     title: "Email",
-                    value: "info@pentaauto.co.in",
+                    value: (
+                      <a
+                        href="mailto:penta.automation2012@gmail.com"
+                        className="text-[#6B7280] hover:text-[#16A34A] transition break-all"
+                      >
+                        penta.automation2012@gmail.com
+                      </a>
+                    ),
                   },
                   {
                     icon: MapPin,
                     title: "Address",
-                    value: "Kolkata, West Bengal, India",
+                    value: (
+                      <a
+                        href="https://maps.google.com/?q=Kolkata,West Bengal,India"
+                        target="_blank"
+                        rel="noopener noreferrer"
+                        className="text-[#6B7280] hover:text-[#16A34A] transition"
+                      >
+                        Kolkata, West Bengal, India
+                      </a>
+                    ),
                   },
                   {
                     icon: Clock,
@@ -207,7 +238,7 @@ export default function Contact() {
                           {item.title}
                         </h4>
 
-                        <p className="text-[#6B7280]">{item.value}</p>
+                        <div className="text-[#6B7280]">{item.value}</div>
                       </div>
                     </motion.div>
                   );
@@ -240,16 +271,18 @@ export default function Contact() {
                   growth.
                 </p>
 
-                <motion.button
+                <motion.a
+                  href="tel:+919836688442"
                   whileHover={{
                     scale: 1.05,
-                    backgroundColor: "#86EFAC",
+                    y: -2,
                   }}
                   whileTap={{ scale: 0.95 }}
-                  className="mt-6 bg-white text-[#14532D] px-6 py-3 rounded-xl font-semibold transition-all duration-300"
+                  className="mt-6 inline-flex items-center gap-3 bg-white text-[#14532D] px-6 py-4 rounded-xl font-semibold shadow-lg hover:bg-[#86EFAC] hover:shadow-2xl transition-all duration-300"
                 >
-                  Call Now
-                </motion.button>
+                  <PhoneCall size={20} />
+                  <span>Call Now</span>
+                </motion.a>
               </div>
             </motion.div>
           </motion.div>
