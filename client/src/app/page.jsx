@@ -114,7 +114,7 @@ export default function Home() {
       role: "Senior Application & Execution Engineer",
       phone: "+91 9836680288",
       email: "srinjoy7.penta@gmail.com",
-      photo: "/team/srinjoy-dey.png",
+      photo: "/team/srinjoy-dey.PNG",
     },
   ];
 
