@@ -111,7 +111,7 @@ export default function Home() {
     {
       id: "06",
       name: "Mr. Srinjoy Dey",
-      role: "Execution Engineer",
+      role: "Senior Application & Execution Engineer",
       phone: "+91 9836680288",
       email: "srinjoy7.penta@gmail.com",
       photo: "/team/srinjoy-dey.png",
