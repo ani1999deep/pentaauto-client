@@ -1,7 +1,19 @@
 "use client";
 
 import { motion } from "framer-motion";
-import { Mail, Phone, MapPin, Clock, Send, PhoneCall } from "lucide-react";
+import {
+  Mail,
+  Phone,
+  MapPin,
+  Clock,
+  Send,
+  PhoneCall,
+  Factory,
+  Building2,
+  User,
+  MessageSquare,
+  FileText,
+} from "lucide-react";
 
 const fadeUp = {
   hidden: { opacity: 0, y: 40 },
@@ -68,75 +80,71 @@ export default function Contact() {
               Send Us a Message
             </h2>
 
-            <motion.form
-              variants={staggerContainer}
-              initial="hidden"
-              whileInView="visible"
-              viewport={{ once: true }}
-              className="space-y-5"
+            <motion.div variants={fadeUp}>
+              <label className="flex items-center gap-2 mb-2 font-medium text-[#1F2937]">
+                <User size={18} className="text-[#16A34A]" />
+                Full Name
+              </label>
+
+              <input
+                type="text"
+                placeholder="Enter your name"
+                className="w-full border border-gray-200 rounded-xl p-4 focus:outline-none focus:ring-2 focus:ring-[#16A34A] transition"
+              />
+            </motion.div>
+
+            <motion.div variants={fadeUp}>
+              <label className="flex items-center gap-2 mb-2 font-medium text-[#1F2937]">
+                <Mail size={18} className="text-[#16A34A]" />
+                Email Address
+              </label>
+
+              <input
+                type="email"
+                placeholder="Enter your email"
+                className="w-full border border-gray-200 rounded-xl p-4 focus:outline-none focus:ring-2 focus:ring-[#16A34A] transition"
+              />
+            </motion.div>
+
+            <motion.div variants={fadeUp}>
+              <label className="flex items-center gap-2 mb-2 font-medium text-[#1F2937]">
+                <FileText size={18} className="text-[#16A34A]" />
+                Subject
+              </label>
+
+              <input
+                type="text"
+                placeholder="Subject"
+                className="w-full border border-gray-200 rounded-xl p-4 focus:outline-none focus:ring-2 focus:ring-[#16A34A] transition"
+              />
+            </motion.div>
+
+            <motion.div variants={fadeUp}>
+              <label className="flex items-center gap-2 mb-2 font-medium text-[#1F2937]">
+                <MessageSquare size={18} className="text-[#16A34A]" />
+                Message
+              </label>
+
+              <textarea
+                rows="5"
+                placeholder="Write your message..."
+                className="w-full border border-gray-200 rounded-xl p-4 focus:outline-none focus:ring-2 focus:ring-[#16A34A] transition resize-none"
+              ></textarea>
+            </motion.div>
+
+            <motion.button
+              variants={fadeUp}
+              whileHover={{
+                scale: 1.02,
+                boxShadow: "0px 15px 30px rgba(22,163,74,0.25)",
+              }}
+              whileTap={{ scale: 0.97 }}
+              type="submit"
+              className="w-full bg-[#16A34A] hover:bg-[#14532D] text-white font-semibold py-4 rounded-xl transition-all duration-300 flex items-center justify-center gap-2"
             >
-              <motion.div variants={fadeUp}>
-                <label className="block mb-2 font-medium text-[#1F2937]">
-                  Full Name
-                </label>
-
-                <input
-                  type="text"
-                  placeholder="Enter your name"
-                  className="w-full border border-gray-200 rounded-xl p-4 focus:outline-none focus:ring-2 focus:ring-[#16A34A] transition"
-                />
-              </motion.div>
-
-              <motion.div variants={fadeUp}>
-                <label className="block mb-2 font-medium text-[#1F2937]">
-                  Email Address
-                </label>
-
-                <input
-                  type="email"
-                  placeholder="Enter your email"
-                  className="w-full border border-gray-200 rounded-xl p-4 focus:outline-none focus:ring-2 focus:ring-[#16A34A] transition"
-                />
-              </motion.div>
-
-              <motion.div variants={fadeUp}>
-                <label className="block mb-2 font-medium text-[#1F2937]">
-                  Subject
-                </label>
-
-                <input
-                  type="text"
-                  placeholder="Subject"
-                  className="w-full border border-gray-200 rounded-xl p-4 focus:outline-none focus:ring-2 focus:ring-[#16A34A] transition"
-                />
-              </motion.div>
-
-              <motion.div variants={fadeUp}>
-                <label className="block mb-2 font-medium text-[#1F2937]">
-                  Message
-                </label>
-
-                <textarea
-                  rows="5"
-                  placeholder="Write your message..."
-                  className="w-full border border-gray-200 rounded-xl p-4 focus:outline-none focus:ring-2 focus:ring-[#16A34A] transition resize-none"
-                ></textarea>
-              </motion.div>
-
-              <motion.button
-                variants={fadeUp}
-                whileHover={{
-                  scale: 1.02,
-                  boxShadow: "0px 15px 30px rgba(22,163,74,0.25)",
-                }}
-                whileTap={{ scale: 0.97 }}
-                type="submit"
-                className="w-full bg-[#16A34A] hover:bg-[#14532D] text-white font-semibold py-4 rounded-xl transition-all duration-300 flex items-center justify-center gap-2"
-              >
-                <Send size={18} />
-                Send Message
-              </motion.button>
-            </motion.form>
+              <Send size={18} />
+              Send Message
+            </motion.button>
           </motion.div>
 
           {/* Contact Info */}
@@ -194,16 +202,30 @@ export default function Contact() {
                     ),
                   },
                   {
-                    icon: MapPin,
-                    title: "Address",
+                    icon: Building2,
+                    title: "Corporate Office",
                     value: (
                       <a
-                        href="https://maps.google.com/?q=Kolkata,West Bengal,India"
+                        href="https://maps.google.com/?q=GC72+X9J,Kasba RTO,Sector C,East Kolkata Township,Kolkata,West Bengal,700107"
                         target="_blank"
                         rel="noopener noreferrer"
                         className="text-[#6B7280] hover:text-[#16A34A] transition"
                       >
-                        Kolkata, West Bengal, India
+                        Corporate Office Address Here
+                      </a>
+                    ),
+                  },
+                  {
+                    icon: Factory,
+                    title: "Factory Address",
+                    value: (
+                      <a
+                        href="https://maps.google.com/?q=Penta+Automation+Workshop,Ramchandrapur,Satanipara,Bonhooghly,West+Bengal+700103"
+                        target="_blank"
+                        rel="noopener noreferrer"
+                        className="text-[#6B7280] hover:text-[#16A34A] transition"
+                      >
+                        Factory Address Here
                       </a>
                     ),
                   },
