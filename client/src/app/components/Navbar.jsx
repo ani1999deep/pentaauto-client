@@ -3,35 +3,54 @@
 import Link from "next/link";
 import Image from "next/image";
 import { Menu, X } from "lucide-react";
-import { useState } from "react";
+import { useState, useEffect } from "react";
 import { motion, AnimatePresence } from "framer-motion";
 
 export default function Navbar() {
   const [isOpen, setIsOpen] = useState(false);
+  const [active, setActive] = useState("/");
 
   const navLinks = [
-    { name: "Home", path: "/" },
-    { name: "About Us", path: "/about" },
-    { name: "Services", path: "/services" },
-    { name: "Projects", path: "/projects" },
-    { name: "Contact", path: "/contact" },
+    { name: "Home", path: "/", id: "home" },
+    { name: "About Us", path: "/#about", id: "about" },
+    { name: "Services", path: "/#services", id: "services" },
+    { name: "Projects", path: "/#projects", id: "projects" },
+    { name: "Contact", path: "/#contact", id: "contact" },
   ];
+
+  useEffect(() => {
+    const sections = document.querySelectorAll("section[id]");
+
+    const observer = new IntersectionObserver(
+      (entries) => {
+        entries.forEach((entry) => {
+          if (entry.isIntersecting) {
+            setActive(entry.target.id);
+          }
+        });
+      },
+      {
+        threshold: 0.45,
+      },
+    );
+
+    sections.forEach((section) => observer.observe(section));
+
+    return () => observer.disconnect();
+  }, []);
 
   return (
     <motion.header
       initial={{ y: -80, opacity: 0 }}
       animate={{ y: 0, opacity: 1 }}
       transition={{ duration: 0.7 }}
-      className="sticky top-0 z-50 bg-white shadow-sm border-b border-gray-100"
+      className="sticky top-0 z-50 bg-white/90 backdrop-blur-lg shadow-sm border-b border-gray-100"
     >
       <div className="container mx-auto px-6">
         <div className="flex items-center justify-between h-20">
           {/* Logo */}
-          <Link href="/" className="flex items-center gap-3">
-            <motion.div
-              whileHover={{ scale: 1.05 }}
-              transition={{ duration: 0.3 }}
-            >
+          <Link href="/" className="flex items-center">
+            <motion.div whileHover={{ scale: 1.04 }}>
               <Image
                 src="/pentaauto2.jpeg"
                 alt="Penta Auto"
@@ -43,105 +62,111 @@ export default function Navbar() {
             </motion.div>
           </Link>
 
-          {/* Desktop Menu */}
-          <nav className="hidden lg:flex items-center gap-8">
-            {navLinks.map((item, index) => (
-              <motion.div
-                key={item.name}
-                initial={{ opacity: 0, y: -20 }}
-                animate={{ opacity: 1, y: 0 }}
-                transition={{
-                  duration: 0.5,
-                  delay: index * 0.1,
-                }}
-                whileHover={{ y: -2 }}
-              >
-                <Link
-                  href={item.path}
-                  className="font-medium text-[#1F2937] hover:text-[#16A34A] transition duration-300"
+          {/* Desktop */}
+          <nav className="hidden lg:flex items-center gap-3">
+            {navLinks.map((item, index) => {
+              const current =
+                active === item.id || (item.path === "/" && active === "home");
+
+              return (
+                <motion.div
+                  key={item.name}
+                  initial={{ opacity: 0, y: -20 }}
+                  animate={{ opacity: 1, y: 0 }}
+                  transition={{
+                    delay: index * 0.08,
+                  }}
                 >
-                  {item.name}
-                </Link>
-              </motion.div>
-            ))}
+                  <Link
+                    href={item.path}
+                    onClick={() => setActive(item.id)}
+                    className={`
+                      relative px-5 py-2 rounded-full
+                      transition-all duration-300
+                      ${
+                        current
+                          ? "bg-green-100 text-[#16A34A]"
+                          : "text-[#1F2937] hover:text-[#16A34A]"
+                      }
+                    `}
+                  >
+                    {item.name}
+
+                    {current && (
+                      <motion.span
+                        layoutId="active"
+                        className="absolute bottom-0 left-3 right-3 h-[3px] bg-[#16A34A] rounded-full"
+                      />
+                    )}
+                  </Link>
+                </motion.div>
+              );
+            })}
           </nav>
 
-          {/* CTA Button */}
-          <motion.div
-            initial={{ opacity: 0, scale: 0.8 }}
-            animate={{ opacity: 1, scale: 1 }}
-            transition={{ duration: 0.5 }}
-            whileHover={{ scale: 1.05 }}
-            whileTap={{ scale: 0.95 }}
+          {/* CTA */}
+          <Link
+            href="/contact"
+            className="hidden lg:flex bg-[#16A34A] text-white px-6 py-3 rounded-xl hover:bg-[#14532D]"
           >
-            <Link
-              href="/contact"
-              className="hidden lg:flex bg-[#16A34A] hover:bg-[#14532D] text-white px-6 py-3 rounded-lg transition shadow-lg hover:shadow-xl"
-            >
-              Enquiry
-            </Link>
-          </motion.div>
+            Enquiry
+          </Link>
 
-          {/* Mobile Menu Button */}
-          <motion.button
-            className="lg:hidden"
-            onClick={() => setIsOpen(!isOpen)}
-            whileTap={{ scale: 0.9 }}
-          >
-            {isOpen ? (
-              <X className="text-[#14532D]" size={28} />
-            ) : (
-              <Menu className="text-[#14532D]" size={28} />
-            )}
-          </motion.button>
+          {/* Mobile */}
+          <button className="lg:hidden" onClick={() => setIsOpen(!isOpen)}>
+            {isOpen ? <X size={28} /> : <Menu size={28} />}
+          </button>
         </div>
 
         {/* Mobile Menu */}
         <AnimatePresence>
           {isOpen && (
             <motion.div
-              initial={{ opacity: 0, height: 0 }}
-              animate={{ opacity: 1, height: "auto" }}
-              exit={{ opacity: 0, height: 0 }}
-              transition={{ duration: 0.35 }}
-              className="lg:hidden overflow-hidden border-t border-green-200"
+              initial={{
+                opacity: 0,
+                height: 0,
+              }}
+              animate={{
+                opacity: 1,
+                height: "auto",
+              }}
+              exit={{
+                opacity: 0,
+                height: 0,
+              }}
+              className="lg:hidden py-5"
             >
-              <div className="flex flex-col gap-4 py-5">
-                {navLinks.map((item, index) => (
-                  <motion.div
-                    key={item.name}
-                    initial={{ opacity: 0, x: -30 }}
-                    animate={{ opacity: 1, x: 0 }}
-                    transition={{
-                      duration: 0.4,
-                      delay: index * 0.08,
-                    }}
-                  >
-                    <Link
-                      href={item.path}
-                      className="text-[#1F2937] hover:text-[#16A34A] font-medium transition"
-                      onClick={() => setIsOpen(false)}
-                    >
-                      {item.name}
-                    </Link>
-                  </motion.div>
-                ))}
+              {navLinks.map((item) => {
+                const current = active === item.id;
 
-                <motion.div
-                  initial={{ opacity: 0, y: 20 }}
-                  animate={{ opacity: 1, y: 0 }}
-                  transition={{ delay: 0.4 }}
-                  whileHover={{ scale: 1.03 }}
-                >
+                return (
                   <Link
-                    href="/contact"
-                    className="bg-[#16A34A] text-white px-5 py-3 rounded-lg w-fit shadow-lg"
-                    onClick={() => setIsOpen(false)}
+                    key={item.name}
+                    href={item.path}
+                    onClick={() => {
+                      setActive(item.id);
+                      setIsOpen(false);
+                    }}
+                    className={`
+                      block py-3 px-4 rounded-xl mb-2
+                      ${
+                        current
+                          ? "bg-green-100 text-[#16A34A]"
+                          : "text-[#1F2937]"
+                      }
+                    `}
                   >
-                    Get Quote
+                    {item.name}
                   </Link>
-                </motion.div>
-              </div>
+                );
+              })}
+
+              <Link
+                href="/contact"
+                className="inline-block mt-4 bg-[#16A34A] text-white px-5 py-3 rounded-xl"
+              >
+                Get Quote
+              </Link>
             </motion.div>
           )}
         </AnimatePresence>

@@ -1,4 +1,5 @@
 "use client";
+
 import HeroSection from "./components/home/HeroSection/HeroSection";
 import AboutSection from "./components/home/AboutSection/AboutSection";
 import KeyPersonsSection from "./components/home/KeyPersonsSection/KeyPersonsSection";
@@ -13,15 +14,41 @@ import WhyPentaAutomation from "./components/home/WhyPentaAutomation/WhyPentaAut
 export default function Home() {
   return (
     <main className="bg-[#F8FAFC]">
-      <HeroSection />
-      <AboutSection />
-      <TeamWorkSection />
-      <WhyPentaAutomation />
-      <IndustriesSection />
-      <FeaturedProjects />
-      <ClientsSection />
-      <Testimonials />
-      <CTASection />
+      <section id="home">
+        <HeroSection />
+      </section>
+
+      <section id="about">
+        <AboutSection />
+      </section>
+
+      <section id="team">
+        <TeamWorkSection />
+      </section>
+
+      <section id="why-penta">
+        <WhyPentaAutomation />
+      </section>
+
+      <section id="services">
+        <IndustriesSection />
+      </section>
+
+      <section id="projects">
+        <FeaturedProjects />
+      </section>
+
+      <section id="clients">
+        <ClientsSection />
+      </section>
+
+      <section id="testimonials">
+        <Testimonials />
+      </section>
+
+      <section id="contact">
+        <CTASection />
+      </section>
     </main>
   );
 }

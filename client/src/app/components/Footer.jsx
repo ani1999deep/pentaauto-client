@@ -28,6 +28,25 @@ const item = {
   },
 };
 
+const footerLinks = [
+  {
+    name: "About",
+    path: "/#about",
+  },
+  {
+    name: "Services",
+    path: "/#services",
+  },
+  {
+    name: "Projects",
+    path: "/#projects",
+  },
+  {
+    name: "Contact",
+    path: "/contact",
+  },
+];
+
 export default function Footer() {
   return (
     <footer className="relative overflow-hidden border-t">
@@ -69,18 +88,18 @@ export default function Footer() {
             <h3 className="font-semibold text-sm uppercase mb-5">Company</h3>
 
             <div className="space-y-3">
-              {["About", "Services", "Projects", "Contact"].map((text) => (
+              {footerLinks.map((item) => (
                 <motion.div
-                  key={text}
+                  key={item.name}
                   whileHover={{
                     x: 6,
                   }}
                 >
                   <Link
-                    href="/"
+                    href={item.path}
                     className="group flex items-center gap-1 text-gray-600"
                   >
-                    {text}
+                    {item.name}
 
                     <ArrowUpRight
                       size={14}

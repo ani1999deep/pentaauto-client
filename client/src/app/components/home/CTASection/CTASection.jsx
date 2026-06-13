@@ -2,6 +2,7 @@
 
 import { motion } from "framer-motion";
 import { ArrowRight } from "lucide-react";
+import Link from "next/link";
 
 export default function CTASection() {
   return (
@@ -25,14 +26,16 @@ export default function CTASection() {
           Partner with us to build innovative, efficient, and sustainable
           solutions for your business.
         </motion.p>
-        <motion.button
-          whileHover={{ scale: 1.05 }}
-          whileTap={{ scale: 0.98 }}
-          className="mt-8 bg-white text-[#14532D] px-8 py-4 rounded-lg font-semibold inline-flex items-center gap-2 hover:bg-[#86EFAC] transition-all duration-200"
-        >
-          Contact Us
-          <ArrowRight size={18} />
-        </motion.button>
+        <Link href="/contact">
+          <motion.button
+            whileHover={{ scale: 1.05 }}
+            whileTap={{ scale: 0.98 }}
+            className="mt-8 bg-white text-[#14532D] px-8 py-4 rounded-lg font-semibold inline-flex items-center gap-2 hover:bg-[#86EFAC] transition-all duration-200"
+          >
+            Contact Us
+            <ArrowRight size={18} />
+          </motion.button>
+        </Link>
       </div>
     </section>
   );
