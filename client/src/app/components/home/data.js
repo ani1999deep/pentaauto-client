@@ -1,13 +1,17 @@
 import {
-  Settings,
-  Zap,
-  ClipboardList,
   Factory,
   Truck,
   Wind,
   Building2,
   Cpu,
   Award,
+  Fuel,
+  Zap,
+  Droplets,
+  FlaskConical,
+  UtensilsCrossed,
+  Settings,
+  ClipboardList,
 } from "lucide-react";
 
 export const services = [
@@ -29,12 +33,74 @@ export const services = [
 ];
 
 export const industries = [
-  { name: "Manufacturing", icon: Factory },
-  { name: "Construction", icon: Truck },
-  { name: "Energy", icon: Wind },
-  { name: "Infrastructure", icon: Building2 },
-  { name: "Automotive", icon: Cpu },
-  { name: "Technology", icon: Award },
+  {
+    name: "Oil & Gas",
+    icon: Fuel,
+    description:
+      "PLC automation and safety systems for upstream, midstream, and downstream operations ensuring operational integrity and regulatory compliance.",
+  },
+
+  {
+    name: "Power & Energy",
+    icon: Zap,
+    description:
+      "Industrial automation for turbine control, grid synchronization, and emissions monitoring across power generation facilities.",
+  },
+
+  {
+    name: "Water & Wastewater",
+    icon: Droplets,
+    description:
+      "SCADA, telemetry, and treatment process automation for municipal and industrial water management with remote monitoring.",
+  },
+
+  {
+    name: "Manufacturing",
+    icon: Factory,
+    description:
+      "Factory automation, robotics integration, assembly line automation, and quality control systems for high-throughput production environments.",
+  },
+
+  {
+    name: "Chemical Processing",
+    icon: FlaskConical,
+    description:
+      "Batch processing automation, hazardous material handling, and regulatory compliance for chemical plants using PLC and DCS systems.",
+  },
+
+  {
+    name: "Food & Beverage",
+    icon: UtensilsCrossed,
+    description:
+      "Hygienic process automation, traceability systems, and packaging line optimization for food safety and manufacturing automation.",
+  },
+
+  {
+    name: "Construction",
+    icon: Truck,
+    description:
+      "Smart industrial solutions and automated systems for construction operations.",
+  },
+
+  {
+    name: "Infrastructure",
+    icon: Building2,
+    description:
+      "Scalable industrial control systems for infrastructure development.",
+  },
+
+  {
+    name: "Technology",
+    icon: Award,
+    description: "Advanced automation and intelligent industrial technologies.",
+  },
+
+  {
+    name: "Automotive",
+    icon: Cpu,
+    description:
+      "Automation systems for automotive manufacturing and production efficiency.",
+  },
 ];
 
 export const projects = [

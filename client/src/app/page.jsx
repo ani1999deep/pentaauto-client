@@ -22,16 +22,16 @@ export default function Home() {
         <AboutSection />
       </section>
 
-      <section id="team">
+      <section id="about">
         <TeamWorkSection />
       </section>
 
-      <section id="why-penta">
+      <section id="about">
         <WhyPentaAutomation />
       </section>
 
       <section id="services">
-        <IndustriesSection />
+        <IndustriesSection home={true} />
       </section>
 
       <section id="projects">

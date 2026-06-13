@@ -1,7 +1,8 @@
 "use client";
 
+import Link from "next/link";
 import { motion } from "framer-motion";
-import { Factory, Truck, Wind, Building2, Cpu, Award } from "lucide-react";
+import { ArrowRight } from "lucide-react";
 import { industries } from "../data";
 
 const scaleIn = {
@@ -11,10 +12,16 @@ const scaleIn = {
 };
 
 const staggerContainer = {
-  animate: { transition: { staggerChildren: 0.1 } },
+  animate: {
+    transition: {
+      staggerChildren: 0.1,
+    },
+  },
 };
 
-export default function IndustriesSection() {
+export default function IndustriesSection({ home = false }) {
+  const cards = home ? industries.slice(0, 3) : industries;
+
   return (
     <section className="py-24 bg-white">
       <div className="container mx-auto px-6">
@@ -26,7 +33,6 @@ export default function IndustriesSection() {
           variants={{
             initial: { opacity: 0, y: 60 },
             animate: { opacity: 1, y: 0 },
-            transition: { duration: 0.6 },
           }}
         >
           <h2 className="text-4xl font-bold text-[#14532D]">
@@ -41,8 +47,9 @@ export default function IndustriesSection() {
           viewport={{ once: true }}
           variants={staggerContainer}
         >
-          {industries.map((item, index) => {
+          {cards.map((item, index) => {
             const Icon = item.icon;
+
             return (
               <motion.div
                 key={index}
@@ -53,11 +60,30 @@ export default function IndustriesSection() {
                 <div className="mx-auto w-12 h-12 flex items-center justify-center bg-white rounded-2xl shadow-sm mb-4 group-hover:rotate-12 transition-transform duration-300">
                   <Icon className="text-[#16A34A]" size={28} />
                 </div>
-                <h3 className="font-semibold text-[#14532D]">{item.name}</h3>
+
+                <h3 className="font-semibold text-[#14532D] mb-3">
+                  {item.name}
+                </h3>
+
+                {/* Description Added */}
+                <p className="text-sm text-gray-500 leading-6">
+                  {item.description}
+                </p>
               </motion.div>
             );
           })}
         </motion.div>
+
+        {home && (
+          <div className="text-center mt-10">
+            <Link href="/services">
+              <button className="inline-flex items-center gap-2 text-[#14532D] font-semibold">
+                See More
+                <ArrowRight size={18} />
+              </button>
+            </Link>
+          </div>
+        )}
       </div>
     </section>
   );
