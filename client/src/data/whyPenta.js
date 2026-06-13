@@ -1,93 +1,112 @@
 // src/data/whyPenta.js
+
 import {
   Target,
   ShieldCheck,
   Users,
-  Clock,
   Zap,
   Lightbulb,
   Factory,
   Handshake,
-  Trophy,
   Settings,
 } from "lucide-react";
 
 export const whyPentaAutomation = {
   title: "Why Choose Penta Automation?",
+
   mainDescription:
-    "At Penta Automation, we don’t just build machines—we build smarter, scalable, and future-ready industrial solutions designed to improve productivity, quality, and operational efficiency. Our focus is delivering automation that creates measurable business impact.",
+    "At Penta Automation, we don’t just build machines—we engineer intelligent, scalable, and future-ready industrial automation solutions that enhance productivity, improve quality, and maximize operational efficiency. Our mission is simple: deliver automation that creates measurable business impact.",
 
   benefits: [
     {
       icon: Target,
       title: "Industry-Focused Engineering",
-      desc: "We understand real manufacturing challenges and develop solutions that reduce cycle time, minimize rejection rates, and improve production performance through optimized automation systems.",
+      desc: "Reduce cycle time, minimize rejection rates, optimize workflows, and improve production performance through advanced automation technologies.",
     },
+
     {
       icon: Settings,
-      title: "End-to-End Solutions",
-      desc: "From concept, design, manufacturing, installation, testing, and commissioning — everything is handled under one roof for faster execution and better control.",
+      title: "End-to-End Automation Solutions",
+      desc: "Complete execution from system design, panel manufacturing, PLC & SCADA development, installation, integration, testing, commissioning, and after-sales support.",
     },
+
     {
       icon: Zap,
       title: "Industry 4.0 Ready Technology",
-      desc: "Our solutions integrate modern technologies including RFID, machine vision, robotics, SCADA, data acquisition, and MES/ERP connectivity to create intelligent manufacturing environments.",
+      desc: "RFID, machine vision, robotics, SCADA, data acquisition, MES/ERP integration, and Industrial IoT for connected manufacturing.",
     },
+
     {
       icon: Factory,
-      title: "Custom Automation for Every Industry",
-      desc: "Every production environment is different. We design flexible automation systems tailored to your process, capacity, and future growth requirements.",
+      title: "Customized Engineering Approach",
+      desc: "Tailored automation systems designed around your production process, operational goals, and future expansion plans.",
     },
+
     {
       icon: ShieldCheck,
       title: "Quality, Safety & Compliance",
-      desc: "We maintain engineering standards with CE-compliant machine design approaches, risk evaluation practices, and strong quality control processes.",
+      desc: "CE-compliant engineering practices, structured quality processes, risk assessment, and dependable testing standards.",
     },
+
     {
       icon: Users,
-      title: "Experienced Team, Reliable Delivery",
-      desc: "Supported by experienced engineers, dedicated project ownership, and structured execution processes, we focus on delivering projects on time with long-term support.",
+      title: "Reliable Execution & Support",
+      desc: "Experienced engineers, structured delivery, smooth commissioning, technical support, and continuous optimization.",
     },
+
     {
       icon: Handshake,
-      title: "Long-Term Partnership Approach",
-      desc: "Our goal is not only project delivery but becoming a trusted automation partner that supports your business growth and continuous improvement. Repeat customer engagement reflects this commitment.",
+      title: "Long-Term Partnership",
+      desc: "We become your trusted automation partner supporting long-term operational growth and continuous improvement.",
     },
   ],
 
   expertise: [
     {
       icon: Zap,
-      title: "⚡ Expert in Electrical Control Panels",
+
+      title: " Expert in Electrical Control Panels",
+
       subtitle:
-        "We design and manufacture high-performance electrical panels for safe, efficient, and uninterrupted industrial operations.",
+        "High-performance electrical panel manufacturing for safe and reliable operations.",
+
       items: [
-        "MCC (Motor Control Center) Panels - Centralized motor monitoring, protection, and control",
-        "PCC (Power Control Center) Panels - Efficient power distribution systems ensuring operational stability and safety",
+        "MCC (Motor Control Center) Panels",
+        "Motor Monitoring & Protection",
+        "PCC (Power Control Center) Panels",
+        "Safe & Efficient Power Distribution",
       ],
     },
+
     {
       icon: Lightbulb,
-      title: "🖥 Advanced PLC & SCADA Integration",
+
+      title: " Advanced PLC & SCADA Integration",
+
       subtitle:
-        "We build intelligent automation systems with real-time monitoring and centralized control.",
+        "Smart industrial control with monitoring and centralized automation.",
+
       items: [
-        "PLC Programming & Automation - Smart process control, machine automation, and production optimization",
-        "SCADA Systems - Real-time monitoring, data logging, alarm management, analytics, and remote operation capabilities",
+        "PLC Programming & Automation",
+        "Machine & Process Automation",
+        "SCADA Monitoring",
+        "Analytics & Remote Operation",
       ],
     },
+
     {
       icon: Factory,
-      title: "🏭 Complete Industrial Automation Solutions",
+
+      title: " Complete Industrial Automation",
+
       subtitle:
-        "From design to commissioning, we provide complete automation services.",
+        "Complete industrial execution from engineering to commissioning.",
+
       items: [
-        "PLC Control System Design",
+        "PLC Control Design",
         "Electrical Panel Manufacturing",
-        "SCADA Development",
-        "HMI Integration",
-        "VFD & Servo Drive Integration",
-        "Machine Automation & Process Automation",
+        "SCADA & HMI Integration",
+        "VFD & Servo Integration",
         "Industrial Networking",
         "Installation & Commissioning",
       ],
@@ -95,7 +114,8 @@ export const whyPentaAutomation = {
   ],
 
   closingTagline:
-    "Penta Automation — Engineering Productivity. Delivering Innovation. Building the Future of Manufacturing.",
+    "Engineering Productivity • Delivering Innovation • Building Future Manufacturing",
+
   finalTagline:
     "Penta Automation — Powering Industries Through Smart Control & Automation Solutions.",
 };
