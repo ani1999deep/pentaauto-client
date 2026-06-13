@@ -22,15 +22,15 @@ export default function Navbar() {
         <div className="flex items-center justify-between h-20">
           {/* Logo */}
           <Link href="/" className="flex items-center">
-  <Image
-    src="/pentaauto.png"
-    alt="Penta Auto Logo"
-    width={180}
-    height={60}
-    priority
-    className="h-auto w-auto max-h-14"
-  />
-</Link>
+            <Image
+              src="/pentaauto2.jpeg"
+              alt="Penta Auto Logo"
+              width={180}
+              height={60}
+              priority
+              className="h-auto w-auto max-h-14"
+            />
+          </Link>
 
           {/* Desktop Menu */}
           <nav className="hidden lg:flex items-center gap-8">

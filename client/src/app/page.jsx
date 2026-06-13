@@ -14,6 +14,7 @@ import {
   Cpu,
   Award,
   Users,
+  Users2,
   Target,
 } from "lucide-react";
 import Image from "next/image";
@@ -116,6 +117,21 @@ export default function Home() {
       phone: "+91 9836680288",
       email: "srinjoy7.penta@gmail.com",
       photo: "/team/srinjoy-dey.PNG",
+    },
+  ];
+
+  const teamworkPhotos = [
+    {
+      title: "Engineering Team",
+      image: "/team/team-1.jpg",
+    },
+    {
+      title: "Project Execution Team",
+      image: "/team/team-2.jpg",
+    },
+    {
+      title: "Automation Experts",
+      image: "/team/team-3.jpg",
     },
   ];
 
@@ -452,7 +468,57 @@ export default function Home() {
           </div>
         </div>
       </section>
+      {/* ====================== Team Work Section ====================== */}
+      <section className="py-24">
+        <div className="text-center mb-12">
+          <span className="inline-flex items-center gap-2 px-4 py-2 rounded-full bg-green-100 text-[#16A34A] font-semibold text-sm">
+            <Users2 size={18} />
+            Team Work
+          </span>
 
+          <h2 className="mt-5 text-4xl font-bold text-[#14532D]">
+            Our Dedicated Team
+          </h2>
+
+          <p className="mt-3 text-gray-600 max-w-3xl mx-auto">
+            Our experienced engineering and automation professionals work
+            together to deliver Electrical Panels, MCC, PCC, PLC, SCADA and
+            industrial automation projects with quality and precision.
+          </p>
+
+          <div className="w-24 h-1 bg-gradient-to-r from-[#16A34A] to-[#86EFAC] mx-auto mt-5 rounded-full" />
+        </div>
+
+        <motion.div
+          initial={{ opacity: 0, y: 40 }}
+          whileInView={{ opacity: 1, y: 0 }}
+          viewport={{ once: true }}
+          transition={{ duration: 0.7 }}
+          className="max-w-5xl mx-auto"
+        >
+          <div className="bg-white rounded-3xl overflow-hidden shadow-xl border border-gray-100">
+            <div className="relative h-[260px] md:h-[500px]">
+              <Image
+                src="/team/team-work.jpg"
+                alt="Penta Automation Team"
+                fill
+                className="object-cover"
+              />
+            </div>
+
+            <div className="p-8 text-center">
+              <h3 className="text-2xl font-bold text-[#14532D]">
+                Strong Team • Smart Solutions
+              </h3>
+
+              <p className="mt-3 text-gray-600">
+                Collaboration, innovation and technical excellence drive every
+                successful project we deliver.
+              </p>
+            </div>
+          </div>
+        </motion.div>
+      </section>
       {/* Industries, Projects, Clients, Testimonials, CTA sections remain the same as before with motion wrappers */}
 
       {/* (Rest of the sections are unchanged from the previous version I gave you - just copy them over) */}
@@ -659,6 +725,7 @@ export default function Home() {
             solutions for your business.
           </motion.p>
           <motion.button
+            href="/contact"
             whileHover={{ scale: 1.05 }}
             whileTap={{ scale: 0.98 }}
             className="mt-8 bg-white text-[#14532D] px-8 py-4 rounded-lg font-semibold inline-flex items-center gap-2 hover:bg-[#86EFAC] transition-all duration-200"

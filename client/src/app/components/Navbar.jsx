@@ -22,7 +22,7 @@ export default function Navbar() {
       initial={{ y: -80, opacity: 0 }}
       animate={{ y: 0, opacity: 1 }}
       transition={{ duration: 0.7 }}
-      className="sticky top-0 z-50 bg-gradient-to-r from-[#06903A] via-[#c3f398] to-[#01652B] shadow-sm border-b border-gray-100"
+      className="sticky top-0 z-50 bg-white shadow-sm border-b border-gray-100"
     >
       <div className="container mx-auto px-6">
         <div className="flex items-center justify-between h-20">
@@ -33,12 +33,12 @@ export default function Navbar() {
               transition={{ duration: 0.3 }}
             >
               <Image
-                src="/pentaauto.png"
+                src="/pentaauto2.jpeg"
                 alt="Penta Auto"
-                width={180}
-                height={60}
+                width={260}
+                height={100}
                 priority
-                className="h-12 w-auto object-contain"
+                className="h-16 w-auto object-contain"
               />
             </motion.div>
           </Link>
