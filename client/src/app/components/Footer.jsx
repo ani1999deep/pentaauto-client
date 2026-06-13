@@ -1,93 +1,166 @@
 "use client";
 
 import Link from "next/link";
-import { Menu, X } from "lucide-react";
-import { useState } from "react";
 import Image from "next/image";
+import { motion } from "framer-motion";
+import { ArrowUpRight, MapPin, Phone, Mail } from "lucide-react";
 
-export default function Navbar() {
-  const [isOpen, setIsOpen] = useState(false);
+const container = {
+  hidden: {},
+  show: {
+    transition: {
+      staggerChildren: 0.12,
+    },
+  },
+};
 
-  const navLinks = [
-    { name: "Home", path: "/" },
-    { name: "About Us", path: "/about" },
-    { name: "Services", path: "/services" },
-    { name: "Projects", path: "/projects" },
-    { name: "Contact", path: "/contact" },
-  ];
+const item = {
+  hidden: {
+    opacity: 0,
+    y: 30,
+  },
+  show: {
+    opacity: 1,
+    y: 0,
+    transition: {
+      duration: 0.7,
+    },
+  },
+};
 
+export default function Footer() {
   return (
-    <header className="sticky top-0 z-50 bg-white shadow-sm border-b border-gray-100">
-      <div className="container mx-auto px-6">
-        <div className="flex items-center justify-between h-20">
-          {/* Logo */}
-          <Link href="/" className="flex items-center">
-            <Image
-              src="/pentaauto2.jpeg"
-              alt="Penta Auto Logo"
-              width={180}
-              height={60}
-              priority
-              className="h-auto w-auto max-h-14"
-            />
-          </Link>
+    <footer className="relative overflow-hidden border-t">
+      {/* Glow */}
+      <div className="absolute -top-32 left-1/2 -translate-x-1/2 w-[400px] h-[400px] rounded-full blur-3xl opacity-10 bg-green-500" />
 
-          {/* Desktop Menu */}
-          <nav className="hidden lg:flex items-center gap-8">
-            {navLinks.map((item) => (
-              <Link
-                key={item.name}
-                href={item.path}
-                className="text-[#1F2937] font-medium hover:text-[#16A34A] transition"
-              >
-                {item.name}
-              </Link>
-            ))}
-          </nav>
+      <motion.div
+        variants={container}
+        initial="hidden"
+        whileInView="show"
+        viewport={{ once: true }}
+        className="container mx-auto px-6 py-14"
+      >
+        <div className="grid grid-cols-1 sm:grid-cols-2 lg:grid-cols-[1.5fr_1fr_1fr_1.2fr] gap-10">
+          {/* Brand */}
+          <motion.div variants={item}>
+            <motion.div
+              whileHover={{
+                scale: 1.04,
+              }}
+            >
+              <Image
+                src="/pentaauto2.jpeg"
+                alt="logo"
+                width={170}
+                height={60}
+                className="mb-5"
+              />
+            </motion.div>
 
-          {/* CTA */}
-          <div className="hidden lg:block">
-            <Link href="/contact">
-              <button className="bg-[#16A34A] hover:bg-[#14532D] text-white px-6 py-3 rounded-lg transition">
-                Get Quote
-              </button>
-            </Link>
-          </div>
+            <p className="text-sm text-gray-500 leading-7 max-w-[280px]">
+              Smart automation solutions with PLC, SCADA, MCC & industrial
+              excellence.
+            </p>
+          </motion.div>
 
-          {/* Mobile Menu */}
-          <button className="lg:hidden" onClick={() => setIsOpen(!isOpen)}>
-            {isOpen ? (
-              <X className="text-[#14532D]" />
-            ) : (
-              <Menu className="text-[#14532D]" />
-            )}
-          </button>
+          {/* Company */}
+          <motion.div variants={item}>
+            <h3 className="font-semibold text-sm uppercase mb-5">Company</h3>
+
+            <div className="space-y-3">
+              {["About", "Services", "Projects", "Contact"].map((text) => (
+                <motion.div
+                  key={text}
+                  whileHover={{
+                    x: 6,
+                  }}
+                >
+                  <Link
+                    href="/"
+                    className="group flex items-center gap-1 text-gray-600"
+                  >
+                    {text}
+
+                    <ArrowUpRight
+                      size={14}
+                      className="opacity-0 group-hover:opacity-100 transition"
+                    />
+                  </Link>
+                </motion.div>
+              ))}
+            </div>
+          </motion.div>
+
+          {/* Solutions */}
+          <motion.div variants={item}>
+            <h3 className="font-semibold text-sm uppercase mb-5">Solutions</h3>
+
+            <div className="space-y-3 text-gray-600">
+              {["PLC Automation", "SCADA", "Electrical Panel", "MCC / PCC"].map(
+                (text) => (
+                  <motion.p
+                    key={text}
+                    whileHover={{
+                      x: 5,
+                    }}
+                  >
+                    {text}
+                  </motion.p>
+                ),
+              )}
+            </div>
+          </motion.div>
+
+          {/* Contact */}
+          <motion.div variants={item}>
+            <h3 className="font-semibold text-sm uppercase mb-5">Contact</h3>
+
+            <div className="space-y-4 text-gray-600">
+              {[
+                {
+                  icon: MapPin,
+                  text: "Kolkata, India",
+                },
+                {
+                  icon: Phone,
+                  text: "+91 9836688442",
+                },
+                {
+                  icon: Mail,
+                  text: "penta.automation2012@gmail.com",
+                },
+              ].map((c, i) => (
+                <motion.div
+                  key={i}
+                  whileHover={{
+                    scale: 1.03,
+                  }}
+                  className="flex gap-3"
+                >
+                  <c.icon size={16} />
+
+                  <p className="text-sm">{c.text}</p>
+                </motion.div>
+              ))}
+            </div>
+          </motion.div>
         </div>
 
-        {/* Mobile Dropdown */}
-        {isOpen && (
-          <div className="lg:hidden pb-5">
-            <div className="flex flex-col gap-4">
-              {navLinks.map((item) => (
-                <Link
-                  key={item.name}
-                  href={item.path}
-                  className="text-[#1F2937] hover:text-[#16A34A]"
-                  onClick={() => setIsOpen(false)}
-                >
-                  {item.name}
-                </Link>
-              ))}
+        {/* Bottom */}
+        <motion.div
+          variants={item}
+          className="mt-10 pt-6 border-t flex flex-col md:flex-row justify-between"
+        >
+          <p className="text-xs text-gray-500">© 2026 Penta Automation</p>
 
-              <Link href="/contact">
-                <button className="bg-[#16A34A] text-white px-5 py-3 rounded-lg mt-2">
-                  Get Quote
-                </button>
-              </Link>
-            </div>
+          <div className="flex gap-6 text-sm mt-3 md:mt-0">
+            <Link href="/">Privacy</Link>
+
+            <Link href="/">Terms</Link>
           </div>
-        )}
-      </div>
-    </header>
+        </motion.div>
+      </motion.div>
+    </footer>
   );
 }
