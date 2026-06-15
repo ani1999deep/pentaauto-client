@@ -133,7 +133,7 @@ export const keyPersons = [
     role: "Marketing Head",
     phone: "+91 9836685823",
     email: "monotosh.penta@gmail.com",
-    photo: "/team/monotosh-halder.jpg",
+    photo: "/team/monotosh-halder.png",
   },
   {
     id: "03",
