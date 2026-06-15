@@ -5,6 +5,7 @@ import Image from "next/image";
 import { motion } from "framer-motion";
 import IndustriesSection from "../components/home/IndustriesSection/IndustriesSection";
 import WhyPentaAutomationSection from "../components/WhyPentaAutomationSection/WhyPentaAutomationSection";
+import ServicesCTASection from "./ServicesCTASection";
 
 export default function ServicesPage() {
   return (
@@ -79,6 +80,7 @@ export default function ServicesPage() {
       {/* Cards */}
       <IndustriesSection />
       <WhyPentaAutomationSection />
+      <ServicesCTASection />
     </main>
   );
 }

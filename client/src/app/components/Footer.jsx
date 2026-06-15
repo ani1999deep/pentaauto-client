@@ -49,7 +49,7 @@ const footerLinks = [
 
 export default function Footer() {
   return (
-    <footer className="relative overflow-hidden border-t">
+    <footer className="relative overflow-hidden ">
       {/* Glow */}
       <div className="absolute -top-32 left-1/2 -translate-x-1/2 w-[400px] h-[400px] rounded-full blur-3xl opacity-10 bg-green-500" />
 
