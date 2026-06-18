@@ -36,6 +36,18 @@ const clients = [
     name: "QUALICOM SOLUTIONS PVT. LTD.",
     logo: "/clients/qualicom.png",
   },
+  {
+    name: "RASHMI METALIKS LIMITED ",
+    logo: "/clients/rashmi.png",
+  },
+  {
+    name: "TITAGARH WAGONS LIMITED ",
+    logo: "/clients/titagarh.png",
+  },
+  {
+    name: "TATA STEEL LIMITED  ",
+    logo: "/clients/tata-steel.png",
+  },
 ];
 
 const container = {
