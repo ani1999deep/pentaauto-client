@@ -23,6 +23,16 @@ const clients = [
   { name: "RASHMI METALIKS LIMITED", logo: "/clients/rashmi.png" },
   { name: "TITAGARH WAGONS LIMITED", logo: "/clients/titagarh.png" },
   { name: "TATA STEEL LIMITED", logo: "/clients/tata-steel.png" },
+  { name: "GIRIDHAN METAL PRIVATE LIMITED", logo: "/clients/giridhan.png" },
+  { name: "EXIDE INDUSTRIES LIMITED", logo: "/clients/exide.png" },
+  { name: "HINDUSTAN UNILEVER LIMITED", logo: "/clients/hul.png" },
+  { name: "SUPER SMELTERS LIMITED", logo: "/clients/super-smelters.png" },
+  { name: "DAMODAR VALLEY CORPORATION", logo: "/clients/dvc.png" },
+  { name: "NTPC LIMITED", logo: "/clients/ntpc.png" },
+  {
+    name: "THE WEST BENGAL POWER DEVELOPMENT CORPORATION LTD",
+    logo: "/clients/wbpdc.png",
+  },
 ];
 
 export default function ClientsSection() {
