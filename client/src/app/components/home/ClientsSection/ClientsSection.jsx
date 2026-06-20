@@ -30,7 +30,9 @@ export default function ClientsSection() {
     <section
       className="
         relative
-        py-24 lg:py-32
+        pt-24
+        lg:pt-32
+        pb-10
         bg-gradient-to-b
         from-white
         to-[#F4FFF8]
@@ -62,7 +64,7 @@ export default function ClientsSection() {
           <div className="w-32 h-1 bg-green-600 mx-auto mt-5 rounded-full" />
         </motion.div>
 
-        <div className="overflow-visible px-2 py-6">
+        <div className="overflow-visible px-2 pt-6 pb-0">
           <Swiper
             modules={[Autoplay]}
             loop
@@ -88,7 +90,7 @@ export default function ClientsSection() {
             }}
           >
             {clients.map((client, index) => (
-              <SwiperSlide key={index} className="!overflow-visible py-4">
+              <SwiperSlide key={index} className="!overflow-visible pt-4 pb-0">
                 <motion.div
                   whileHover={{
                     y: -12,
@@ -212,9 +214,7 @@ export default function ClientsSection() {
                         fill
                         className="
                           object-contain
-
                           grayscale
-
                           transition-all
                           duration-500
 
