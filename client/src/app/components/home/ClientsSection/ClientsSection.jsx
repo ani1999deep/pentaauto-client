@@ -3,19 +3,18 @@
 import Image from "next/image";
 import { motion } from "framer-motion";
 
+import { Swiper, SwiperSlide } from "swiper/react";
+import { Autoplay } from "swiper/modules";
+
+import "swiper/css";
+
 const clients = [
-  {
-    name: "IPSEN TECHNOLOGIES PVT. LTD",
-    logo: "/clients/ipsen.png",
-  },
+  { name: "IPSEN TECHNOLOGIES PVT. LTD", logo: "/clients/ipsen.png" },
   {
     name: "ADVANCED SYSTEMS SAMPLING PVT. LTD",
     logo: "/clients/advanced.png",
   },
-  {
-    name: "DABUR INDIA LTD",
-    logo: "/clients/dabur.png",
-  },
+  { name: "DABUR INDIA LTD", logo: "/clients/dabur.png" },
   {
     name: "BHAMBRA ENGINEERING WORKS",
     logo: "/clients/bhambra.png",
@@ -37,27 +36,18 @@ const clients = [
     logo: "/clients/qualicom.png",
   },
   {
-    name: "RASHMI METALIKS LIMITED ",
+    name: "RASHMI METALIKS LIMITED",
     logo: "/clients/rashmi.png",
   },
   {
-    name: "TITAGARH WAGONS LIMITED ",
+    name: "TITAGARH WAGONS LIMITED",
     logo: "/clients/titagarh.png",
   },
   {
-    name: "TATA STEEL LIMITED  ",
+    name: "TATA STEEL LIMITED",
     logo: "/clients/tata-steel.png",
   },
 ];
-
-const container = {
-  hidden: {},
-  show: {
-    transition: {
-      staggerChildren: 0.12,
-    },
-  },
-};
 
 const item = {
   hidden: {
@@ -75,6 +65,7 @@ export default function ClientsSection() {
     <section className="relative py-20 lg:py-28 overflow-hidden bg-gradient-to-b from-white to-[#F4FFF8]">
       {/* Background Glow */}
       <div className="absolute top-0 left-0 w-[500px] h-[500px] bg-green-200 blur-[180px] opacity-20" />
+
       <div className="absolute bottom-0 right-0 w-[500px] h-[500px] bg-emerald-300 blur-[180px] opacity-20" />
 
       <div className="container mx-auto px-5 lg:px-6 relative z-10">
@@ -84,7 +75,7 @@ export default function ClientsSection() {
           whileInView={{ opacity: 1, y: 0 }}
           viewport={{ once: true }}
           transition={{ duration: 0.7 }}
-          className="text-center mb-12 lg:mb-16"
+          className="text-center mb-12"
         >
           <p className="text-[#16A34A] font-semibold uppercase tracking-[5px] mb-3">
             Our Clients
@@ -97,178 +88,218 @@ export default function ClientsSection() {
           <div className="w-28 h-1 bg-green-600 rounded-full mx-auto mt-5" />
         </motion.div>
 
-        {/* Grid */}
-        <motion.div
-          variants={container}
-          initial="hidden"
-          whileInView="show"
-          viewport={{ once: true }}
-          className="
-            grid
-            grid-cols-2
-            sm:grid-cols-2
-            lg:grid-cols-4
-            gap-4
-            lg:gap-8
-          "
+        {/* Swiper */}
+        <Swiper
+          modules={[Autoplay]}
+          loop
+          speed={1000}
+          spaceBetween={18}
+          grabCursor
+          autoplay={{
+            delay: 2300,
+            disableOnInteraction: false,
+            pauseOnMouseEnter: true,
+          }}
+          breakpoints={{
+            0: {
+              slidesPerView: 2,
+            },
+            640: {
+              slidesPerView: 2,
+            },
+            1024: {
+              slidesPerView: 4,
+            },
+          }}
         >
           {clients.map((client, index) => (
-            <motion.div
-              key={index}
-              variants={item}
-              whileHover={{
-                y: -10,
-                scale: 1.04,
-              }}
-              whileTap={{
-                scale: 1.04,
-              }}
-              transition={{
-                duration: 0.3,
-              }}
-              className="group relative"
-            >
-              <div
-                className="
-                  relative
-
-                  h-[180px]
-                  sm:h-[210px]
-                  lg:h-[220px]
-
-                  rounded-3xl
-
-                  bg-white/70
-                  backdrop-blur-xl
-
-                  border
-                  border-green-100
-
-                  shadow-lg
-
-                  hover:shadow-green-300/40
-                  active:shadow-green-300/40
-
-                  transition-all
-                  duration-500
-
-                  flex
-                  flex-col
-                  items-center
-                  justify-center
-
-                  p-4
-                  lg:p-8
-
-                  overflow-hidden
-                "
+            <SwiperSlide key={index}>
+              <motion.div
+                variants={item}
+                initial="hidden"
+                whileInView="show"
+                viewport={{ once: true }}
+                whileHover={{
+                  y: -10,
+                  scale: 1.04,
+                }}
+                whileTap={{
+                  y: -10,
+                  scale: 1.04,
+                }}
+                transition={{
+                  duration: 0.3,
+                }}
+                className="group cursor-pointer"
               >
-                {/* Glow */}
-                <div
-                  className="
-                    absolute
-                    inset-0
-
-                    opacity-0
-
-                    group-hover:opacity-100
-                    group-active:opacity-100
-
-                    transition
-                    duration-700
-
-                    bg-gradient-to-br
-                    from-green-100/50
-                    to-transparent
-                  "
-                />
-
-                {/* Logo */}
                 <div
                   className="
                     relative
+                    h-[180px]
+                    sm:h-[210px]
+                    lg:h-[220px]
 
-                    w-[90px]
-                    h-[55px]
+                    rounded-[28px]
 
-                    sm:w-[120px]
-                    sm:h-[65px]
+                    bg-white/80
+                    backdrop-blur-xl
 
-                    lg:w-[150px]
-                    lg:h-[80px]
+                    border
+                    border-green-100
 
-                    mb-4
-                    lg:mb-6
+                    shadow-lg
+
+                    hover:shadow-[0_20px_60px_rgba(34,197,94,.25)]
+                    active:shadow-[0_20px_60px_rgba(34,197,94,.25)]
+
+                    transition-all
+                    duration-500
+
+                    flex
+                    flex-col
+                    items-center
+                    justify-center
+
+                    p-5
+
+                    overflow-hidden
                   "
                 >
-                  <Image
-                    src={client.logo}
-                    alt={client.name}
-                    fill
+                  {/* Glow */}
+                  <div
                     className="
-                      object-contain
+                      absolute
+                      inset-0
 
-                      grayscale
-                      group-hover:grayscale-0
-                      group-active:grayscale-0
+                      opacity-0
 
-                      group-hover:scale-105
-                      group-active:scale-105
+                      group-hover:opacity-100
+                      group-active:opacity-100
+
+                      transition-all
+                      duration-700
+
+                      bg-gradient-to-br
+                      from-green-100/80
+                      via-transparent
+                      to-emerald-100/50
+                    "
+                  />
+
+                  {/* Floating Circle */}
+                  <div
+                    className="
+                      absolute
+                      top-[-50px]
+                      right-[-50px]
+
+                      w-[120px]
+                      h-[120px]
+
+                      rounded-full
+
+                      bg-green-100
+
+                      blur-3xl
+
+                      opacity-0
+
+                      group-hover:opacity-100
+                      group-active:opacity-100
+
+                      transition
+                    "
+                  />
+
+                  {/* Logo */}
+                  <div
+                    className="
+                      relative
+
+                      w-[95px]
+                      h-[60px]
+
+                      sm:w-[120px]
+                      sm:h-[70px]
+
+                      lg:w-[150px]
+                      lg:h-[85px]
+
+                      mb-5
+                    "
+                  >
+                    <Image
+                      src={client.logo}
+                      alt={client.name}
+                      fill
+                      className="
+                        object-contain
+
+                        grayscale
+
+                        group-hover:grayscale-0
+                        group-active:grayscale-0
+
+                        group-hover:scale-110
+                        group-active:scale-110
+
+                        transition-all
+                        duration-500
+                      "
+                    />
+                  </div>
+
+                  {/* Name */}
+                  <h3
+                    className="
+                      text-center
+
+                      text-[11px]
+                      sm:text-[12px]
+                      lg:text-sm
+
+                      font-semibold
+
+                      text-gray-700
+
+                      group-hover:text-[#14532D]
+                      group-active:text-[#14532D]
+
+                      transition
+
+                      leading-relaxed
+                    "
+                  >
+                    {client.name}
+                  </h3>
+
+                  {/* Bottom Animated Border */}
+                  <div
+                    className="
+                      absolute
+                      bottom-0
+                      left-0
+
+                      h-[4px]
+
+                      w-0
+
+                      bg-gradient-to-r
+                      from-green-500
+                      to-emerald-600
+
+                      group-hover:w-full
+                      group-active:w-full
 
                       transition-all
                       duration-500
                     "
                   />
                 </div>
-
-                {/* Company Name */}
-                <h3
-                  className="
-                    text-center
-
-                    text-[11px]
-                    sm:text-xs
-                    lg:text-sm
-
-                    font-semibold
-
-                    text-gray-700
-
-                    group-hover:text-[#14532D]
-                    group-active:text-[#14532D]
-
-                    transition
-
-                    leading-relaxed
-                  "
-                >
-                  {client.name}
-                </h3>
-
-                {/* Bottom Line */}
-                <div
-                  className="
-                    absolute
-                    bottom-0
-                    left-0
-
-                    h-1
-
-                    w-0
-
-                    bg-green-600
-
-                    group-hover:w-full
-                    group-active:w-full
-
-                    transition-all
-                    duration-500
-                  "
-                />
-              </div>
-            </motion.div>
+              </motion.div>
+            </SwiperSlide>
           ))}
-        </motion.div>
+        </Swiper>
       </div>
     </section>
   );
