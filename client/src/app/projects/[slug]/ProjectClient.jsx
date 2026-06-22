@@ -77,47 +77,16 @@ export default function ProjectClient({ project }) {
       {/* CONTENT */}
       <section className="container mx-auto px-6 py-24">
         <div className="bg-white rounded-[40px] p-10 lg:p-16 shadow-xl">
-          {/* ←←← NEW: Sub Projects / Implementations */}
-          {project.projectTitles && project.projectTitles.length > 0 && (
-            <motion.div
-              initial={{ opacity: 0, y: 40 }}
-              whileInView={{ opacity: 1, y: 0 }}
-              viewport={{ once: true }}
-              className="mb-16"
-            >
-              <div className="flex items-center gap-3 mb-8">
-                <motion.div
-                  initial={{ scale: 0 }}
-                  whileInView={{ scale: 1 }}
-                  viewport={{ once: true }}
-                  className="w-2 h-10 bg-green-700 rounded-full"
-                />
-                <h2 className="text-3xl md:text-4xl font-black text-[#14532D]">
-                  Key Implementations
-                </h2>
-              </div>
-
-              <div className="grid md:grid-cols-2 gap-4">
-                {project.projectTitles.map((title, index) => (
-                  <motion.div
-                    key={index}
-                    variants={fadeInUp}
-                    initial="initial"
-                    whileInView="animate"
-                    viewport={{ once: true }}
-                    className="flex gap-4 p-6 bg-green-50 border border-green-100 rounded-2xl hover:bg-green-100 transition-all group"
-                  >
-                    <span className="text-green-700 font-bold text-xl mt-1">
-                      {String(index + 1).padStart(2, "0")}
-                    </span>
-                    <p className="text-[#14532D] leading-relaxed font-medium">
-                      {title}
-                    </p>
-                  </motion.div>
-                ))}
-              </div>
-            </motion.div>
-          )}
+          <motion.div
+            initial={{ opacity: 0, y: 30 }}
+            whileInView={{ opacity: 1, y: 0 }}
+            viewport={{ once: true }}
+            className="mb-10"
+          >
+            <h1 className="text-4xl md:text-5xl font-black text-[#14532D] tracking-tight">
+              {project.title}
+            </h1>
+          </motion.div>
           {/* Overview */}
           <motion.div
             variants={fadeInUp}
