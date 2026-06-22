@@ -10,6 +10,7 @@ import ClientsSection from "./components/home/ClientsSection/ClientsSection";
 import Testimonials from "./components/home/Testimonials/Testimonials";
 import CTASection from "./components/home/CTASection/CTASection";
 import WhyPentaAutomation from "./components/home/WhyPentaAutomation/WhyPentaAutomation";
+import OurPartnersSection from "./components/home/OurPartnersSection/OurPartnersSection";
 
 export default function Home() {
   return (
@@ -40,6 +41,10 @@ export default function Home() {
 
       <section id="clients">
         <ClientsSection />
+      </section>
+
+      <section id="partners">
+        <OurPartnersSection />
       </section>
 
       <section id="testimonials">
