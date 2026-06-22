@@ -55,15 +55,6 @@ export default function ProjectClient({ project }) {
         {/* Content */}
         <div className="absolute inset-0 flex items-center">
           <div className="container mx-auto px-5 sm:px-8">
-            <motion.span
-              initial={{ opacity: 0, y: -20 }}
-              animate={{ opacity: 1, y: 0 }}
-              transition={{ duration: 0.6 }}
-              className="inline-flex items-center px-4 py-1.5 rounded-full bg-white/10 border border-white/20 text-white text-xs sm:text-sm backdrop-blur-md"
-            >
-              {project.category}
-            </motion.span>
-
             <motion.h1
               initial={{ opacity: 0, y: 40 }}
               animate={{ opacity: 1, y: 0 }}
@@ -72,18 +63,6 @@ export default function ProjectClient({ project }) {
             >
               {project.title}
             </motion.h1>
-
-            <motion.p
-              initial={{ opacity: 0, y: 30 }}
-              animate={{ opacity: 1, y: 0 }}
-              transition={{ duration: 0.7, delay: 0.3 }}
-              className="mt-3 text-sm sm:text-lg text-white/80"
-            >
-              Built for{" "}
-              <span className="text-green-300 font-medium">
-                {project.company}
-              </span>
-            </motion.p>
 
             <motion.div
               initial={{ width: 0 }}
@@ -98,6 +77,47 @@ export default function ProjectClient({ project }) {
       {/* CONTENT */}
       <section className="container mx-auto px-6 py-24">
         <div className="bg-white rounded-[40px] p-10 lg:p-16 shadow-xl">
+          {/* ←←← NEW: Sub Projects / Implementations */}
+          {project.projectTitles && project.projectTitles.length > 0 && (
+            <motion.div
+              initial={{ opacity: 0, y: 40 }}
+              whileInView={{ opacity: 1, y: 0 }}
+              viewport={{ once: true }}
+              className="mb-16"
+            >
+              <div className="flex items-center gap-3 mb-8">
+                <motion.div
+                  initial={{ scale: 0 }}
+                  whileInView={{ scale: 1 }}
+                  viewport={{ once: true }}
+                  className="w-2 h-10 bg-green-700 rounded-full"
+                />
+                <h2 className="text-3xl md:text-4xl font-black text-[#14532D]">
+                  Key Implementations
+                </h2>
+              </div>
+
+              <div className="grid md:grid-cols-2 gap-4">
+                {project.projectTitles.map((title, index) => (
+                  <motion.div
+                    key={index}
+                    variants={fadeInUp}
+                    initial="initial"
+                    whileInView="animate"
+                    viewport={{ once: true }}
+                    className="flex gap-4 p-6 bg-green-50 border border-green-100 rounded-2xl hover:bg-green-100 transition-all group"
+                  >
+                    <span className="text-green-700 font-bold text-xl mt-1">
+                      {String(index + 1).padStart(2, "0")}
+                    </span>
+                    <p className="text-[#14532D] leading-relaxed font-medium">
+                      {title}
+                    </p>
+                  </motion.div>
+                ))}
+              </div>
+            </motion.div>
+          )}
           {/* Overview */}
           <motion.div
             variants={fadeInUp}
