@@ -33,6 +33,18 @@ const clients = [
     name: "THE WEST BENGAL POWER DEVELOPMENT CORPORATION LTD",
     logo: "/clients/wbpdc.png",
   },
+  {
+    name: "CDE ASIA LIMITED",
+    logo: "/clients/cde.png",
+  },
+  {
+    name: "THE WESMAN ENGINEERING COMPANY PVT LTD",
+    logo: "/clients/wesman.png",
+  },
+  {
+    name: "HINDALCO INDUSTRIES LIMITED",
+    logo: "/clients/hindalco.png",
+  },
 ];
 
 export default function ClientsSection() {
