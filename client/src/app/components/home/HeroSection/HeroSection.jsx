@@ -3,6 +3,7 @@
 import { motion } from "framer-motion";
 import Image from "next/image";
 import { ArrowRight } from "lucide-react";
+import Link from "next/link";
 
 export default function HeroSection() {
   return (
@@ -46,14 +47,19 @@ export default function HeroSection() {
                 whileTap={{ scale: 0.98 }}
                 className="bg-[#16A34A] text-white px-8 py-4 rounded-lg hover:bg-[#14532D] transition"
               >
-                Get Started
+                <Link href="/services" className="block">
+                  Get Started
+                </Link>
               </motion.button>
+
               <motion.button
                 whileHover={{ scale: 1.05 }}
                 whileTap={{ scale: 0.98 }}
                 className="border border-[#16A34A] text-[#16A34A] px-8 py-4 rounded-lg hover:bg-[#16A34A] hover:text-white transition"
               >
-                Learn More
+                <Link href="/#projects" className="block">
+                  Learn More
+                </Link>
               </motion.button>
             </motion.div>
           </motion.div>

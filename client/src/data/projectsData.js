@@ -30,13 +30,13 @@ export const projects = [
       "Remote Operation",
     ],
 
-    tech: ["Next.js", "Node.js", "MongoDB", "PLC", "SCADA"],
+    tech: ["MongoDB", "PLC", "SCADA"],
   },
 
   {
     slug: "ipsen-technologies",
 
-    title: "Heat Treatment Automation",
+    title: "Bright Bar Industry Automation",
 
     company: "IPSEN TECHNOLOGIES PVT.LTD",
 
