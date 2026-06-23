@@ -112,6 +112,56 @@ export default function ProjectClient({ project }) {
             </h1>
           </motion.div>
 
+          {/* PROJECT TITLES - Creative & Simple */}
+          {project.projectTitles && project.projectTitles.length > 0 && (
+            <motion.div
+              initial={{ opacity: 0, y: 30 }}
+              whileInView={{ opacity: 1, y: 0 }}
+              viewport={{ once: true }}
+              className="mb-14"
+            >
+              <div className="flex items-center gap-3 mb-8">
+                <div className="w-8 h-[3px] bg-gradient-to-r from-green-600 to-emerald-400 rounded" />
+                <h3 className="text-2xl font-bold text-[#14532D] tracking-tight">
+                  Notable Implementations
+                </h3>
+              </div>
+
+              <div className="space-y-6 pl-2">
+                {project.projectTitles.map((title, index) => (
+                  <motion.div
+                    key={index}
+                    variants={fadeInUp}
+                    initial="initial"
+                    whileInView="animate"
+                    viewport={{ once: true }}
+                    whileHover={{ x: 8 }}
+                    className="group relative flex gap-5 items-start"
+                  >
+                    {/* Left Creative Accent */}
+                    <div className="flex-shrink-0 mt-1.5">
+                      <div className="w-7 h-7 rounded-full border-2 border-green-600 flex items-center justify-center bg-white text-green-700 font-semibold text-sm shadow-sm">
+                        {String(index + 1)}
+                      </div>
+                    </div>
+
+                    {/* Content Card */}
+                    <div className="flex-1 bg-gradient-to-r from-green-50 to-white border border-green-100 rounded-2xl p-6 hover:shadow-md transition-all duration-300 group-hover:border-green-200">
+                      <p className="text-[#14532D] leading-relaxed font-medium">
+                        {title}
+                      </p>
+                    </div>
+
+                    {/* Decorative Line */}
+                    {index < project.projectTitles.length - 1 && (
+                      <div className="absolute left-[13px] top-9 bottom-0 w-[2px] bg-gradient-to-b from-green-300 to-transparent" />
+                    )}
+                  </motion.div>
+                ))}
+              </div>
+            </motion.div>
+          )}
+
           {/* Overview */}
           <motion.div
             variants={fadeInUp}

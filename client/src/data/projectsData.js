@@ -38,9 +38,7 @@ export const projects = [
 
   {
     slug: "bright-bar-industry-automation",
-
     title: "Bright Bar Industry Automation",
-
     tagline: "Smart Industrial Automation & Heat Treatment Control Solutions",
 
     image: "/projects/ipsen/hero.jpg",
@@ -65,13 +63,17 @@ export const projects = [
     ],
 
     tech: ["React", "Express", "MongoDB", "PLC"],
+
+    projectTitles: [
+      "Ipsen Bright Bar Heat Treatment Line Automation",
+      "Continuous Bright Bar Annealing Furnace Control System",
+      "Multi-Zone Bright Bar Hardening & Tempering Automation",
+    ],
   },
 
   {
     slug: "sampling-automation-system",
-
     title: "Sampling Automation System",
-
     tagline: "Precision Sampling with Intelligent Automation Solutions",
 
     image: "/projects/advanced/hero.jpg",
@@ -90,13 +92,17 @@ export const projects = [
     features: ["Auto Sampling", "Remote Monitoring", "Live Dashboard"],
 
     tech: ["Next.js", "Node", "MongoDB"],
+
+    projectTitles: [
+      "Automatic Powder & Liquid Sampling System",
+      "Multi-Point Industrial Material Sampler Automation",
+      "Centralized Quality Control Sampling Platform",
+    ],
   },
 
   {
     slug: "factory-production-control",
-
     title: "Factory Production Control",
-
     tagline: "Driving Manufacturing Excellence Through Automation",
 
     image: "/projects/dabur/hero.jpg",
@@ -121,5 +127,11 @@ export const projects = [
     ],
 
     tech: ["React", "Node", "MongoDB", "PLC"],
+
+    projectTitles: [
+      "Dabur Complete Factory Production Line Automation",
+      "End-to-End Manufacturing Execution System (MES)",
+      "Real-time OEE & Production Tracking Dashboard",
+    ],
   },
 ];
