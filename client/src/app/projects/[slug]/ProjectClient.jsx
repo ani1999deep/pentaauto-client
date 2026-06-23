@@ -64,14 +64,38 @@ export default function ProjectClient({ project }) {
               {project.title}
             </motion.h1>
             {project.tagline && (
-              <motion.p
-                initial={{ opacity: 0, y: 20 }}
+              <motion.div
+                initial={{ opacity: 0, y: 18 }}
                 animate={{ opacity: 1, y: 0 }}
-                transition={{ duration: 0.8, delay: 0.3 }}
-                className="mt-3 text-sm sm:text-lg text-green-100 max-w-2xl"
+                transition={{ duration: 0.9, delay: 0.35 }}
+                className="mt-6"
               >
-                {project.tagline}
-              </motion.p>
+                <div className="inline-flex items-center gap-4">
+                  {/* Left Accent */}
+                  <div className="flex flex-col items-center">
+                    <span className="w-10 h-[2px] bg-gradient-to-r from-green-500 to-emerald-300 rounded-full" />
+                    <span className="w-1.5 h-1.5 mt-1 rounded-full bg-green-400 shadow-[0_0_14px_rgba(74,222,128,.8)]" />
+                  </div>
+
+                  {/* Tagline */}
+                  <p
+                    className="
+          text-sm
+          sm:text-lg
+          lg:text-xl
+          font-light
+          tracking-[0.18em]
+          uppercase
+          text-white/85
+          leading-relaxed
+        "
+                  >
+                    <span className="text-green-300">“</span>
+                    {project.tagline}
+                    <span className="text-green-300">”</span>
+                  </p>
+                </div>
+              </motion.div>
             )}
 
             <motion.div
