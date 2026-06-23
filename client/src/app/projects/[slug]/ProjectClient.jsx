@@ -63,6 +63,16 @@ export default function ProjectClient({ project }) {
             >
               {project.title}
             </motion.h1>
+            {project.tagline && (
+              <motion.p
+                initial={{ opacity: 0, y: 20 }}
+                animate={{ opacity: 1, y: 0 }}
+                transition={{ duration: 0.8, delay: 0.3 }}
+                className="mt-3 text-sm sm:text-lg text-green-100 max-w-2xl"
+              >
+                {project.tagline}
+              </motion.p>
+            )}
 
             <motion.div
               initial={{ width: 0 }}
