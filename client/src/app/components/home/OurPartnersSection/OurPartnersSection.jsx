@@ -37,89 +37,81 @@ const partners = [
 
 export default function OurPartnersSection() {
   return (
-    <section className="relative pt-24 lg:pt-32 pb-10 bg-gradient-to-b from-white to-[#F4FFF8] overflow-x-hidden">
+    <section className="relative pt-16 lg:pt-20 pb-8 bg-gradient-to-b from-white to-[#F4FFF8] overflow-x-hidden">
       {/* Background Glow */}
-      <div className="absolute top-0 left-0 w-[500px] h-[500px] bg-green-200 blur-[180px] opacity-20" />
-      <div className="absolute bottom-0 right-0 w-[500px] h-[500px] bg-emerald-300 blur-[180px] opacity-20" />
+      <div className="absolute top-0 left-0 w-[400px] h-[400px] bg-green-200 blur-[160px] opacity-20" />
+      <div className="absolute bottom-0 right-0 w-[400px] h-[400px] bg-emerald-300 blur-[160px] opacity-20" />
 
       <div className="container mx-auto px-5 relative z-10">
         {/* Heading */}
         <motion.div
-          initial={{ opacity: 0, y: 35 }}
+          initial={{ opacity: 0, y: 25 }}
           whileInView={{ opacity: 1, y: 0 }}
           viewport={{ once: true }}
-          transition={{ duration: 0.7 }}
-          className="text-center mb-16"
+          transition={{ duration: 0.6 }}
+          className="text-center mb-10"
         >
-          <p className="text-green-600 font-semibold uppercase tracking-[5px] mb-3">
+          <p className="text-green-600 font-semibold uppercase tracking-[4px] mb-2 text-sm">
             Our Partners
           </p>
 
-          <h2 className="text-3xl lg:text-5xl font-bold text-[#14532D]">
+          <h2 className="text-3xl lg:text-4xl font-bold text-[#14532D]">
             Technology & Industrial Partners
           </h2>
 
-          <div className="w-32 h-1 bg-green-600 mx-auto mt-5 rounded-full" />
+          <div className="w-24 h-1 bg-green-600 mx-auto mt-4 rounded-full" />
         </motion.div>
 
         {/* Swiper */}
-        <div className="w-full overflow-hidden px-2 pt-6">
+        <div className="w-full overflow-hidden px-1">
           <Swiper
             modules={[Autoplay]}
             loop
-            speed={900}
+            speed={800}
             grabCursor
-            spaceBetween={24}
+            spaceBetween={20}
             autoplay={{
-              delay: 2200,
+              delay: 2000,
               disableOnInteraction: false,
               pauseOnMouseEnter: true,
             }}
             className="!overflow-visible w-full"
             breakpoints={{
               0: { slidesPerView: 2 },
-              640: { slidesPerView: 2 },
-              1024: { slidesPerView: 4 },
+              640: { slidesPerView: 3 },
+              1024: { slidesPerView: 5 },
             }}
           >
             {partners.map((partner, index) => (
               <SwiperSlide key={index} className="!overflow-visible">
                 <motion.div
-                  whileHover={{ y: -12, scale: 1.05 }}
-                  whileTap={{ scale: 1.04 }}
-                  transition={{ duration: 0.35 }}
+                  whileHover={{ y: -8, scale: 1.04 }}
+                  whileTap={{ scale: 1.02 }}
+                  transition={{ duration: 0.3 }}
                   className="group w-full min-w-0 cursor-pointer"
                 >
                   <div
                     className="
                       relative
-                      h-[190px]
-                      sm:h-[220px]
-                      rounded-[30px]
-                      bg-white/85
-                      backdrop-blur-xl
-                      border
-                      border-green-100
-                      p-6
+                      h-[160px]
+                      sm:h-[180px]
                       flex
                       flex-col
                       justify-center
                       items-center
-                      shadow-lg
-                      overflow-hidden
+                      p-4
                       transition-all
                       duration-500
-                      hover:shadow-[0_30px_80px_rgba(34,197,94,.35)]
                     "
                   >
-                    {/* Glow layer */}
-                    <div className="absolute inset-0 rounded-[30px] opacity-0 group-hover:opacity-100 bg-gradient-to-br from-green-100 via-transparent to-emerald-100 transition-all duration-700" />
+                    {/* Hover Glow */}
+                    <div className="absolute inset-0 rounded-3xl opacity-0 group-hover:opacity-60 bg-gradient-to-br from-green-100/40 via-transparent to-emerald-100/40 transition-all duration-700" />
 
-                    {/* Floating glow */}
-                    <div className="absolute -top-10 -right-10 w-[120px] h-[120px] rounded-full bg-green-300 blur-3xl opacity-0 group-hover:opacity-30 transition-all duration-700" />
+                    {/* Floating Glow */}
+                    <div className="absolute -top-8 -right-8 w-[100px] h-[100px] rounded-full bg-green-300 blur-3xl opacity-0 group-hover:opacity-30 transition-all duration-700" />
 
                     {/* Logo */}
-                    <div className="relative z-10 w-[110px] h-[70px] sm:w-[140px] sm:h-[85px] mb-5">
+                    <div className="relative z-10 w-[90px] h-[55px] sm:w-[110px] sm:h-[68px] mb-4">
                       <Image
                         src={partner.logo}
                         alt={partner.name}
@@ -136,12 +128,12 @@ export default function OurPartnersSection() {
                     </div>
 
                     {/* Name */}
-                    <h3 className="relative z-10 text-center text-[11px] sm:text-[13px] font-semibold text-gray-700 group-hover:text-green-900 transition-all duration-500">
+                    <h3 className="relative z-10 text-center text-[10px] sm:text-xs font-semibold text-gray-700 group-hover:text-green-900 transition-all duration-500 leading-tight">
                       {partner.name}
                     </h3>
 
-                    {/* Bottom bar */}
-                    <div className="absolute bottom-0 left-0 h-[4px] w-0 bg-gradient-to-r from-green-500 to-emerald-600 group-hover:w-full transition-all duration-500" />
+                    {/* Bottom Bar */}
+                    <div className="absolute bottom-0 left-1/2 -translate-x-1/2 h-[3px] w-0 bg-gradient-to-r from-green-500 to-emerald-600 group-hover:w-12 transition-all duration-500" />
                   </div>
                 </motion.div>
               </SwiperSlide>
