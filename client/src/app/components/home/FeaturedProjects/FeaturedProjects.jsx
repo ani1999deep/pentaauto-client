@@ -3,6 +3,7 @@
 import Link from "next/link";
 import Image from "next/image";
 import { motion } from "framer-motion";
+import { ArrowRight } from "lucide-react";
 import { projects } from "../../../../data/projectsData";
 
 const featured = projects.slice(0, 3);
@@ -87,24 +88,60 @@ export default function FeaturedProjects() {
           ))}
         </div>
 
-        <div className="text-center mt-12">
+        <motion.div
+          className="text-center mt-16"
+          initial={{ opacity: 0 }}
+          whileInView={{ opacity: 1 }}
+          viewport={{ once: true }}
+        >
           <Link href="/projects">
-            <button
+            <motion.button
+              whileHover={{
+                scale: 1.05,
+                y: -2,
+              }}
+              whileTap={{
+                scale: 0.96,
+              }}
               className="
-                px-8
-                py-3
-                rounded-full
-                bg-[#14532D]
-                text-white
-                text-sm
-                hover:scale-105
-                duration-300
-              "
+        group
+        inline-flex
+        items-center
+        gap-3
+        px-10
+        py-5
+        rounded-full
+        bg-gradient-to-r
+        from-[#16A34A]
+        via-[#22C55E]
+        to-[#15803D]
+        text-white
+        font-semibold
+        shadow-[0_15px_40px_rgba(34,197,94,0.35)]
+        hover:shadow-[0_25px_60px_rgba(34,197,94,0.45)]
+        transition-all
+        duration-500
+      "
             >
-              See More Projects →
-            </button>
+              See More Projects
+              <motion.div
+                animate={{
+                  x: [0, 5, 0],
+                }}
+                transition={{
+                  repeat: Infinity,
+                  duration: 1.5,
+                }}
+              >
+                <ArrowRight size={22} />
+              </motion.div>
+            </motion.button>
           </Link>
-        </div>
+
+          <p className="mt-4 text-sm text-gray-500">
+            Discover our complete industrial automation portfolio
+          </p>
+        </motion.div>
       </div>
     </section>
   );
