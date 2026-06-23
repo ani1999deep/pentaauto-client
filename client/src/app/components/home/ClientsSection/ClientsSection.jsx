@@ -119,29 +119,21 @@ export default function ClientsSection() {
                       relative
                       h-[160px]
                       sm:h-[180px]
-                      rounded-3xl
-                      bg-white/90
-                      backdrop-blur-xl
-                      border
-                      border-green-100
-                      p-5
                       flex
                       flex-col
                       justify-center
                       items-center
-                      shadow-md
-                      overflow-hidden
+                      p-4
                       transition-all
                       duration-500
-                      hover:shadow-[0_25px_60px_rgba(34,197,94,.3)]
                       outline-none
                     "
                   >
-                    {/* Gradient Glow */}
-                    <div className="absolute inset-0 rounded-3xl opacity-0 group-hover:opacity-100 bg-gradient-to-br from-green-50 via-transparent to-emerald-50 transition-all duration-700" />
+                    {/* Hover Glow */}
+                    <div className="absolute inset-0 rounded-3xl opacity-0 group-hover:opacity-60 bg-gradient-to-br from-green-100/40 via-transparent to-emerald-100/40 transition-all duration-700" />
 
                     {/* Floating Glow */}
-                    <div className="absolute -top-8 -right-8 w-[100px] h-[100px] rounded-full bg-green-300 blur-3xl opacity-0 group-hover:opacity-40 transition-all duration-700" />
+                    <div className="absolute -top-8 -right-8 w-[100px] h-[100px] rounded-full bg-green-300 blur-3xl opacity-0 group-hover:opacity-30 transition-all duration-700" />
 
                     {/* Logo */}
                     <div className="relative z-10 w-[90px] h-[55px] sm:w-[110px] sm:h-[68px] mb-4">
@@ -168,7 +160,7 @@ export default function ClientsSection() {
                     </h3>
 
                     {/* Bottom Bar */}
-                    <div className="absolute bottom-0 left-0 h-[3px] w-0 bg-gradient-to-r from-green-500 to-emerald-600 group-hover:w-full transition-all duration-500" />
+                    <div className="absolute bottom-0 left-1/2 -translate-x-1/2 h-[3px] w-0 bg-gradient-to-r from-green-500 to-emerald-600 group-hover:w-12 transition-all duration-500" />
                   </div>
                 </motion.div>
               </SwiperSlide>
