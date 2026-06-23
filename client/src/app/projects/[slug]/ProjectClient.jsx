@@ -4,7 +4,7 @@ import Image from "next/image";
 import { motion } from "framer-motion";
 
 export default function ProjectClient({ project }) {
-  // Animation Variants
+  // Animation Variants (unchanged)
   const fadeInUp = {
     initial: { opacity: 0, y: 60 },
     animate: { opacity: 1, y: 0 },
@@ -29,7 +29,7 @@ export default function ProjectClient({ project }) {
   return (
     <main className="bg-[#F7FAF7]">
       {/* HERO */}
-      <section className="relative h-[45vh] md:h-[55vh] overflow-hidden rounded-b-3xl">
+      <section className="relative h-[50vh] sm:h-[55vh] md:h-[60vh] lg:h-[65vh] overflow-hidden rounded-b-3xl">
         <Image
           src={project.image}
           alt={project.title}
@@ -42,27 +42,28 @@ export default function ProjectClient({ project }) {
 
         {/* Decorative Glow */}
         <motion.div
-          className="absolute -top-20 -left-20 w-72 h-72 bg-green-500/20 blur-3xl rounded-full"
+          className="absolute -top-20 -left-20 w-64 h-64 sm:w-72 sm:h-72 bg-green-500/20 blur-3xl rounded-full"
           animate={{ scale: [1, 1.1, 1], opacity: [0.6, 0.8, 0.6] }}
           transition={{ duration: 8, repeat: Infinity }}
         />
         <motion.div
-          className="absolute -bottom-20 -right-20 w-72 h-72 bg-emerald-400/20 blur-3xl rounded-full"
+          className="absolute -bottom-20 -right-20 w-64 h-64 sm:w-72 sm:h-72 bg-emerald-400/20 blur-3xl rounded-full"
           animate={{ scale: [1, 1.15, 1], opacity: [0.6, 0.9, 0.6] }}
           transition={{ duration: 10, repeat: Infinity }}
         />
 
         {/* Content */}
         <div className="absolute inset-0 flex items-center">
-          <div className="container mx-auto px-5 sm:px-8">
+          <div className="container mx-auto px-5 sm:px-6 md:px-8">
             <motion.h1
               initial={{ opacity: 0, y: 40 }}
               animate={{ opacity: 1, y: 0 }}
               transition={{ duration: 0.8, delay: 0.1 }}
-              className="mt-4 text-2xl sm:text-4xl lg:text-5xl font-extrabold text-white leading-tight max-w-2xl"
+              className="mt-4 text-3xl sm:text-4xl md:text-5xl lg:text-6xl font-extrabold text-white leading-tight max-w-3xl"
             >
               {project.title}
             </motion.h1>
+
             {project.tagline && (
               <motion.div
                 initial={{ opacity: 0, y: 18 }}
@@ -78,18 +79,7 @@ export default function ProjectClient({ project }) {
                   </div>
 
                   {/* Tagline */}
-                  <p
-                    className="
-          text-sm
-          sm:text-lg
-          lg:text-xl
-          font-light
-          tracking-[0.18em]
-          uppercase
-          text-white/85
-          leading-relaxed
-        "
-                  >
+                  <p className="text-sm sm:text-base md:text-lg lg:text-xl font-light tracking-[0.18em] uppercase text-white/85 leading-relaxed">
                     <span className="text-green-300">“</span>
                     {project.tagline}
                     <span className="text-green-300">”</span>
@@ -102,25 +92,26 @@ export default function ProjectClient({ project }) {
               initial={{ width: 0 }}
               animate={{ width: "5rem" }}
               transition={{ duration: 1, delay: 0.5 }}
-              className="mt-5 w-20 h-[3px] bg-green-400 rounded-full"
+              className="mt-5 w-16 sm:w-20 h-[3px] bg-green-400 rounded-full"
             />
           </div>
         </div>
       </section>
 
       {/* CONTENT */}
-      <section className="container mx-auto px-6 py-24">
-        <div className="bg-white rounded-[40px] p-10 lg:p-16 shadow-xl">
+      <section className="container mx-auto px-5 sm:px-6 md:px-8 py-16 md:py-24">
+        <div className="bg-white rounded-[32px] md:rounded-[40px] p-8 md:p-12 lg:p-16 shadow-xl">
           <motion.div
             initial={{ opacity: 0, y: 30 }}
             whileInView={{ opacity: 1, y: 0 }}
             viewport={{ once: true }}
             className="mb-10"
           >
-            <h1 className="text-4xl md:text-5xl font-black text-[#14532D] tracking-tight">
+            <h1 className="text-3xl md:text-4xl lg:text-5xl font-black text-[#14532D] tracking-tight">
               {project.title}
             </h1>
           </motion.div>
+
           {/* Overview */}
           <motion.div
             variants={fadeInUp}
@@ -129,25 +120,25 @@ export default function ProjectClient({ project }) {
             viewport={{ once: true }}
             className="relative"
           >
-            <div className="absolute -left-6 top-0 h-24 w-24 bg-green-500/10 blur-2xl rounded-full" />
-            <div className="absolute -right-6 bottom-0 h-24 w-24 bg-emerald-500/10 blur-2xl rounded-full" />
+            <div className="absolute -left-4 sm:-left-6 top-0 h-20 w-20 bg-green-500/10 blur-2xl rounded-full" />
+            <div className="absolute -right-4 sm:-right-6 bottom-0 h-20 w-20 bg-emerald-500/10 blur-2xl rounded-full" />
 
             <div className="flex items-center gap-3">
               <motion.div
                 initial={{ height: 0 }}
                 whileInView={{ height: "40px" }}
                 viewport={{ once: true }}
-                className="h-10 w-1 bg-gradient-to-b from-green-700 to-emerald-400 rounded-full"
+                className="h-8 sm:h-10 w-1 bg-gradient-to-b from-green-700 to-emerald-400 rounded-full"
               />
-              <h2 className="text-3xl md:text-4xl font-extrabold text-[#14532D] tracking-tight">
+              <h2 className="text-2xl sm:text-3xl md:text-4xl font-extrabold text-[#14532D] tracking-tight">
                 Project Overview
               </h2>
             </div>
 
             <div className="mt-4 ml-4 flex items-center gap-2">
-              <div className="w-12 h-[2px] bg-green-600 rounded-full" />
+              <div className="w-10 h-[2px] bg-green-600 rounded-full" />
               <div className="w-3 h-3 bg-emerald-500 rounded-full" />
-              <div className="w-20 h-[2px] bg-green-300 rounded-full" />
+              <div className="w-16 h-[2px] bg-green-300 rounded-full" />
             </div>
 
             <motion.div
@@ -157,7 +148,7 @@ export default function ProjectClient({ project }) {
               viewport={{ once: true }}
               className="mt-8 ml-4 border-l-2 border-green-200 pl-6"
             >
-              <p className="text-lg md:text-xl leading-9 text-gray-600">
+              <p className="text-base sm:text-lg md:text-xl leading-relaxed md:leading-9 text-gray-600">
                 {project.description}
               </p>
             </motion.div>
@@ -165,7 +156,7 @@ export default function ProjectClient({ project }) {
 
           {/* FEATURES */}
           <motion.div
-            className="mt-20"
+            className="mt-16 md:mt-20"
             initial="initial"
             whileInView="animate"
             viewport={{ once: true }}
@@ -176,15 +167,15 @@ export default function ProjectClient({ project }) {
                 initial={{ scale: 0 }}
                 whileInView={{ scale: 1 }}
                 viewport={{ once: true }}
-                className="w-2 h-10 bg-green-700 rounded-full"
+                className="w-2 h-9 sm:h-10 bg-green-700 rounded-full"
               />
-              <h2 className="text-3xl md:text-4xl font-black text-[#14532D]">
+              <h2 className="text-2xl sm:text-3xl md:text-4xl font-black text-[#14532D]">
                 Key Features
               </h2>
             </div>
 
             <motion.div
-              className="grid md:grid-cols-2 xl:grid-cols-3 gap-6 mt-10"
+              className="grid sm:grid-cols-2 lg:grid-cols-3 gap-6 mt-10"
               variants={staggerContainer}
             >
               {project.features?.map((item, index) => (
@@ -200,7 +191,7 @@ export default function ProjectClient({ project }) {
                     </span>
                     <div className="flex-1 h-[1px] bg-green-200 group-hover:bg-green-400 transition" />
                   </div>
-                  <h3 className="text-base md:text-lg font-semibold text-[#14532D] leading-relaxed">
+                  <h3 className="text-base sm:text-lg font-semibold text-[#14532D] leading-relaxed">
                     {item}
                   </h3>
                 </motion.div>
@@ -210,16 +201,18 @@ export default function ProjectClient({ project }) {
 
           {/* TECHNOLOGY */}
           <motion.div
-            className="mt-20"
+            className="mt-16 md:mt-20"
             initial={{ opacity: 0, y: 40 }}
             whileInView={{ opacity: 1, y: 0 }}
             viewport={{ once: true }}
             transition={{ duration: 0.7 }}
           >
-            <h2 className="text-4xl font-black text-[#14532D]">Technologies</h2>
+            <h2 className="text-3xl md:text-4xl font-black text-[#14532D]">
+              Technologies
+            </h2>
 
             <motion.div
-              className="flex flex-wrap gap-5 mt-10"
+              className="flex flex-wrap gap-4 sm:gap-5 mt-10"
               variants={staggerContainer}
               initial="initial"
               whileInView="animate"
@@ -231,11 +224,11 @@ export default function ProjectClient({ project }) {
                   variants={scaleIn}
                   whileHover={{
                     scale: 1.08,
-                    backgroundColor: "rgba(34, 197, 94, 0.25)", // light green hover
+                    backgroundColor: "rgba(34, 197, 94, 0.25)",
                     backdropFilter: "blur(10px)",
                   }}
-                  className="px-7 py-3 rounded-full text-green-900 font-medium cursor-default
-             bg-green-200/20 backdrop-blur-md border border-green-300/30 shadow-sm"
+                  className="px-6 sm:px-7 py-3 rounded-full text-green-900 font-medium cursor-default
+                    bg-green-200/20 backdrop-blur-md border border-green-300/30 shadow-sm text-sm sm:text-base"
                 >
                   {tech}
                 </motion.div>
@@ -245,7 +238,7 @@ export default function ProjectClient({ project }) {
 
           {/* GALLERY */}
           <motion.div
-            className="mt-24"
+            className="mt-20 md:mt-24"
             initial={{ opacity: 0 }}
             whileInView={{ opacity: 1 }}
             viewport={{ once: true }}
@@ -255,7 +248,7 @@ export default function ProjectClient({ project }) {
                 initial={{ opacity: 0, y: 30 }}
                 whileInView={{ opacity: 1, y: 0 }}
                 viewport={{ once: true }}
-                className="text-5xl font-black text-[#14532D]"
+                className="text-4xl md:text-5xl font-black text-[#14532D]"
               >
                 Project Gallery
               </motion.h2>
@@ -265,14 +258,14 @@ export default function ProjectClient({ project }) {
                 whileInView={{ opacity: 1 }}
                 viewport={{ once: true }}
                 transition={{ delay: 0.2 }}
-                className="mt-5 text-gray-500"
+                className="mt-5 text-gray-500 text-sm sm:text-base"
               >
                 Explore actual industrial implementation
               </motion.p>
             </div>
 
             <motion.div
-              className="mt-14 grid md:grid-cols-2 xl:grid-cols-4 gap-8"
+              className="mt-12 md:mt-14 grid grid-cols-1 sm:grid-cols-2 lg:grid-cols-3 xl:grid-cols-4 gap-6 md:gap-8"
               variants={staggerContainer}
               initial="initial"
               whileInView="animate"
@@ -283,7 +276,7 @@ export default function ProjectClient({ project }) {
                   key={index}
                   variants={fadeInUp}
                   whileHover={{ scale: 1.03 }}
-                  className="relative h-[320px] rounded-[32px] overflow-hidden group shadow-xl"
+                  className="relative aspect-[16/12] sm:aspect-[4/3] rounded-[28px] md:rounded-[32px] overflow-hidden group shadow-xl"
                 >
                   <Image
                     src={img}
@@ -297,7 +290,7 @@ export default function ProjectClient({ project }) {
                   <motion.div
                     initial={{ opacity: 0, y: 30 }}
                     whileHover={{ opacity: 1, y: 0 }}
-                    className="absolute left-6 bottom-6 text-white"
+                    className="absolute left-4 sm:left-6 bottom-4 sm:bottom-6 text-white text-sm sm:text-base"
                   >
                     <p>{project.company}</p>
                   </motion.div>
