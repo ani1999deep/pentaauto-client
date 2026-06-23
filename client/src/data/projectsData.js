@@ -38,7 +38,7 @@ export const projects = [
 
   {
     slug: "bright-bar-industry-automation",
-    title: "Bright Bar Industry Automation",
+    title: "Black & Bright Bar Industry Automation",
     tagline: "Smart Industrial Automation & Heat Treatment Control Solutions",
 
     image: "/projects/ipsen/hero.jpg",
@@ -132,6 +132,180 @@ export const projects = [
       "Dabur Complete Factory Production Line Automation",
       "End-to-End Manufacturing Execution System (MES)",
       "Real-time OEE & Production Tracking Dashboard",
+    ],
+  },
+  {
+    slug: "pdb-panel",
+    title: "PDB Panel",
+    tagline:
+      "Reliable Power Distribution Panel Solutions for Industrial Automation",
+
+    image: "/projects/pdb/hero.jpg",
+
+    gallery: [
+      "/projects/pdb/gallery1.jpg",
+      "/projects/pdb/gallery2.jpg",
+      "/projects/pdb/gallery3.jpg",
+      "/projects/pdb/gallery4.jpg",
+    ],
+
+    shortDesc: "Industrial power distribution and control solutions.",
+
+    description:
+      "Custom-designed power distribution systems for industrial applications.",
+
+    features: [
+      "Power Distribution",
+      "Load Management",
+      "Industrial Safety",
+      "Control Integration",
+    ],
+
+    tech: ["PLC", "SCADA", "Industrial Control"],
+
+    projectTitles: [
+      "Industrial Power Distribution Panel",
+      "Heavy Duty Electrical Control PDB",
+      "Smart Energy Distribution Solution",
+    ],
+  },
+
+  {
+    slug: "mcc-panel",
+    title: "MCC Panel",
+    tagline: "Advanced Motor Control Center Panels for Industrial Operations",
+
+    image: "/projects/mcc/hero.jpg",
+
+    gallery: [
+      "/projects/mcc/gallery1.jpg",
+      "/projects/mcc/gallery2.jpg",
+      "/projects/mcc/gallery3.jpg",
+      "/projects/mcc/gallery4.jpg",
+    ],
+
+    shortDesc: "Motor control and industrial automation system.",
+
+    description: "Centralized motor control and monitoring solution.",
+
+    features: [
+      "Motor Control",
+      "Automation",
+      "Remote Monitoring",
+      "Protection System",
+    ],
+
+    tech: ["PLC", "SCADA", "VFD"],
+
+    projectTitles: [
+      "Industrial Motor Control Center",
+      "Intelligent MCC Automation",
+      "Centralized Motor Distribution Panel",
+    ],
+  },
+
+  {
+    slug: "drawout-type-pdb-panel",
+    title: "Drawout Type PDB Panel",
+    tagline:
+      "Flexible Drawout Panel Solutions for High Availability Operations",
+
+    image: "/projects/drawout/hero.jpg",
+
+    gallery: [
+      "/projects/drawout/gallery1.jpg",
+      "/projects/drawout/gallery2.jpg",
+      "/projects/drawout/gallery3.jpg",
+      "/projects/drawout/gallery4.jpg",
+    ],
+
+    shortDesc: "Modular industrial power distribution system.",
+
+    description: "High-performance drawout type electrical distribution panel.",
+
+    features: [
+      "Drawout Mechanism",
+      "Easy Maintenance",
+      "Industrial Safety",
+      "Scalable Design",
+    ],
+
+    tech: ["PLC", "SCADA"],
+
+    projectTitles: [
+      "Drawout Distribution Control Panel",
+      "Industrial Modular Power Panel",
+      "High Availability Electrical System",
+    ],
+  },
+
+  {
+    slug: "wireless-industry-4-0-solution",
+    title: "Wireless 4.0 Industry Solution",
+    tagline: "Smart Connected Industry with Wireless Monitoring & Automation",
+
+    image: "/projects/industry4/hero.jpg",
+
+    gallery: [
+      "/projects/industry4/gallery1.jpg",
+      "/projects/industry4/gallery2.jpg",
+      "/projects/industry4/gallery3.jpg",
+      "/projects/industry4/gallery4.jpg",
+    ],
+
+    shortDesc: "Industry 4.0 wireless automation platform.",
+
+    description:
+      "Industrial IoT based wireless monitoring and automation solution.",
+
+    features: [
+      "Industrial IoT",
+      "Wireless Monitoring",
+      "Realtime Analytics",
+      "Predictive Maintenance",
+    ],
+
+    tech: ["Node.js", "MongoDB", "PLC"],
+
+    projectTitles: [
+      "Industry 4.0 Smart Factory",
+      "Wireless Industrial Monitoring",
+      "Connected Manufacturing Automation",
+    ],
+  },
+
+  {
+    slug: "pascal-machine-vision-automation",
+    title: "Pascal Machine (Vision Automation)",
+    tagline: "High Precision Machine Vision & Intelligent Automation Solutions",
+
+    image: "/projects/pascal/hero.jpg",
+
+    gallery: [
+      "/projects/pascal/gallery1.jpg",
+      "/projects/pascal/gallery2.jpg",
+      "/projects/pascal/gallery3.jpg",
+      "/projects/pascal/gallery4.jpg",
+    ],
+
+    shortDesc: "Machine vision and intelligent inspection automation.",
+
+    description:
+      "Advanced machine vision system for inspection and quality control.",
+
+    features: [
+      "Vision Inspection",
+      "AI Detection",
+      "Quality Monitoring",
+      "Automation Control",
+    ],
+
+    tech: ["Vision System", "PLC", "AI"],
+
+    projectTitles: [
+      "Vision Based Quality Inspection System",
+      "Machine Vision Production Line",
+      "Smart Detection Automation",
     ],
   },
 ];

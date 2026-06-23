@@ -4,7 +4,6 @@ import Image from "next/image";
 import { motion } from "framer-motion";
 
 export default function ProjectClient({ project }) {
-  // Animation Variants (unchanged)
   const fadeInUp = {
     initial: { opacity: 0, y: 60 },
     animate: { opacity: 1, y: 0 },
@@ -27,9 +26,9 @@ export default function ProjectClient({ project }) {
   };
 
   return (
-    <main className="bg-[#F7FAF7]">
+    <main className="bg-[#F7FAF7] overflow-x-hidden">
       {/* HERO */}
-      <section className="relative h-[50vh] sm:h-[55vh] md:h-[60vh] lg:h-[65vh] overflow-hidden rounded-b-3xl">
+      <section className="relative h-[45vh] sm:h-[50vh] md:h-[55vh] lg:h-[62vh] xl:h-[65vh] overflow-hidden rounded-b-3xl">
         <Image
           src={project.image}
           alt={project.title}
@@ -40,7 +39,6 @@ export default function ProjectClient({ project }) {
 
         <div className="absolute inset-0 bg-gradient-to-br from-black/80 via-black/50 to-green-900/40 backdrop-blur-[2px]" />
 
-        {/* Decorative Glow */}
         <motion.div
           className="absolute -top-20 -left-20 w-64 h-64 sm:w-72 sm:h-72 bg-green-500/20 blur-3xl rounded-full"
           animate={{ scale: [1, 1.1, 1], opacity: [0.6, 0.8, 0.6] }}
@@ -52,14 +50,13 @@ export default function ProjectClient({ project }) {
           transition={{ duration: 10, repeat: Infinity }}
         />
 
-        {/* Content */}
         <div className="absolute inset-0 flex items-center">
-          <div className="container mx-auto px-5 sm:px-6 md:px-8">
+          <div className="container mx-auto px-5 sm:px-6 md:px-8 max-w-5xl">
             <motion.h1
               initial={{ opacity: 0, y: 40 }}
               animate={{ opacity: 1, y: 0 }}
               transition={{ duration: 0.8, delay: 0.1 }}
-              className="mt-4 text-3xl sm:text-4xl md:text-5xl lg:text-6xl font-extrabold text-white leading-tight max-w-3xl"
+              className="mt-4 text-3xl sm:text-4xl md:text-5xl lg:text-6xl font-extrabold text-white leading-[1.1] max-w-3xl"
             >
               {project.title}
             </motion.h1>
@@ -72,14 +69,12 @@ export default function ProjectClient({ project }) {
                 className="mt-6"
               >
                 <div className="inline-flex items-center gap-4">
-                  {/* Left Accent */}
                   <div className="flex flex-col items-center">
                     <span className="w-10 h-[2px] bg-gradient-to-r from-green-500 to-emerald-300 rounded-full" />
                     <span className="w-1.5 h-1.5 mt-1 rounded-full bg-green-400 shadow-[0_0_14px_rgba(74,222,128,.8)]" />
                   </div>
 
-                  {/* Tagline */}
-                  <p className="text-sm sm:text-base md:text-lg lg:text-xl font-light tracking-[0.18em] uppercase text-white/85 leading-relaxed">
+                  <p className="text-sm sm:text-base md:text-lg lg:text-xl font-light tracking-[0.18em] uppercase text-white/85 leading-relaxed max-w-xl">
                     <span className="text-green-300">“</span>
                     {project.tagline}
                     <span className="text-green-300">”</span>
@@ -99,35 +94,34 @@ export default function ProjectClient({ project }) {
       </section>
 
       {/* CONTENT */}
-      <section className="container mx-auto px-5 sm:px-6 md:px-8 py-16 md:py-24">
-        <div className="bg-white rounded-[32px] md:rounded-[40px] p-8 md:p-12 lg:p-16 shadow-xl">
+      <section className="container mx-auto px-5 sm:px-6 md:px-8 py-8 md:py-12 lg:py-16">
+        <div className="bg-white rounded-[28px] sm:rounded-[32px] md:rounded-[40px] p-6 sm:p-8 md:p-12 lg:p-16 shadow-xl">
           <motion.div
             initial={{ opacity: 0, y: 30 }}
             whileInView={{ opacity: 1, y: 0 }}
             viewport={{ once: true }}
-            className="mb-10"
+            className="mb-8 md:mb-10"
           >
             <h1 className="text-3xl md:text-4xl lg:text-5xl font-black text-[#14532D] tracking-tight">
               {project.title}
             </h1>
           </motion.div>
 
-          {/* PROJECT TITLES - Creative & Simple */}
-          {project.projectTitles && project.projectTitles.length > 0 && (
+          {project.projectTitles?.length > 0 && (
             <motion.div
               initial={{ opacity: 0, y: 30 }}
               whileInView={{ opacity: 1, y: 0 }}
               viewport={{ once: true }}
-              className="mb-14"
+              className="mb-12 md:mb-14"
             >
               <div className="flex items-center gap-3 mb-8">
                 <div className="w-8 h-[3px] bg-gradient-to-r from-green-600 to-emerald-400 rounded" />
-                <h3 className="text-2xl font-bold text-[#14532D] tracking-tight">
+                <h3 className="text-xl sm:text-2xl font-bold text-[#14532D] tracking-tight">
                   Notable Implementations
                 </h3>
               </div>
 
-              <div className="space-y-6 pl-2">
+              <div className="space-y-6 pl-1 sm:pl-2">
                 {project.projectTitles.map((title, index) => (
                   <motion.div
                     key={index}
@@ -136,23 +130,20 @@ export default function ProjectClient({ project }) {
                     whileInView="animate"
                     viewport={{ once: true }}
                     whileHover={{ x: 8 }}
-                    className="group relative flex gap-5 items-start"
+                    className="group relative flex gap-4 sm:gap-5 items-start"
                   >
-                    {/* Left Creative Accent */}
                     <div className="flex-shrink-0 mt-1.5">
                       <div className="w-7 h-7 rounded-full border-2 border-green-600 flex items-center justify-center bg-white text-green-700 font-semibold text-sm shadow-sm">
                         {String(index + 1)}
                       </div>
                     </div>
 
-                    {/* Content Card */}
-                    <div className="flex-1 bg-gradient-to-r from-green-50 to-white border border-green-100 rounded-2xl p-6 hover:shadow-md transition-all duration-300 group-hover:border-green-200">
-                      <p className="text-[#14532D] leading-relaxed font-medium">
+                    <div className="flex-1 bg-gradient-to-r from-green-50 to-white border border-green-100 rounded-2xl p-5 sm:p-6 hover:shadow-md transition-all duration-300 group-hover:border-green-200">
+                      <p className="text-[#14532D] leading-relaxed font-medium text-[15px] sm:text-base">
                         {title}
                       </p>
                     </div>
 
-                    {/* Decorative Line */}
                     {index < project.projectTitles.length - 1 && (
                       <div className="absolute left-[13px] top-9 bottom-0 w-[2px] bg-gradient-to-b from-green-300 to-transparent" />
                     )}
@@ -196,7 +187,7 @@ export default function ProjectClient({ project }) {
               initial="initial"
               whileInView="animate"
               viewport={{ once: true }}
-              className="mt-8 ml-4 border-l-2 border-green-200 pl-6"
+              className="mt-8 ml-4 border-l-2 border-green-200 pl-5 sm:pl-6"
             >
               <p className="text-base sm:text-lg md:text-xl leading-relaxed md:leading-9 text-gray-600">
                 {project.description}
@@ -206,7 +197,7 @@ export default function ProjectClient({ project }) {
 
           {/* FEATURES */}
           <motion.div
-            className="mt-16 md:mt-20"
+            className="mt-14 md:mt-20"
             initial="initial"
             whileInView="animate"
             viewport={{ once: true }}
@@ -225,7 +216,7 @@ export default function ProjectClient({ project }) {
             </div>
 
             <motion.div
-              className="grid sm:grid-cols-2 lg:grid-cols-3 gap-6 mt-10"
+              className="grid grid-cols-1 sm:grid-cols-2 lg:grid-cols-3 gap-5 sm:gap-6 mt-8 md:mt-10"
               variants={staggerContainer}
             >
               {project.features?.map((item, index) => (
@@ -251,7 +242,7 @@ export default function ProjectClient({ project }) {
 
           {/* TECHNOLOGY */}
           <motion.div
-            className="mt-16 md:mt-20"
+            className="mt-14 md:mt-20"
             initial={{ opacity: 0, y: 40 }}
             whileInView={{ opacity: 1, y: 0 }}
             viewport={{ once: true }}
@@ -262,7 +253,7 @@ export default function ProjectClient({ project }) {
             </h2>
 
             <motion.div
-              className="flex flex-wrap gap-4 sm:gap-5 mt-10"
+              className="flex flex-wrap gap-3 sm:gap-4 md:gap-5 mt-8 md:mt-10"
               variants={staggerContainer}
               initial="initial"
               whileInView="animate"
@@ -277,8 +268,7 @@ export default function ProjectClient({ project }) {
                     backgroundColor: "rgba(34, 197, 94, 0.25)",
                     backdropFilter: "blur(10px)",
                   }}
-                  className="px-6 sm:px-7 py-3 rounded-full text-green-900 font-medium cursor-default
-                    bg-green-200/20 backdrop-blur-md border border-green-300/30 shadow-sm text-sm sm:text-base"
+                  className="px-5 sm:px-6 md:px-7 py-3 rounded-full text-green-900 font-medium cursor-default bg-green-200/20 backdrop-blur-md border border-green-300/30 shadow-sm text-sm sm:text-base"
                 >
                   {tech}
                 </motion.div>
@@ -288,7 +278,7 @@ export default function ProjectClient({ project }) {
 
           {/* GALLERY */}
           <motion.div
-            className="mt-20 md:mt-24"
+            className="mt-16 md:mt-24"
             initial={{ opacity: 0 }}
             whileInView={{ opacity: 1 }}
             viewport={{ once: true }}
@@ -298,7 +288,7 @@ export default function ProjectClient({ project }) {
                 initial={{ opacity: 0, y: 30 }}
                 whileInView={{ opacity: 1, y: 0 }}
                 viewport={{ once: true }}
-                className="text-4xl md:text-5xl font-black text-[#14532D]"
+                className="text-3xl sm:text-4xl md:text-5xl font-black text-[#14532D]"
               >
                 Project Gallery
               </motion.h2>
@@ -308,14 +298,14 @@ export default function ProjectClient({ project }) {
                 whileInView={{ opacity: 1 }}
                 viewport={{ once: true }}
                 transition={{ delay: 0.2 }}
-                className="mt-5 text-gray-500 text-sm sm:text-base"
+                className="mt-5 text-gray-500 text-sm sm:text-base px-4"
               >
                 Explore actual industrial implementation
               </motion.p>
             </div>
 
             <motion.div
-              className="mt-12 md:mt-14 grid grid-cols-1 sm:grid-cols-2 lg:grid-cols-3 xl:grid-cols-4 gap-6 md:gap-8"
+              className="mt-10 md:mt-14 grid grid-cols-1 sm:grid-cols-2 lg:grid-cols-3 xl:grid-cols-4 gap-5 sm:gap-6 md:gap-8"
               variants={staggerContainer}
               initial="initial"
               whileInView="animate"
@@ -326,7 +316,7 @@ export default function ProjectClient({ project }) {
                   key={index}
                   variants={fadeInUp}
                   whileHover={{ scale: 1.03 }}
-                  className="relative aspect-[16/12] sm:aspect-[4/3] rounded-[28px] md:rounded-[32px] overflow-hidden group shadow-xl"
+                  className="relative aspect-[4/3] sm:aspect-[16/12] md:aspect-[4/3] rounded-2xl sm:rounded-[28px] md:rounded-[32px] overflow-hidden group shadow-xl"
                 >
                   <Image
                     src={img}
