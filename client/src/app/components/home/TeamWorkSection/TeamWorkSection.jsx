@@ -33,7 +33,7 @@ export default function TeamWorkSection() {
         <div className="bg-white rounded-3xl overflow-hidden shadow-xl border border-gray-100">
           <div className="relative h-[260px] md:h-[500px]">
             <img
-              src="/team/team-work-penta.jpg"
+              src="/team/team-work-penta-1.jpeg"
               alt="team"
               className="w-full h-full object-contain"
             />
