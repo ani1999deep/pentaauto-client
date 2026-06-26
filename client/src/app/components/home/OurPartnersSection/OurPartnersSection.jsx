@@ -24,11 +24,11 @@ const partners = [
   },
   { name: "JiGO India", logo: "/partners/jigo.png" },
   { name: "Teknic Controlgear Private Limited", logo: "/partners/teknic.png" },
-  { name: "Esbee Electrotech LLP", logo: "/partners/esbee.png" },
+  { name: "Esbee Electrotech LLP", logo: "/partners/esbee.jpg" },
   { name: "Mitsubishi Electric", logo: "/partners/mitsubishi.png" },
   {
     name: "GENERAL INDUSTRIAL CONTROLS PRIVATE LIMITED",
-    logo: "/partners/gic.png",
+    logo: "/partners/gic.jpg",
   },
   { name: "WAGO India", logo: "/partners/wago.png" },
   { name: "Elmex Controls Private Limited", logo: "/partners/elmex.png" },

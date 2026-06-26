@@ -276,17 +276,17 @@ export const projects = [
   },
 
   {
-    slug: "pascal-machine-vision-automation",
-    title: "Pascal Machine (Vision Automation)",
+    slug: "pascan-machine-vision-automation",
+    title: "Pascan Machine (Vision Automation)",
     tagline: "High Precision Machine Vision & Intelligent Automation Solutions",
 
-    image: "/projects/pascal/hero.jpg",
+    image: "/projects/pascan/hero.jpg",
 
     gallery: [
-      "/projects/pascal/gallery1.jpg",
-      "/projects/pascal/gallery2.jpg",
-      "/projects/pascal/gallery3.jpg",
-      "/projects/pascal/gallery4.jpg",
+      "/projects/pascan/gallery1.jpg",
+      "/projects/pascan/gallery2.jpg",
+      "/projects/pascan/gallery3.jpg",
+      "/projects/pascan/gallery4.jpg",
     ],
 
     shortDesc: "Machine vision and intelligent inspection automation.",
