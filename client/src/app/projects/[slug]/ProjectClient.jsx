@@ -2,6 +2,10 @@
 
 import Image from "next/image";
 import { motion } from "framer-motion";
+import { Swiper, SwiperSlide } from "swiper/react";
+import { Autoplay } from "swiper/modules";
+
+import "swiper/css";
 
 export default function ProjectClient({ project }) {
   const fadeInUp = {
@@ -240,103 +244,87 @@ export default function ProjectClient({ project }) {
             </motion.div>
           </motion.div>
 
-          {/* TECHNOLOGY */}
           <motion.div
-            className="mt-14 md:mt-20"
-            initial={{ opacity: 0, y: 40 }}
-            whileInView={{ opacity: 1, y: 0 }}
-            viewport={{ once: true }}
-            transition={{ duration: 0.7 }}
-          >
-            <h2 className="text-3xl md:text-4xl font-black text-[#14532D]">
-              Technologies
-            </h2>
-
-            <motion.div
-              className="flex flex-wrap gap-3 sm:gap-4 md:gap-5 mt-8 md:mt-10"
-              variants={staggerContainer}
-              initial="initial"
-              whileInView="animate"
-              viewport={{ once: true }}
-            >
-              {project.tech?.map((tech) => (
-                <motion.div
-                  key={tech}
-                  variants={scaleIn}
-                  whileHover={{
-                    scale: 1.08,
-                    backgroundColor: "rgba(34, 197, 94, 0.25)",
-                    backdropFilter: "blur(10px)",
-                  }}
-                  className="px-5 sm:px-6 md:px-7 py-3 rounded-full text-green-900 font-medium cursor-default bg-green-200/20 backdrop-blur-md border border-green-300/30 shadow-sm text-sm sm:text-base"
-                >
-                  {tech}
-                </motion.div>
-              ))}
-            </motion.div>
-          </motion.div>
-
-          {/* GALLERY */}
-          <motion.div
-            className="mt-16 md:mt-24"
-            initial={{ opacity: 0 }}
-            whileInView={{ opacity: 1 }}
+            className="mt-10 md:mt-14"
+            variants={staggerContainer}
+            initial="initial"
+            whileInView="animate"
             viewport={{ once: true }}
           >
-            <div className="text-center">
-              <motion.h2
-                initial={{ opacity: 0, y: 30 }}
-                whileInView={{ opacity: 1, y: 0 }}
-                viewport={{ once: true }}
-                className="text-3xl sm:text-4xl md:text-5xl font-black text-[#14532D]"
-              >
-                Project Gallery
-              </motion.h2>
-
-              <motion.p
-                initial={{ opacity: 0 }}
-                whileInView={{ opacity: 1 }}
-                viewport={{ once: true }}
-                transition={{ delay: 0.2 }}
-                className="mt-5 text-gray-500 text-sm sm:text-base px-4"
-              >
-                Explore actual industrial implementation
-              </motion.p>
+            <div className="flex items-center gap-3 mb-6">
+              <div className="w-2 h-8 bg-green-700 rounded-full" />
+              <h2 className="text-2xl sm:text-3xl font-black text-[#14532D]">
+                Photo Gallery
+              </h2>
             </div>
 
-            <motion.div
-              className="mt-10 md:mt-14 grid grid-cols-1 sm:grid-cols-2 lg:grid-cols-3 xl:grid-cols-4 gap-5 sm:gap-6 md:gap-8"
-              variants={staggerContainer}
-              initial="initial"
-              whileInView="animate"
-              viewport={{ once: true }}
+            <Swiper
+              modules={[Autoplay]}
+              loop={true}
+              speed={1200}
+              observer={true}
+              observeParents={true}
+              allowTouchMove={true}
+              autoplay={{
+                delay: 2000,
+                disableOnInteraction: false,
+                pauseOnMouseEnter: true,
+                waitForTransition: false,
+              }}
+              onSwiper={(swiper) => {
+                swiper.el.addEventListener("mouseenter", () => {
+                  swiper.autoplay.stop();
+                });
+
+                swiper.el.addEventListener("mouseleave", () => {
+                  swiper.autoplay.start();
+                });
+
+                swiper.el.addEventListener("click", () => {
+                  swiper.autoplay.stop();
+
+                  setTimeout(() => {
+                    swiper.autoplay.start();
+                  }, 2500);
+                });
+
+                swiper.el.addEventListener("touchend", () => {
+                  setTimeout(() => {
+                    swiper.autoplay.start();
+                  }, 1500);
+                });
+              }}
+              spaceBetween={24}
+              breakpoints={{
+                0: {
+                  slidesPerView: 1,
+                },
+                640: {
+                  slidesPerView: 2,
+                },
+                1024: {
+                  slidesPerView: 2,
+                },
+                1280: {
+                  slidesPerView: 3,
+                },
+              }}
+              className="bg-transparent"
             >
               {project.gallery?.map((img, index) => (
-                <motion.div
-                  key={index}
-                  variants={fadeInUp}
-                  whileHover={{ scale: 1.03 }}
-                  className="relative aspect-[4/3] sm:aspect-[16/12] md:aspect-[4/3] rounded-2xl sm:rounded-[28px] md:rounded-[32px] overflow-hidden group shadow-xl"
-                >
-                  <Image
-                    src={img}
-                    fill
-                    alt={`${project.title}-${index}`}
-                    className="object-cover group-hover:scale-110 duration-700"
-                  />
-
-                  <div className="absolute inset-0 bg-gradient-to-t from-black/80 to-transparent opacity-0 group-hover:opacity-100 duration-500" />
-
-                  <motion.div
-                    initial={{ opacity: 0, y: 30 }}
-                    whileHover={{ opacity: 1, y: 0 }}
-                    className="absolute left-4 sm:left-6 bottom-4 sm:bottom-6 text-white text-sm sm:text-base"
-                  >
-                    <p>{project.company}</p>
-                  </motion.div>
-                </motion.div>
+                <SwiperSlide key={index}>
+                  <div className="relative aspect-[4/3] rounded-[32px] overflow-hidden bg-transparent">
+                    <Image
+                      src={img}
+                      fill
+                      alt={`${project.title}-${index}`}
+                      sizes="(max-width:768px) 100vw,33vw"
+                      className="object-cover transition-transform duration-700 hover:scale-110"
+                    />
+                  </div>
+                </SwiperSlide>
               ))}
-            </motion.div>
+            </Swiper>
           </motion.div>
         </div>
       </section>

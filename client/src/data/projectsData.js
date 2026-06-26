@@ -252,6 +252,11 @@ export const projects = [
       "/projects/industry4/gallery2.jpg",
       "/projects/industry4/gallery3.jpg",
       "/projects/industry4/gallery4.jpg",
+      "/projects/industry4/gallery5.jpg",
+      "/projects/industry4/gallery6.jpg",
+      "/projects/industry4/gallery7.jpg",
+      "/projects/industry4/gallery8.jpg",
+      "/projects/industry4/gallery9.jpg",
     ],
 
     shortDesc: "Industry 4.0 wireless automation platform.",
