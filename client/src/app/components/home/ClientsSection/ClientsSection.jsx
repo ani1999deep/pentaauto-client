@@ -10,9 +10,9 @@ import "swiper/css";
 
 const clients = [
   { name: "IPSEN TECHNOLOGIES PVT. LTD", logo: "/clients/ipsen.png" },
-  { name: "ADVANCED SYSTEMS SAMPLING PVT. LTD", logo: "/clients/advanced.png" },
+  { name: "ADVANCED SYSTEMS SAMPLING PVT. LTD", logo: "/clients/no-photo.jpg" },
   { name: "DABUR INDIA LTD", logo: "/clients/dabur.png" },
-  { name: "BHAMBRA ENGINEERING WORKS", logo: "/clients/bhambra.png" },
+  { name: "BHAMBRA ENGINEERING WORKS", logo: "/clients/no-photo.jpg" },
   { name: "BAT-SOL EQUIPMENT & TECHNOLOGY", logo: "/clients/batsol.png" },
   {
     name: "BHARATIYA RESERVE BANK NOTE MUDRAN PVT. LTD",
@@ -44,6 +44,10 @@ const clients = [
   {
     name: "HINDALCO INDUSTRIES LIMITED",
     logo: "/clients/hindalco.png",
+  },
+  {
+    name: "Sotefin Parking Private Limited ",
+    logo: "/clients/sotefin.jpg",
   },
 ];
 
