@@ -32,11 +32,10 @@ export default function TeamWorkSection() {
       >
         <div className="bg-white rounded-3xl overflow-hidden shadow-xl border border-gray-100">
           <div className="relative h-[260px] md:h-[500px]">
-            <Image
-              src="/team/team-work.jpg"
-              alt="Penta Automation Team"
-              fill
-              className="object-cover"
+            <img
+              src="/team/team-work-penta.jpg"
+              alt="team"
+              className="w-full h-full object-contain"
             />
           </div>
           <div className="p-8 text-center">
