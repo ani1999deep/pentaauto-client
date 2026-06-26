@@ -26,9 +26,9 @@ export default function ProjectClient({ project }) {
   };
 
   return (
-    <main className="bg-[#F7FAF7] overflow-x-hidden">
+    <main className="bg-[#F7FAF7] overflow-x-hidden w-full max-w-full">
       {/* HERO */}
-      <section className="relative h-[45vh] sm:h-[50vh] md:h-[55vh] lg:h-[62vh] xl:h-[65vh] overflow-hidden rounded-b-3xl">
+      <section className="relative h-[45vh] sm:h-[50vh] md:h-[55vh] lg:h-[62vh] xl:h-[65vh] overflow-hidden rounded-b-3xl w-full max-w-full">
         <Image
           src={project.image}
           alt={project.title}

@@ -133,7 +133,7 @@ export const keyPersons = [
     role: "Marketing Head",
     phone: "+91 9836685823",
     email: "monotosh.penta@gmail.com",
-    photo: "/team/monotosh-halder.png",
+    photo: "/team/monotosh-halder.jpeg",
   },
   {
     id: "03",
@@ -141,7 +141,7 @@ export const keyPersons = [
     role: "Application & Design Head",
     phone: "+91 9836680717",
     email: "penta.tapan@gmail.com",
-    photo: "/team/tapan-metya.jpeg",
+    photo: "/team/tapan-metya.png",
   },
   {
     id: "04",
@@ -165,7 +165,7 @@ export const keyPersons = [
     role: "Senior Application & Execution Engineer",
     phone: "+91 9836680288",
     email: "srinjoy7.penta@gmail.com",
-    photo: "/team/srinjoy-dey.PNG",
+    photo: "/team/srinjoy-dey.png",
   },
 ];
 

@@ -76,12 +76,13 @@ export const projects = [
     title: "Sampling Automation System",
     tagline: "Precision Sampling with Intelligent Automation Solutions",
 
-    image: "/projects/advanced/hero.jpg",
+    image: "/projects/wesman/hero.jpg",
 
     gallery: [
-      "/projects/advanced/gallery1.jpg",
-      "/projects/advanced/gallery2.jpg",
-      "/projects/advanced/gallery3.jpg",
+      "/projects/wesman/gallery1.jpg",
+      "/projects/wesman/gallery2.jpg",
+      "/projects/wesman/gallery3.jpg",
+      "/projects/wesman/gallery4.jpg",
     ],
 
     shortDesc: "Automatic industrial sampling platform.",

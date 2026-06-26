@@ -11,9 +11,10 @@ export async function generateStaticParams() {
 }
 
 export default async function ProjectPage({ params }) {
+  // IMPORTANT
   const { slug } = await params;
 
-  const project = projects.find((p) => p.slug === slug);
+  const project = projects.find((p) => p.slug.trim() === slug.trim());
 
   if (!project) {
     notFound();
@@ -22,7 +23,6 @@ export default async function ProjectPage({ params }) {
   return (
     <>
       <ProjectClient project={project} />
-
       <WhyPentaAutomationSection />
       <ServicesCTASection />
     </>
