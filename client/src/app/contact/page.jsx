@@ -8,6 +8,7 @@ import {
   PhoneCall,
   Factory,
   Building2,
+  MapPin,
 } from "lucide-react";
 
 const fadeUp = {
@@ -125,11 +126,13 @@ export default function Contact() {
                 target="_blank"
                 className="text-sm sm:text-base text-[#4B5563] hover:text-green-700 leading-8"
               >
-                24/4, Purbachal Garden
+                <MapPin
+                  size={22}
+                  className="text-green-600 mt-1 shrink-0 group-hover:scale-110 transition"
+                />
+                24/4, Purbachal Garden,North Purbachal
                 <br />
-                North Purbachal, Haltu
-                <br />
-                Kolkata, West Bengal 700078
+                Haltu,Kolkata, West Bengal 700078
               </a>
             </motion.div>
 
@@ -153,11 +156,13 @@ export default function Contact() {
                 target="_blank"
                 className="text-sm sm:text-base text-[#4B5563] hover:text-green-700 leading-8"
               >
-                Penta Automation Workshop
+                <MapPin
+                  size={22}
+                  className="text-green-600 mt-1 shrink-0 group-hover:scale-110 transition"
+                />
+                Penta Automation Workshop,Ramchandrapur
                 <br />
-                Ramchandrapur, Satanipara
-                <br />
-                Bonhooghly, West Bengal 700103
+                Satanipara,Bonhooghly, West Bengal 700103
               </a>
             </motion.div>
 
