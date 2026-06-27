@@ -8,10 +8,14 @@ export const projects = [
     image: "/projects/wesman/hero.jpg",
 
     gallery: [
-      "/projects/wesman/gallery1.jpg",
       "/projects/wesman/gallery2.jpg",
       "/projects/wesman/gallery3.jpg",
       "/projects/wesman/gallery4.jpg",
+      "/projects/wesman/gallery5.jpg",
+      "/projects/wesman/gallery6.jpg",
+      "/projects/wesman/gallery7.jpg",
+      "/projects/wesman/gallery8.jpg",
+      "/projects/wesman/gallery9.jpg",
     ],
 
     shortDesc: "Industrial furnace and thermal process automation.",
@@ -24,7 +28,7 @@ export const projects = [
         title: "PLC Automation",
         items: [
           "SIEMENS & Rockwell PLC",
-          "Auto Furnace",
+          "Auto Furnace Control",
           "Batch Start / Stop",
           "PID Control",
           "Digital & Analog I/O",
