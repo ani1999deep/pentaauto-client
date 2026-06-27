@@ -198,57 +198,48 @@ export default function ProjectClient({ project }) {
               </p>
             </motion.div>
           </motion.div>
-
           {/* FEATURES */}
           <motion.div
-            className="mt-14 md:mt-20"
+            className="mt-12 md:mt-16"
             initial="initial"
             whileInView="animate"
             viewport={{ once: true }}
             variants={staggerContainer}
           >
             <div className="flex items-center gap-3">
-              <motion.div
-                initial={{ scale: 0 }}
-                whileInView={{ scale: 1 }}
-                viewport={{ once: true }}
-                className="w-2 h-9 sm:h-10 bg-green-700 rounded-full"
-              />
-              <h2 className="text-2xl sm:text-3xl md:text-4xl font-black text-[#14532D]">
+              <div className="w-1.5 h-8 bg-green-700 rounded-full" />
+              <h2 className="text-2xl sm:text-3xl font-extrabold text-[#14532D]">
                 Key Features
               </h2>
             </div>
 
             <motion.div
-              className="grid grid-cols-1 lg:grid-cols-2 gap-6 mt-8 md:mt-10"
+              className="grid grid-cols-1 sm:grid-cols-2 lg:grid-cols-3 gap-4 mt-8"
               variants={staggerContainer}
             >
               {project.features?.map((feature, index) => (
                 <motion.div
                   key={index}
                   variants={fadeInUp}
-                  whileHover={{ y: -8 }}
-                  className="group rounded-[28px] p-6 sm:p-8 bg-green-50 border border-green-100 hover:bg-green-100 transition-all duration-300"
+                  whileHover={{ y: -4 }}
+                  className="group rounded-2xl bg-white border border-green-100 p-5 shadow-sm hover:shadow-lg transition"
                 >
-                  <div className="flex items-center gap-3 mb-5">
-                    <span className="text-green-700 font-bold text-sm">
-                      {String(index + 1).padStart(2, "0")}
-                    </span>
-
-                    <div className="flex-1 h-[1px] bg-green-200" />
+                  <div className="flex items-center gap-2 mb-4">
+                    <h3 className="text-base font-bold text-[#14532D] leading-tight">
+                      {feature.title}
+                    </h3>
                   </div>
 
-                  <h3 className="text-xl font-bold text-[#14532D] mb-5">
-                    {feature.title}
-                  </h3>
-
-                  <div className="space-y-3">
+                  <div className="flex flex-wrap gap-2">
                     {feature.items?.map((item, idx) => (
-                      <div key={idx} className="flex items-start gap-3">
-                        <div className="w-2 h-2 rounded-full bg-green-600 mt-2 flex-shrink-0" />
-
-                        <p className="text-gray-700 leading-relaxed">{item}</p>
-                      </div>
+                      <span
+                        key={idx}
+                        className="px-3 py-1.5 text-xs sm:text-sm rounded-full 
+      bg-green-50 text-green-700 border border-green-200
+      hover:bg-green-100 transition"
+                      >
+                        {item}
+                      </span>
                     ))}
                   </div>
                 </motion.div>
