@@ -234,9 +234,7 @@ export default function ProjectClient({ project }) {
                     {feature.items?.map((item, idx) => (
                       <span
                         key={idx}
-                        className="px-3 py-1.5 text-xs sm:text-sm rounded-full 
-      bg-green-50 text-green-700 border border-green-200
-      hover:bg-green-100 transition"
+                        className="px-2 py-1 text-xs rounded-md bg-green-100 text-green-700"
                       >
                         {item}
                       </span>
