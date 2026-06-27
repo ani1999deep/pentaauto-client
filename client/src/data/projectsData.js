@@ -17,7 +17,7 @@ export const projects = [
     shortDesc: "Industrial furnace and thermal process automation.",
 
     description:
-      "Advanced automation and monitoring system for furnace and thermal industrial operation with centralized control and live reporting.",
+      "Fully Automated Furnace Process Control using Gas and Thyristor Firing technology with real-time data monitoring and analysis up to 1050°C. Equipped with intelligent zone-wise temperature stage control to ensure consistent operation and superior product quality.",
 
     features: [
       {
