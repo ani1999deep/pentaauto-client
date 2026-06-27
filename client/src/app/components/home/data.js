@@ -124,7 +124,7 @@ export const keyPersons = [
     name: "Mr. Nihar Roy",
     role: "Application MD",
     phone: "+91 9836680055",
-    email: "niharroy@pentaauto.co.in",
+    email: "penta.automation2012@gmail.com",
     photo: "/team/nihar-roy.jpeg",
   },
   {
@@ -148,7 +148,7 @@ export const keyPersons = [
     name: "Mr. Abhisek Paul",
     role: "Senior Accountant",
     phone: "+91 9836681900",
-    email: "abhisek@pentaauto.co.in",
+    email: "abhisekpenta0805@gmail.com",
     photo: "/team/abhisek-paul.png",
   },
   {
