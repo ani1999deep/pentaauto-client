@@ -20,11 +20,73 @@ export const projects = [
       "Advanced automation and monitoring system for furnace and thermal industrial operation with centralized control and live reporting.",
 
     features: [
-      "PLC Automation",
-      "Realtime Monitoring",
-      "Industrial Dashboard",
-      "Control Panels",
-      "Remote Operation",
+      {
+        title: "PLC Automation",
+        items: [
+          "PLC Automation mainly using SIEMENS & Rockwell PLC",
+          "Fully Automated Furnace Operation",
+          "Automatic Batch Start & Stop Sequence",
+          "PID Temperature Control",
+          "Digital & Analog I/O Control",
+          "Automatic Interlocks & Safety Logic",
+          "Alarm & Fault Handling",
+          "Automatic Cycle Management",
+        ],
+      },
+
+      {
+        title: "Real-Time Monitoring",
+        items: [
+          "Furnace Temperature",
+          "Zone Temperature",
+          "Process Status",
+          "Heating Cycle Status",
+          "Equipment Health",
+          "Production Parameters",
+          "Batch Status",
+          "Motor & Fan Status",
+          "Alarm Status",
+          "Communication Status",
+          "All process values updated in real time from PLC",
+        ],
+      },
+
+      {
+        title: "Industrial Dashboard",
+        items: [
+          "Live Process Overview",
+          "Furnace Mimic Diagram",
+          "Temperature Trends (Historical & Real-Time)",
+          "Production Summary",
+          "Alarm Summary (Historical & Real-Time)",
+          "Current Process Values",
+          "Historical Data Access",
+        ],
+      },
+
+      {
+        title: "Control Panel",
+        items: [
+          "Start Batch",
+          "Stop Batch",
+          "Pause Process",
+          "Reset Alarms",
+          "Manual / Auto Mode Selection",
+        ],
+      },
+
+      {
+        title: "Remote Operation",
+        items: [
+          "Monitor Furnace Status",
+          "View Alarms",
+          "Access Production History",
+          "Analyze Process Trends",
+          "Review Batch Reports",
+          "Monitor Equipment Health",
+          "Availability depends on network architecture and security configuration",
+        ],
+      },
     ],
 
     tech: ["MongoDB", "PLC", "SCADA"],

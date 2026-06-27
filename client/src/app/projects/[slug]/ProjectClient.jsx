@@ -220,25 +220,37 @@ export default function ProjectClient({ project }) {
             </div>
 
             <motion.div
-              className="grid grid-cols-1 sm:grid-cols-2 lg:grid-cols-3 gap-5 sm:gap-6 mt-8 md:mt-10"
+              className="grid grid-cols-1 lg:grid-cols-2 gap-6 mt-8 md:mt-10"
               variants={staggerContainer}
             >
-              {project.features?.map((item, index) => (
+              {project.features?.map((feature, index) => (
                 <motion.div
-                  key={item}
+                  key={index}
                   variants={fadeInUp}
-                  whileHover={{ y: -8, transition: { duration: 0.3 } }}
-                  className="group p-6 rounded-2xl bg-green-50 border border-green-100 hover:bg-green-100 transition-all duration-300"
+                  whileHover={{ y: -8 }}
+                  className="group rounded-[28px] p-6 sm:p-8 bg-green-50 border border-green-100 hover:bg-green-100 transition-all duration-300"
                 >
-                  <div className="flex items-center gap-3 mb-4">
+                  <div className="flex items-center gap-3 mb-5">
                     <span className="text-green-700 font-bold text-sm">
                       {String(index + 1).padStart(2, "0")}
                     </span>
-                    <div className="flex-1 h-[1px] bg-green-200 group-hover:bg-green-400 transition" />
+
+                    <div className="flex-1 h-[1px] bg-green-200" />
                   </div>
-                  <h3 className="text-base sm:text-lg font-semibold text-[#14532D] leading-relaxed">
-                    {item}
+
+                  <h3 className="text-xl font-bold text-[#14532D] mb-5">
+                    {feature.title}
                   </h3>
+
+                  <div className="space-y-3">
+                    {feature.items?.map((item, idx) => (
+                      <div key={idx} className="flex items-start gap-3">
+                        <div className="w-2 h-2 rounded-full bg-green-600 mt-2 flex-shrink-0" />
+
+                        <p className="text-gray-700 leading-relaxed">{item}</p>
+                      </div>
+                    ))}
+                  </div>
                 </motion.div>
               ))}
             </motion.div>
