@@ -14,5 +14,5 @@ export const siteConfig = {
 
   author: "Penta Automation",
 
-  ogImage: "/og-image.png",
+  ogImage: "/og-image.jpg",
 };
