@@ -46,10 +46,10 @@ export default function Navbar() {
       transition={{ duration: 0.7 }}
       className="sticky top-0 z-50 bg-white/90 backdrop-blur-lg shadow-sm border-b border-gray-100"
     >
-      <div className="container mx-auto px-6">
-        <div className="flex items-center justify-between h-20">
+      <div className="container mx-auto px-4 sm:px-6 lg:px-8">
+        <div className="flex items-center justify-between h-[72px] sm:h-20">
           {/* Logo */}
-          <Link href="/" className="flex items-center">
+          <Link href="/" className="flex items-center shrink-0">
             <motion.div whileHover={{ scale: 1.04 }}>
               <Image
                 src="/pentaauto3.png"
@@ -57,13 +57,19 @@ export default function Navbar() {
                 width={260}
                 height={100}
                 priority
-                className="h-16 w-auto object-contain"
+                className="
+                  h-12
+                  sm:h-14
+                  md:h-16
+                  w-auto
+                  object-contain
+                "
               />
             </motion.div>
           </Link>
 
           {/* Desktop */}
-          <nav className="hidden lg:flex items-center gap-3">
+          <nav className="hidden lg:flex items-center gap-2 xl:gap-3">
             {navLinks.map((item, index) => {
               const current =
                 active === item.id || (item.path === "/" && active === "home");
@@ -81,8 +87,13 @@ export default function Navbar() {
                     href={item.path}
                     onClick={() => setActive(item.id)}
                     className={`
-                      relative px-5 py-2 rounded-full
-                      transition-all duration-300
+                      relative
+                      px-4 xl:px-5
+                      py-2
+                      rounded-full
+                      whitespace-nowrap
+                      transition-all
+                      duration-300
                       ${
                         current
                           ? "bg-green-100 text-[#16A34A]"
@@ -107,13 +118,23 @@ export default function Navbar() {
           {/* CTA */}
           <Link
             href="/contact"
-            className="hidden lg:flex bg-[#16A34A] text-white px-6 py-3 rounded-xl hover:bg-[#14532D]"
+            className="
+              hidden
+              lg:flex
+              items-center
+              bg-[#16A34A]
+              text-white
+              px-5 xl:px-6
+              py-3
+              rounded-xl
+              hover:bg-[#14532D]
+            "
           >
             Enquiry
           </Link>
 
           {/* Mobile */}
-          <button className="lg:hidden" onClick={() => setIsOpen(!isOpen)}>
+          <button className="lg:hidden p-1" onClick={() => setIsOpen(!isOpen)}>
             {isOpen ? <X size={28} /> : <Menu size={28} />}
           </button>
         </div>
@@ -134,7 +155,7 @@ export default function Navbar() {
                 opacity: 0,
                 height: 0,
               }}
-              className="lg:hidden py-5"
+              className="lg:hidden py-4 overflow-hidden"
             >
               {navLinks.map((item) => {
                 const current = active === item.id;
@@ -148,7 +169,12 @@ export default function Navbar() {
                       setIsOpen(false);
                     }}
                     className={`
-                      block py-3 px-4 rounded-xl mb-2
+                      block
+                      w-full
+                      py-3
+                      px-4
+                      rounded-xl
+                      mb-2
                       ${
                         current
                           ? "bg-green-100 text-[#16A34A]"
@@ -163,7 +189,17 @@ export default function Navbar() {
 
               <Link
                 href="/contact"
-                className="inline-block mt-4 bg-[#16A34A] text-white px-5 py-3 rounded-xl"
+                onClick={() => setIsOpen(false)}
+                className="
+                  block
+                  text-center
+                  mt-4
+                  bg-[#16A34A]
+                  text-white
+                  px-5
+                  py-3
+                  rounded-xl
+                "
               >
                 Get Quote
               </Link>
