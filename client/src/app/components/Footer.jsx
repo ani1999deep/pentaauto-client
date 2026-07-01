@@ -76,12 +76,7 @@ export default function Footer() {
         <div className="container mx-auto px-6">
           <div className="grid grid-cols-1 sm:grid-cols-2 lg:grid-cols-4 gap-10">
             <div>
-              <Image
-                src="/pentaauto2.jpeg"
-                alt="logo"
-                width={170}
-                height={60}
-              />
+              <Image src="/pentaauto3.png" alt="logo" width={170} height={60} />
 
               <p className="mt-4 text-gray-500">
                 Smart automation solutions with PLC, SCADA, MCC & industrial

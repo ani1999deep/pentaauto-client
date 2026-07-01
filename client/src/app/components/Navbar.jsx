@@ -15,7 +15,7 @@ export default function Navbar() {
     { name: "About Us", path: "/#about", id: "about" },
     { name: "Services", path: "/services", id: "services" },
     { name: "Projects", path: "/#projects", id: "projects" },
-    { name: "Contact", path: "/#contact", id: "contact" },
+    { name: "Contact", path: "/contact", id: "contact" },
   ];
 
   useEffect(() => {
@@ -52,7 +52,7 @@ export default function Navbar() {
           <Link href="/" className="flex items-center">
             <motion.div whileHover={{ scale: 1.04 }}>
               <Image
-                src="/pentaauto2.jpeg"
+                src="/pentaauto3.png"
                 alt="Penta Auto"
                 width={260}
                 height={100}
