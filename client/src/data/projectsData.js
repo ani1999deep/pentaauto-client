@@ -110,24 +110,29 @@ export const projects = [
       "/projects/ipsen/gallery4.jpg",
     ],
 
-    shortDesc: "Industrial heat treatment automation.",
+    shortDesc: "Industrial heat treatment and bright bar automation",
 
     description:
-      "Production and process optimization platform with automated industrial monitoring and reporting.",
+      "An advanced industrial automation platform designed for Black & Bright Bar manufacturing processes. The system enables real-time production monitoring, heat treatment control, machine integration, process optimization, and automated reporting to improve efficiency, quality, and operational visibility across production lines.",
 
     features: [
-      "Production Analytics",
-      "SCADA",
-      "Realtime Alerts",
-      "Machine Integration",
+      "Production Analytics Dashboard",
+      "SCADA Monitoring & Control",
+      "Realtime Alerts & Notifications",
+      "PLC & Machine Integration",
+      "Heat Treatment Process Automation",
+      "Production Reporting",
+      "Energy Consumption Monitoring",
+      "Predictive Maintenance Support",
     ],
 
-    tech: ["React", "Express", "MongoDB", "PLC"],
+    tech: ["PLC", "SCADA"],
 
     projectTitles: [
-      "Ipsen Bright Bar Heat Treatment Line Automation",
       "Continuous Bright Bar Annealing Furnace Control System",
       "Multi-Zone Bright Bar Hardening & Tempering Automation",
+      "Industrial Production Monitoring Dashboard",
+      "Realtime Furnace Temperature Control Platform",
     ],
   },
 
@@ -136,7 +141,7 @@ export const projects = [
     title: "Sampling Automation System",
     tagline: "Precision Sampling with Intelligent Automation Solutions",
 
-    image: "/projects/wesman/hero.jpg",
+    image: "/projects/sampling/hero.jpg",
 
     gallery: [
       "/projects/wesman/gallery1.jpg",
