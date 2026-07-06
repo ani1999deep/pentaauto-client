@@ -90,9 +90,9 @@ export const projects = [
     tech: ["MongoDB", "PLC", "SCADA"],
 
     projectTitles: [
-      "Hindalco Aluminum 900°C 6-Stage Furnace Thyristor Firing",
-      "Dana 0-1050°C Gas Firing Continuous Furnace",
-      "Bull Gear 0-1050°C Continuous Gas Furnace",
+      "Aluminum 900°C 6-Stage Furnace Thyristor Firing",
+      "0-1050°C Gas Firing Continuous Furnace",
+      " 0-1050°C Continuous Gas Furnace",
     ],
   },
 
@@ -113,26 +113,88 @@ export const projects = [
     shortDesc: "Industrial heat treatment and bright bar automation",
 
     description:
-      "An advanced industrial automation platform designed for Black & Bright Bar manufacturing processes. The system enables real-time production monitoring, heat treatment control, machine integration, process optimization, and automated reporting to improve efficiency, quality, and operational visibility across production lines.",
+      "Steel Bar Processing Automation System – A PLC-based industrial automation solution for steel bar processing, integrating Bar Peeling, Bar Straightening, and Operator Draw Bench machines with HMI, VFDs, real-time monitoring, safety interlocks, and automatic production control for efficient and reliable operation.",
 
     features: [
-      "Production Analytics Dashboard",
-      "SCADA Monitoring & Control",
-      "Realtime Alerts & Notifications",
-      "PLC & Machine Integration",
-      "Heat Treatment Process Automation",
-      "Production Reporting",
-      "Energy Consumption Monitoring",
-      "Predictive Maintenance Support",
+      {
+        title: "Bar Handling Automation",
+        items: [
+          "Automatic Bar Loading",
+          "Automatic Feeding",
+          "Material Handling",
+          "Machine Synchronization",
+          "Production Flow",
+        ],
+      },
+
+      {
+        title: "Machine Control",
+        items: [
+          "Bar Peeling Control",
+          "Bar Straightening",
+          "Draw Bench Control",
+          "PLC Automation",
+          "VFD Drive Control",
+          "Motor Control",
+        ],
+      },
+
+      {
+        title: "Real-Time Monitoring",
+        items: [
+          "Production Status",
+          "Machine Status",
+          "Process Monitoring",
+          "Equipment Health",
+          "Cycle Status",
+          "Live PLC Data",
+        ],
+      },
+
+      {
+        title: "Industrial Dashboard",
+        items: [
+          "Live Overview",
+          "Production Dashboard",
+          "Machine Mimic",
+          "Alarm Monitoring",
+          "Process Trends",
+          "Data Visualization",
+        ],
+      },
+
+      {
+        title: "Safety & Alarms",
+        items: [
+          "Safety PLC",
+          "Emergency Stop",
+          "Safety Interlocks",
+          "Alarm Handling",
+          "Fault Logging",
+          "Event History",
+        ],
+      },
+
+      {
+        title: "Reports & Remote Access",
+        items: [
+          "Production Reports",
+          "Data Logging",
+          "Historical Data",
+          "Remote Diagnostics",
+          "Remote Maintenance",
+          "SCADA Integration",
+          "HMI Interface",
+        ],
+      },
     ],
 
     tech: ["PLC", "SCADA"],
 
     projectTitles: [
-      "Continuous Bright Bar Annealing Furnace Control System",
-      "Multi-Zone Bright Bar Hardening & Tempering Automation",
-      "Industrial Production Monitoring Dashboard",
-      "Realtime Furnace Temperature Control Platform",
+      "Bar Peeling Machine (25–100 mm Diameter Steel Bars) Fully automated operation",
+      "Bar Straightening Machine (32–120 mm Diameter Steel Bars)",
+      "Automatic Draw Bench ",
     ],
   },
 
@@ -144,25 +206,100 @@ export const projects = [
     image: "/projects/sampling/hero.jpg",
 
     gallery: [
-      "/projects/wesman/gallery1.jpg",
-      "/projects/wesman/gallery2.jpg",
-      "/projects/wesman/gallery3.jpg",
-      "/projects/wesman/gallery4.jpg",
+      "/projects/coal/gallery1.jpg",
+      "/projects/coal/gallery2.jpg",
+      "/projects/coal/gallery3.jpg",
+      "/projects/coal/gallery4.jpg",
     ],
 
     shortDesc: "Automatic industrial sampling platform.",
 
     description:
-      "Complete industrial sampling automation with centralized management.",
+      "Coal Sampling Automation Panel – A PLC-based industrial automation solution for fully automated coal sampling, integrating samplers, crushers, sample dividers, conveyors, HMI, VFDs, real-time monitoring, safety interlocks, and SCADA/DCS connectivity for accurate, reliable, and efficient coal sampling operations.",
 
-    features: ["Auto Sampling", "Remote Monitoring", "Live Dashboard"],
+    features: [
+      {
+        title: "Coal Sampling Automation",
+        items: [
+          "Automatic Sample Collection",
+          "Automatic Sample Preparation",
+          "Coal Sampler Control",
+          "Crusher Automation",
+          "Sample Divider Control",
+          "Conveyor Synchronization",
+        ],
+      },
+
+      {
+        title: "PLC & Process Control",
+        items: [
+          "PLC-Based Automation",
+          "Sequential Process Control",
+          "Motor Control",
+          "VFD Drive Control",
+          "Auto/Manual Operation",
+          "Equipment Synchronization",
+        ],
+      },
+
+      {
+        title: "Real-Time Monitoring",
+        items: [
+          "Equipment Status",
+          "Sampling Process Monitoring",
+          "Machine Health",
+          "Live PLC Data",
+          "Cycle Status",
+          "System Diagnostics",
+        ],
+      },
+
+      {
+        title: "Industrial Dashboard",
+        items: [
+          "Interactive HMI",
+          "Live Process Overview",
+          "Equipment Mimic",
+          "Alarm Monitoring",
+          "Process Trends",
+          "Data Visualization",
+        ],
+      },
+
+      {
+        title: "Safety & Alarms",
+        items: [
+          "Safety Interlocks",
+          "Emergency Stop",
+          "Fault Detection",
+          "Alarm Management",
+          "Event History",
+          "Equipment Protection",
+        ],
+      },
+
+      {
+        title: "Reports & Connectivity",
+        items: [
+          "Production Reports",
+          "Data Logging",
+          "Historical Data",
+          "SCADA Integration",
+          "DCS Connectivity",
+          "Remote Monitoring",
+          "Remote Diagnostics",
+          "Industrial Communication",
+        ],
+      },
+    ],
 
     tech: ["Next.js", "Node", "MongoDB"],
 
     projectTitles: [
-      "Automatic Powder & Liquid Sampling System",
-      "Multi-Point Industrial Material Sampler Automation",
-      "Centralized Quality Control Sampling Platform",
+      "0.7 MTY Coal Handling Plant Automation",
+      "5.0 MTY Coal Handling Plant Automation",
+      "35–70 MTY Coal Sampling System",
+      "Automatic Scoop Sampler",
     ],
   },
 
