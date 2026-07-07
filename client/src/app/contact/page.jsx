@@ -179,7 +179,7 @@ export default function Contact() {
               <div className="space-y-3">
                 <div className="flex flex-col sm:flex-row sm:justify-between gap-2">
                   <span>Monday - Saturday</span>
-                  <span>9:00 AM - 6:00 PM</span>
+                  <span>10:00 AM - 7:00 PM</span>
                 </div>
 
                 <div className="text-green-300 text-sm">Sunday Closed</div>
