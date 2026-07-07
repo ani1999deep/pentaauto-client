@@ -101,13 +101,25 @@ export const projects = [
     title: "Black & Bright Bar Industry Automation",
     tagline: "Smart Industrial Automation & Heat Treatment Control Solutions",
 
-    image: "/projects/ipsen/hero.jpg",
+    image: "/projects/bhambra/hero.jpg",
 
     gallery: [
-      "/projects/ipsen/gallery1.jpg",
-      "/projects/ipsen/gallery2.jpg",
-      "/projects/ipsen/gallery3.jpg",
-      "/projects/ipsen/gallery4.jpg",
+      "/projects/bhambra/gallery1.jpg",
+      "/projects/bhambra/gallery2.jpg",
+      "/projects/bhambra/gallery3.jpg",
+      "/projects/bhambra/gallery4.JPG",
+      "/projects/bhambra/gallery5.jpg",
+      "/projects/bhambra/gallery6.jpg",
+      "/projects/bhambra/gallery7.jpg",
+      "/projects/bhambra/gallery8.jpg",
+      "/projects/bhambra/gallery9.jpg",
+      "/projects/bhambra/gallery10.jpg",
+      "/projects/bhambra/gallery11.jpg",
+      "/projects/bhambra/gallery12.jpg",
+      "/projects/bhambra/gallery13.jpg",
+      "/projects/bhambra/gallery14.jpg",
+      "/projects/bhambra/gallery15.jpg",
+      "/projects/bhambra/gallery16.jpg",
     ],
 
     shortDesc: "Industrial heat treatment and bright bar automation",
@@ -148,18 +160,7 @@ export const projects = [
           "Equipment Health",
           "Cycle Status",
           "Live PLC Data",
-        ],
-      },
-
-      {
-        title: "Industrial Dashboard",
-        items: [
-          "Live Overview",
-          "Production Dashboard",
-          "Machine Mimic",
-          "Alarm Monitoring",
-          "Process Trends",
-          "Data Visualization",
+          "HMI Interface",
         ],
       },
 
@@ -172,19 +173,6 @@ export const projects = [
           "Alarm Handling",
           "Fault Logging",
           "Event History",
-        ],
-      },
-
-      {
-        title: "Reports & Remote Access",
-        items: [
-          "Production Reports",
-          "Data Logging",
-          "Historical Data",
-          "Remote Diagnostics",
-          "Remote Maintenance",
-          "SCADA Integration",
-          "HMI Interface",
         ],
       },
     ],
