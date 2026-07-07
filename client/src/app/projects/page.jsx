@@ -167,6 +167,7 @@ export default function ProjectsPage() {
       <section>
         <WhyPentaAutomationSection />
       </section>
+
       <section>
         <ServicesCTASection />
       </section>
