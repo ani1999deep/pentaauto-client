@@ -1,6 +1,8 @@
 import Link from "next/link";
 import Image from "next/image";
 import { projects } from "../../data/projectsData";
+import WhyPentaAutomationSection from "../components/WhyPentaAutomationSection/WhyPentaAutomationSection";
+import ServicesCTASection from "../services/ServicesCTASection";
 
 export default function ProjectsPage() {
   return (
@@ -161,6 +163,12 @@ export default function ProjectsPage() {
             ))}
           </div>
         </div>
+      </section>
+      <section>
+        <WhyPentaAutomationSection />
+      </section>
+      <section>
+        <ServicesCTASection />
       </section>
     </main>
   );
