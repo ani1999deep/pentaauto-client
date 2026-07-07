@@ -194,10 +194,15 @@ export const projects = [
     image: "/projects/sampling/hero.jpg",
 
     gallery: [
-      "/projects/coal/gallery1.jpg",
-      "/projects/coal/gallery2.jpg",
-      "/projects/coal/gallery3.jpg",
-      "/projects/coal/gallery4.jpg",
+      "/projects/sampling/gallery1.jpg",
+      "/projects/sampling/gallery2.jpg",
+      "/projects/sampling/gallery3.jpg",
+      "/projects/sampling/gallery4.jpg",
+      "/projects/sampling/gallery5.jpg",
+      "/projects/sampling/gallery6.jpg",
+      "/projects/sampling/gallery7.jpg",
+      "/projects/sampling/gallery8.jpg",
+      "/projects/sampling/gallery9.jpg",
     ],
 
     shortDesc: "Automatic industrial sampling platform.",
