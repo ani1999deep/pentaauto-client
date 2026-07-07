@@ -296,25 +296,132 @@ export const projects = [
     title: "Factory Production Control",
     tagline: "Driving Manufacturing Excellence Through Automation",
 
-    image: "/projects/dabur/hero.jpg",
+    image: "/projects/factory/hero.jpg",
 
     gallery: [
-      "/projects/dabur/gallery1.jpg",
-      "/projects/dabur/gallery2.jpg",
-      "/projects/dabur/gallery3.jpg",
-      "/projects/dabur/gallery4.jpg",
+      "/projects/factory/gallery1.jpg",
+      "/projects/factory/gallery2.jpg",
+      "/projects/factory/gallery3.jpg",
+      "/projects/factory/gallery4.jpg",
     ],
-
-    shortDesc: "Industrial manufacturing control.",
+    shortDesc:
+      "Smart factory production control and industrial process automation.",
 
     description:
-      "Factory process automation and manufacturing analytics platform.",
+      "Factory Production Control System – A PLC and SCADA-based manufacturing automation solution designed to monitor, control, and optimize production lines. It integrates production equipment, HMI, VFDs, real-time process monitoring, production analytics, machine synchronization, quality control, and maintenance management to improve productivity, efficiency, and operational reliability.",
 
     features: [
-      "Realtime Analytics",
-      "Automation",
-      "Process Monitoring",
-      "Maintenance",
+      {
+        title: "Production Line Control",
+        items: [
+          "Production Line Automation",
+          "Machine Synchronization",
+          "Automatic Material Flow",
+          "Batch Production Control",
+          "Cycle Time Optimization",
+          "Workstation Coordination",
+          "Line Start & Stop Control",
+          "Production Scheduling",
+        ],
+      },
+
+      {
+        title: "PLC Automation",
+        items: [
+          "PLC-Based Control",
+          "Automatic Sequencing",
+          "Interlocking Logic",
+          "Auto / Manual Operation",
+          "Remote I/O Integration",
+          "Equipment Synchronization",
+          "Control Logic Programming",
+          "Process Automation",
+        ],
+      },
+
+      {
+        title: "HMI Operator Interface",
+        items: [
+          "Touch Screen HMI",
+          "Production Dashboard",
+          "Machine Status Display",
+          "Operator Controls",
+          "Recipe & Parameter Settings",
+          "Alarm Acknowledgement",
+          "Production Reports",
+          "User Access Control",
+        ],
+      },
+
+      {
+        title: "SCADA Monitoring",
+        items: [
+          "Centralized Monitoring",
+          "Remote Plant Control",
+          "Live Production Data",
+          "Historical Data Logging",
+          "Trend Analysis",
+          "Alarm Management",
+          "Event Logging",
+          "Production Analytics",
+        ],
+      },
+
+      {
+        title: "Process Monitoring",
+        items: [
+          "Machine Performance",
+          "Production Status",
+          "Cycle Time Monitoring",
+          "OEE Monitoring",
+          "Downtime Analysis",
+          "Equipment Health",
+          "Quality Monitoring",
+          "Live Process Visualization",
+        ],
+      },
+
+      {
+        title: "VFD & Motion Control",
+        items: [
+          "VFD Integration",
+          "Motor Speed Control",
+          "Conveyor Control",
+          "Drive Monitoring",
+          "Energy Optimization",
+          "Variable Speed Operation",
+          "Remote Drive Control",
+          "Motion Synchronization",
+        ],
+      },
+
+      {
+        title: "Maintenance & Diagnostics",
+        items: [
+          "Predictive Maintenance",
+          "Preventive Maintenance",
+          "Fault Diagnostics",
+          "Alarm Notifications",
+          "Equipment Health Monitoring",
+          "Maintenance Scheduling",
+          "Fault Logging",
+          "Event History",
+        ],
+      },
+
+      {
+        title: "Communication & Integration",
+        items: [
+          "Modbus RTU",
+          "Modbus TCP/IP",
+          "PROFINET",
+          "Ethernet Communication",
+          "PLC Networking",
+          "MES Integration",
+          "ERP Connectivity",
+          "Industrial IoT Ready",
+        ],
+      },
     ],
 
     tech: ["React", "Node", "MongoDB", "PLC"],
@@ -340,16 +447,138 @@ export const projects = [
       "/projects/pdb/gallery4.jpg",
     ],
 
-    shortDesc: "Industrial power distribution and control solutions.",
+    shortDesc:
+      "Advanced PLC-based Power Distribution Board (PDB) Panel with intelligent monitoring and control.",
 
     description:
-      "Custom-designed power distribution systems for industrial applications.",
+      "Power Distribution Board (PDB) Panel – An intelligent PLC and SCADA integrated power distribution solution designed for industrial plants, providing safe power distribution, motor feeder control, energy monitoring, remote operation, alarm management, and real-time electrical system supervision. The panel ensures reliable operation, reduced downtime, enhanced safety, and seamless integration with plant automation systems.",
 
     features: [
-      "Power Distribution",
-      "Load Management",
-      "Industrial Safety",
-      "Control Integration",
+      {
+        title: "Power Distribution System",
+        items: [
+          "Incoming Power Distribution",
+          "Outgoing Feeder Distribution",
+          "Busbar Distribution System",
+          "Load Balancing",
+          "Power Routing",
+          "Motor Feeder Distribution",
+          "Cable Management",
+          "Electrical Isolation",
+        ],
+      },
+
+      {
+        title: "PLC Automation",
+        items: [
+          "PLC-Based Control",
+          "Automatic Feeder Control",
+          "Sequential Logic Control",
+          "Auto / Manual Operation",
+          "Interlocking Logic",
+          "Remote I/O Integration",
+          "Control Logic Programming",
+          "System Automation",
+        ],
+      },
+
+      {
+        title: "HMI Operator Interface",
+        items: [
+          "Touch Screen HMI",
+          "Real-Time System Status",
+          "Electrical Mimic Diagram",
+          "Operator Commands",
+          "Parameter Configuration",
+          "Alarm Acknowledgement",
+          "User Access Control",
+          "Production Dashboard",
+        ],
+      },
+
+      {
+        title: "SCADA Monitoring",
+        items: [
+          "Remote Monitoring",
+          "Centralized Control",
+          "Live Electrical Parameters",
+          "Historical Data Logging",
+          "Event History",
+          "Alarm Management",
+          "Trend Analysis",
+          "Report Generation",
+        ],
+      },
+
+      {
+        title: "VFD & Motor Control",
+        items: [
+          "VFD Integration",
+          "Motor Speed Control",
+          "Soft Start & Stop",
+          "Drive Monitoring",
+          "Drive Fault Diagnostics",
+          "Multiple Motor Control",
+          "Energy Optimization",
+          "Remote Drive Operation",
+        ],
+      },
+
+      {
+        title: "Electrical Protection",
+        items: [
+          "MCCB Protection",
+          "MCB Protection",
+          "Short Circuit Protection",
+          "Overload Protection",
+          "Earth Fault Protection",
+          "Phase Failure Protection",
+          "Phase Sequence Protection",
+          "Surge Protection",
+        ],
+      },
+
+      {
+        title: "Power & Energy Monitoring",
+        items: [
+          "Voltage Monitoring",
+          "Current Monitoring",
+          "Power Monitoring",
+          "Energy Consumption",
+          "Power Factor Monitoring",
+          "Frequency Monitoring",
+          "Demand Monitoring",
+          "Load Analysis",
+        ],
+      },
+
+      {
+        title: "Communication & Networking",
+        items: [
+          "Modbus RTU",
+          "Modbus TCP/IP",
+          "Ethernet Communication",
+          "PROFINET Support",
+          "Remote Diagnostics",
+          "PLC Networking",
+          "SCADA Connectivity",
+          "Industrial Communication",
+        ],
+      },
+
+      {
+        title: "Safety & Alarm Management",
+        items: [
+          "Emergency Stop",
+          "Safety Interlocks",
+          "Fault Detection",
+          "Alarm Notifications",
+          "Trip Indication",
+          "Fault Logging",
+          "Event Logging",
+          "System Health Monitoring",
+        ],
+      },
     ],
 
     tech: ["PLC", "SCADA", "Industrial Control"],
@@ -366,7 +595,7 @@ export const projects = [
     title: "MCC Panel",
     tagline: "Advanced Motor Control Center Panels for Industrial Operations",
 
-    image: "/projects/mcc/hero.jpg",
+    image: "/projects/mcc/hero1.jpg",
 
     gallery: [
       "/projects/mcc/gallery1.jpg",
@@ -375,15 +604,124 @@ export const projects = [
       "/projects/mcc/gallery4.jpg",
     ],
 
-    shortDesc: "Motor control and industrial automation system.",
+    shortDesc:
+      "Centralized motor control and PLC-based industrial automation solution.",
 
-    description: "Centralized motor control and monitoring solution.",
+    description:
+      "Motor Control Center (MCC) Panel – A PLC-based motor control and power management solution designed for industrial plants. It provides centralized control, protection, monitoring, and automation of multiple motors, pumps, conveyors, blowers, compressors, and process equipment through PLC, HMI, SCADA, VFDs, and intelligent motor protection systems for safe, reliable, and efficient plant operation.",
 
     features: [
-      "Motor Control",
-      "Automation",
-      "Remote Monitoring",
-      "Protection System",
+      {
+        title: "Motor Control",
+        items: [
+          "Motor Start & Stop",
+          "DOL Starter Control",
+          "Star-Delta Starter",
+          "Soft Starter Integration",
+          "Forward / Reverse Control",
+          "Multiple Motor Control",
+          "Pump Control",
+          "Conveyor Motor Control",
+        ],
+      },
+
+      {
+        title: "PLC Automation",
+        items: [
+          "PLC-Based Control",
+          "Automatic Sequencing",
+          "Interlocking Logic",
+          "Auto / Manual Operation",
+          "Remote I/O Integration",
+          "Process Automation",
+          "Equipment Synchronization",
+          "Control Logic Programming",
+        ],
+      },
+
+      {
+        title: "HMI Operator Interface",
+        items: [
+          "Touch Screen HMI",
+          "Motor Status Display",
+          "Operation Dashboard",
+          "Parameter Configuration",
+          "Alarm Acknowledgement",
+          "Manual Control",
+          "System Diagnostics",
+          "User Access Control",
+        ],
+      },
+
+      {
+        title: "SCADA Integration",
+        items: [
+          "Remote Monitoring",
+          "Centralized Control",
+          "Live Motor Status",
+          "Historical Data Logging",
+          "Alarm Management",
+          "Trend Analysis",
+          "Event Logging",
+          "Production Reports",
+        ],
+      },
+
+      {
+        title: "VFD & Drive Control",
+        items: [
+          "VFD Integration",
+          "Motor Speed Control",
+          "Soft Start & Stop",
+          "Drive Monitoring",
+          "Drive Fault Diagnostics",
+          "Energy Optimization",
+          "Remote Drive Control",
+          "Variable Speed Operation",
+        ],
+      },
+
+      {
+        title: "Motor Protection",
+        items: [
+          "Overload Protection",
+          "Short Circuit Protection",
+          "Earth Fault Protection",
+          "Phase Failure Protection",
+          "Phase Sequence Protection",
+          "Under / Over Voltage Protection",
+          "Motor Overtemperature Protection",
+          "Motor Health Monitoring",
+        ],
+      },
+
+      {
+        title: "Communication & Networking",
+        items: [
+          "Modbus RTU",
+          "Modbus TCP/IP",
+          "PROFINET",
+          "Ethernet Communication",
+          "PLC Networking",
+          "Remote Diagnostics",
+          "SCADA Connectivity",
+          "Industrial Communication",
+        ],
+      },
+
+      {
+        title: "Safety & Alarm Management",
+        items: [
+          "Emergency Stop",
+          "Safety Interlocks",
+          "Fault Detection",
+          "Trip Indication",
+          "Alarm Notifications",
+          "Fault Logging",
+          "Event History",
+          "System Health Monitoring",
+        ],
+      },
     ],
 
     tech: ["PLC", "SCADA", "VFD"],
@@ -410,15 +748,124 @@ export const projects = [
       "/projects/drawout/gallery4.jpg",
     ],
 
-    shortDesc: "Modular industrial power distribution system.",
+    shortDesc:
+      "Modular drawout-type Power Distribution Board (PDB) for safe and reliable industrial power management.",
 
-    description: "High-performance drawout type electrical distribution panel.",
+    description:
+      "Drawout Type PDB Panel – A modular, PLC and SCADA-ready power distribution solution designed for industrial facilities. Featuring withdrawable feeder units, intelligent protection, real-time monitoring, and easy maintenance, the system ensures maximum uptime, enhanced operational safety, simplified servicing, and flexible expansion for critical power distribution applications.",
 
     features: [
-      "Drawout Mechanism",
-      "Easy Maintenance",
-      "Industrial Safety",
-      "Scalable Design",
+      {
+        title: "Drawout Power Distribution",
+        items: [
+          "Withdrawable Feeder Units",
+          "Drawout MCCB Compartments",
+          "Incoming & Outgoing Feeders",
+          "Busbar Power Distribution",
+          "Modular Panel Design",
+          "Plug-in Power Modules",
+          "Load Distribution",
+          "Future Expansion Ready",
+        ],
+      },
+
+      {
+        title: "PLC & Automation",
+        items: [
+          "PLC-Based Power Control",
+          "Automatic Feeder Management",
+          "Auto / Manual Operation",
+          "Electrical Interlocking",
+          "Remote I/O Integration",
+          "Control Logic Programming",
+          "Power Automation",
+          "Equipment Synchronization",
+        ],
+      },
+
+      {
+        title: "HMI & SCADA",
+        items: [
+          "Touch Screen HMI",
+          "SCADA Integration",
+          "Real-Time Power Monitoring",
+          "Remote Operation",
+          "Electrical Mimic Display",
+          "Alarm Management",
+          "Historical Data Logging",
+          "Event & Fault History",
+        ],
+      },
+
+      {
+        title: "Protection System",
+        items: [
+          "MCCB & ACB Protection",
+          "Short Circuit Protection",
+          "Overload Protection",
+          "Earth Fault Protection",
+          "Phase Failure Protection",
+          "Surge Protection",
+          "Selective Tripping",
+          "Protection Relay Integration",
+        ],
+      },
+
+      {
+        title: "Maintenance & Serviceability",
+        items: [
+          "Hot-Swappable Drawout Units",
+          "Quick Feeder Replacement",
+          "Minimal Plant Downtime",
+          "Front Access Maintenance",
+          "Easy Cable Management",
+          "Safe Isolation Mechanism",
+          "Tool-Free Inspection",
+          "Reduced Maintenance Time",
+        ],
+      },
+
+      {
+        title: "Monitoring & Metering",
+        items: [
+          "Voltage Monitoring",
+          "Current Monitoring",
+          "Power Monitoring",
+          "Energy Metering",
+          "Power Factor Monitoring",
+          "Load Analysis",
+          "Demand Monitoring",
+          "System Health Monitoring",
+        ],
+      },
+
+      {
+        title: "Communication",
+        items: [
+          "Modbus RTU",
+          "Modbus TCP/IP",
+          "PROFINET",
+          "Ethernet Communication",
+          "Remote Diagnostics",
+          "PLC Networking",
+          "SCADA Connectivity",
+          "Industrial IoT Ready",
+        ],
+      },
+
+      {
+        title: "Industrial Safety",
+        items: [
+          "Mechanical Interlocks",
+          "Electrical Interlocks",
+          "Arc Flash Protection",
+          "Emergency Shutdown",
+          "Door Safety Interlocks",
+          "Fault Indication",
+          "Alarm Notifications",
+          "Operator Safety",
+        ],
+      },
     ],
 
     tech: ["PLC", "SCADA"],
@@ -451,16 +898,111 @@ export const projects = [
 
     shortDesc: "Industry 4.0 wireless automation platform.",
 
+    shortDesc:
+      "Industrial IoT (IIoT) platform for wireless monitoring, automation, and predictive analytics.",
+
     description:
-      "Industrial IoT based wireless monitoring and automation solution.",
+      "Industrial IoT (IIoT) Monitoring System – A smart wireless monitoring and automation platform designed to collect, analyze, and visualize real-time data from industrial equipment and processes. The system integrates PLCs, SCADA, sensors, edge devices, and cloud connectivity to enable remote monitoring, predictive maintenance, energy optimization, alarm management, and data-driven decision-making for improved operational efficiency and reduced downtime.",
 
     features: [
-      "Industrial IoT",
-      "Wireless Monitoring",
-      "Realtime Analytics",
-      "Predictive Maintenance",
-    ],
+      {
+        title: "Industrial IoT",
+        items: [
+          "IIoT Gateway Integration",
+          "Smart Sensor Connectivity",
+          "Edge Computing",
+          "Industrial Device Integration",
+          "Cloud Connectivity",
+          "Industrial Data Acquisition",
+          "Industrial IoT Network",
+          "Digital Transformation",
+        ],
+      },
 
+      {
+        title: "Wireless Monitoring",
+        items: [
+          "Remote Equipment Monitoring",
+          "Wireless Sensor Network",
+          "Live Machine Status",
+          "Real-Time Data Collection",
+          "Remote Asset Tracking",
+          "Mobile Monitoring",
+          "Web Dashboard",
+          "Multi-Site Monitoring",
+        ],
+      },
+
+      {
+        title: "PLC, HMI & SCADA Integration",
+        items: [
+          "PLC Integration",
+          "HMI Dashboard",
+          "SCADA Connectivity",
+          "Remote PLC Diagnostics",
+          "Live Process Visualization",
+          "Historical Data Logging",
+          "Alarm Management",
+          "Event Logging",
+        ],
+      },
+
+      {
+        title: "Real-Time Analytics",
+        items: [
+          "Live Performance Dashboard",
+          "Production Analytics",
+          "OEE Monitoring",
+          "Energy Analytics",
+          "Trend Analysis",
+          "KPI Monitoring",
+          "Custom Reports",
+          "Data Visualization",
+        ],
+      },
+
+      {
+        title: "Predictive Maintenance",
+        items: [
+          "Equipment Health Monitoring",
+          "Predictive Fault Detection",
+          "Condition Monitoring",
+          "Maintenance Alerts",
+          "Failure Prediction",
+          "Downtime Analysis",
+          "Maintenance Scheduling",
+          "Asset Performance Tracking",
+        ],
+      },
+
+      {
+        title: "Communication & Connectivity",
+        items: [
+          "Modbus RTU",
+          "Modbus TCP/IP",
+          "MQTT",
+          "OPC UA",
+          "Ethernet Communication",
+          "Wi-Fi Connectivity",
+          "4G/5G Remote Access",
+          "Industrial IoT Cloud",
+        ],
+      },
+
+      {
+        title: "Security & Notifications",
+        items: [
+          "Role-Based User Access",
+          "Secure Remote Access",
+          "Real-Time Alarm Notifications",
+          "SMS & Email Alerts",
+          "Event History",
+          "Data Backup",
+          "Audit Logs",
+          "Cybersecurity Ready",
+        ],
+      },
+    ],
     tech: ["Node.js", "MongoDB", "PLC"],
 
     projectTitles: [
@@ -484,16 +1026,124 @@ export const projects = [
       "/projects/pascan/gallery4.jpg",
     ],
 
-    shortDesc: "Machine vision and intelligent inspection automation.",
+    shortDesc:
+      "AI-powered machine vision system for automated inspection and quality assurance.",
 
     description:
-      "Advanced machine vision system for inspection and quality control.",
+      "Machine Vision Inspection System – An intelligent PLC and HMI integrated vision automation solution designed for high-speed industrial inspection and quality control. The system utilizes industrial vision cameras, AI-based image processing, advanced lighting, sensors, and SCADA connectivity to perform automatic defect detection, dimensional measurement, object identification, barcode verification, and real-time production monitoring, ensuring consistent product quality and improved manufacturing efficiency.",
 
     features: [
-      "Vision Inspection",
-      "AI Detection",
-      "Quality Monitoring",
-      "Automation Control",
+      {
+        title: "Machine Vision System",
+        items: [
+          "Industrial Vision Cameras",
+          "High-Speed Image Capture",
+          "Smart Camera Integration",
+          "Multi-Camera Inspection",
+          "Image Acquisition",
+          "Machine Vision Controller",
+          "Industrial Lighting Control",
+          "Vision Sensor Integration",
+        ],
+      },
+
+      {
+        title: "AI Image Processing",
+        items: [
+          "AI Defect Detection",
+          "Pattern Recognition",
+          "Surface Defect Inspection",
+          "Object Detection",
+          "Edge Detection",
+          "Dimensional Measurement",
+          "OCR & Character Recognition",
+          "Barcode & QR Code Verification",
+        ],
+      },
+
+      {
+        title: "PLC & Automation",
+        items: [
+          "PLC-Based Inspection Control",
+          "Automatic Product Detection",
+          "Reject Mechanism Control",
+          "Conveyor Synchronization",
+          "Machine Interlocking",
+          "Auto/Manual Operation",
+          "Sensor Integration",
+          "Production Line Automation",
+        ],
+      },
+
+      {
+        title: "HMI & SCADA",
+        items: [
+          "Touch Screen HMI",
+          "Live Camera View",
+          "Inspection Dashboard",
+          "Real-Time Defect Monitoring",
+          "SCADA Integration",
+          "Historical Data Logging",
+          "Alarm Management",
+          "Production Reports",
+        ],
+      },
+
+      {
+        title: "Quality Control",
+        items: [
+          "100% Product Inspection",
+          "Pass/Fail Classification",
+          "Dimensional Verification",
+          "Assembly Verification",
+          "Color Inspection",
+          "Label Verification",
+          "Packaging Inspection",
+          "Traceability Management",
+        ],
+      },
+
+      {
+        title: "Monitoring & Analytics",
+        items: [
+          "Real-Time Production Monitoring",
+          "Inspection Statistics",
+          "Defect Trend Analysis",
+          "Production Analytics",
+          "Image Storage",
+          "Event & Fault Logging",
+          "Performance Dashboard",
+          "OEE Monitoring",
+        ],
+      },
+
+      {
+        title: "Communication & Integration",
+        items: [
+          "Ethernet/IP",
+          "PROFINET",
+          "Modbus TCP/IP",
+          "OPC UA",
+          "PLC Communication",
+          "MES Integration",
+          "ERP Connectivity",
+          "Industrial IoT Ready",
+        ],
+      },
+
+      {
+        title: "Safety & Reliability",
+        items: [
+          "Automatic Alarm Notification",
+          "Emergency Stop Integration",
+          "System Diagnostics",
+          "Camera Health Monitoring",
+          "Backup & Recovery",
+          "User Access Control",
+          "Fault Logging",
+          "24/7 Continuous Operation",
+        ],
+      },
     ],
 
     tech: ["Vision System", "PLC", "AI"],
