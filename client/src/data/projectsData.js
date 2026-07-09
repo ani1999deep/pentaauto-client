@@ -304,10 +304,14 @@ export const projects = [
     image: "/projects/factory/hero.jpg",
 
     gallery: [
-      "/projects/factory/gallery1.jpg",
-      "/projects/factory/gallery2.jpg",
-      "/projects/factory/gallery3.jpg",
-      "/projects/factory/gallery4.jpg",
+      "/projects/factory/gallery1.jpeg",
+      "/projects/factory/gallery2.jpeg",
+      "/projects/factory/gallery3.jpeg",
+      "/projects/factory/gallery4.jpeg",
+      "/projects/factory/gallery5.jpeg",
+      "/projects/factory/gallery6.jpeg",
+      "/projects/factory/gallery7.jpeg",
+      "/projects/factory/gallery8.jpeg",
     ],
     shortDesc:
       "Smart factory production control and industrial process automation.",
@@ -607,6 +611,10 @@ export const projects = [
       "/projects/mcc/gallery2.jpg",
       "/projects/mcc/gallery3.jpg",
       "/projects/mcc/gallery4.jpg",
+      "/projects/mcc/gallery5.jpg",
+      "/projects/mcc/gallery6.jpg",
+      "/projects/mcc/gallery7.jpg",
+      "/projects/mcc/gallery8.jpg",
     ],
 
     shortDesc:
