@@ -745,6 +745,153 @@ export const projects = [
       "Centralized Motor Distribution Panel",
     ],
   },
+  {
+    slug: "vfd-panel",
+    title: "VFD Panel",
+    tagline:
+      "Intelligent Variable Frequency Drive Panels for Precision Motor Control",
+
+    image: "/projects/vfd/hero.jpg",
+
+    gallery: [
+      "/projects/vfd/gallery1.jpg",
+      "/projects/vfd/gallery2.jpg",
+      "/projects/vfd/gallery3.jpg",
+      "/projects/vfd/gallery4.jpg",
+      "/projects/vfd/gallery5.jpg",
+      "/projects/vfd/gallery6.jpg",
+      "/projects/vfd/gallery7.jpg",
+      "/projects/vfd/gallery8.jpg",
+    ],
+
+    shortDesc:
+      "PLC-integrated Variable Frequency Drive panel for efficient motor speed control and energy optimization.",
+
+    description:
+      "Variable Frequency Drive (VFD) Panel – An advanced motor control solution designed to regulate AC motor speed, torque, and direction with maximum efficiency. Integrated with PLC, HMI, SCADA, and industrial communication protocols, the panel ensures smooth motor operation, reduced energy consumption, enhanced process automation, and comprehensive motor protection for pumps, fans, compressors, conveyors, mixers, and other industrial equipment.",
+
+    features: [
+      {
+        title: "Motor Speed Control",
+        items: [
+          "Variable Speed Control",
+          "Frequency Adjustment",
+          "Soft Start & Stop",
+          "Acceleration & Deceleration Control",
+          "Forward / Reverse Operation",
+          "Torque Control",
+          "Constant Speed Operation",
+          "Multi-Speed Selection",
+        ],
+      },
+
+      {
+        title: "PLC Automation",
+        items: [
+          "PLC-Based Drive Control",
+          "Automatic Process Control",
+          "Sequential Motor Operation",
+          "Auto / Manual Mode",
+          "Remote I/O Integration",
+          "Interlocking Logic",
+          "Equipment Synchronization",
+          "Custom PLC Programming",
+        ],
+      },
+
+      {
+        title: "HMI Operator Interface",
+        items: [
+          "Touch Screen HMI",
+          "Speed Monitoring",
+          "Drive Status Display",
+          "Parameter Configuration",
+          "Alarm Acknowledgement",
+          "Manual Speed Adjustment",
+          "System Diagnostics",
+          "User Access Control",
+        ],
+      },
+
+      {
+        title: "SCADA Integration",
+        items: [
+          "Remote Monitoring",
+          "Centralized Drive Control",
+          "Real-Time Speed Monitoring",
+          "Historical Data Logging",
+          "Alarm Management",
+          "Trend Analysis",
+          "Event Logging",
+          "Production Reports",
+        ],
+      },
+
+      {
+        title: "Drive Monitoring",
+        items: [
+          "Output Frequency Monitoring",
+          "Motor Current Monitoring",
+          "Voltage Monitoring",
+          "Power Consumption Analysis",
+          "Drive Health Monitoring",
+          "Runtime Monitoring",
+          "Load Monitoring",
+          "Efficiency Optimization",
+        ],
+      },
+
+      {
+        title: "Motor Protection",
+        items: [
+          "Overload Protection",
+          "Short Circuit Protection",
+          "Over Current Protection",
+          "Over / Under Voltage Protection",
+          "Phase Loss Protection",
+          "Over Temperature Protection",
+          "Ground Fault Protection",
+          "Motor Thermal Protection",
+        ],
+      },
+
+      {
+        title: "Communication & Networking",
+        items: [
+          "Modbus RTU",
+          "Modbus TCP/IP",
+          "PROFINET",
+          "Ethernet/IP",
+          "Profibus",
+          "Remote Diagnostics",
+          "SCADA Connectivity",
+          "Industrial Ethernet",
+        ],
+      },
+
+      {
+        title: "Safety & Alarm Management",
+        items: [
+          "Emergency Stop",
+          "Drive Fault Detection",
+          "Trip Indication",
+          "Fault Logging",
+          "Alarm Notifications",
+          "Safety Interlocks",
+          "Event History",
+          "System Health Monitoring",
+        ],
+      },
+    ],
+
+    tech: ["PLC", "VFD", "HMI", "SCADA", "Modbus", "PROFINET"],
+
+    projectTitles: [
+      "Industrial Variable Frequency Drive Panel",
+      "Energy Efficient Motor Speed Control System",
+      "PLC Integrated VFD Automation Panel",
+    ],
+  },
 
   {
     slug: "drawout-type-pdb-panel",
