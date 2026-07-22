@@ -1,0 +1,18 @@
+{
+  "employees": [
+    {
+      "email": "employee@company.com",
+      "password": "password123",
+      "name": "Rahul Sharma",
+      "role": "Software Engineer",
+      "id": "EMP001"
+    },
+    {
+      "email": "manager@company.com",
+      "password": "manager123",
+      "name": "Priya Patel",
+      "role": "Project Manager",
+      "id": "EMP002"
+    }
+  ]
+}
