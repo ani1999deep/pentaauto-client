@@ -1,17 +1,15 @@
 import "./globals.css";
 
 export const metadata = {
-  title: "Employee Portal",
-  description: "Company Employee Login System",
-  icons: {
-    icon: "/favicon.ico",
-  },
+  title: "Penta Automation | Employee Portal",
+  description: "Internal Employee Management System",
+  icons: { icon: "/favicon.ico" },
 };
 
 export default function RootLayout({ children }) {
   return (
     <html lang="en">
-      <body className="font-sans">{children}</body>
+      <body className="font-sans bg-[#F8FAFC]">{children}</body>
     </html>
   );
 }

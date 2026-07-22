@@ -1,252 +1,204 @@
 "use client";
 
 import { useEffect, useState } from "react";
-import { useRouter } from "next/navigation";
+import Navbar from "@/components/Navbar";
+import Sidebar from "@/components/Sidebar";
+import Footer from "@/components/Footer";
+
 import {
-  LogOut,
-  User,
-  MapPin,
-  Clock,
-  CheckCircle,
-  AlertCircle,
-  XCircle,
-} from "lucide-react";
+  PieChart,
+  Pie,
+  Cell,
+  Tooltip,
+  ResponsiveContainer,
+  Legend,
+  LineChart,
+  Line,
+  CartesianGrid,
+  XAxis,
+  YAxis,
+  BarChart,
+  Bar,
+} from "recharts";
 
 export default function Dashboard() {
   const [user, setUser] = useState(null);
   const [loading, setLoading] = useState(true);
-  const [attendanceStatus, setAttendanceStatus] = useState(null);
-  const [isMarking, setIsMarking] = useState(false);
-  const [error, setError] = useState("");
-
-  const router = useRouter();
-
-  // Office Location
-  const officeLocation = {
-    lat: 22.5123,
-    lng: 88.3982,
-    name: "PENTA AUTOMATION Office",
-    address:
-      "2nd Floor, F-2A, 47A/108/3A, Purbachal Road, Kasba, Kolkata – 700078",
-  };
 
   useEffect(() => {
     const currentUser = localStorage.getItem("currentUser");
+
     if (!currentUser) {
-      router.push("/login");
+      window.location.href = "/login";
     } else {
       setUser(JSON.parse(currentUser));
     }
+
     setLoading(false);
-  }, [router]);
+  }, []);
 
-  const getCurrentLocation = () => {
-    return new Promise((resolve, reject) => {
-      if (!navigator.geolocation) {
-        reject(new Error("Geolocation not supported"));
-        return;
-      }
-      navigator.geolocation.getCurrentPosition(
-        (position) =>
-          resolve({
-            lat: position.coords.latitude,
-            lng: position.coords.longitude,
-          }),
-        (err) => reject(err),
-        { enableHighAccuracy: true, timeout: 10000 },
-      );
-    });
-  };
+  const attendanceData = [
+    { day: "Mon", attendance: 86 },
+    { day: "Tue", attendance: 91 },
+    { day: "Wed", attendance: 88 },
+    { day: "Thu", attendance: 95 },
+    { day: "Fri", attendance: 92 },
+    { day: "Sat", attendance: 85 },
+    { day: "Sun", attendance: 80 },
+  ];
 
-  const calculateDistance = (lat1, lon1, lat2, lon2) => {
-    const R = 6371e3;
-    const φ1 = (lat1 * Math.PI) / 180;
-    const φ2 = (lat2 * Math.PI) / 180;
-    const Δφ = ((lat2 - lat1) * Math.PI) / 180;
-    const Δλ = ((lon2 - lon1) * Math.PI) / 180;
+  const employeeData = [
+    { name: "Present", value: 86 },
+    { name: "Absent", value: 9 },
+    { name: "Leave", value: 5 },
+  ];
 
-    const a =
-      Math.sin(Δφ / 2) * Math.sin(Δφ / 2) +
-      Math.cos(φ1) * Math.cos(φ2) * Math.sin(Δλ / 2) * Math.sin(Δλ / 2);
-    const c = 2 * Math.atan2(Math.sqrt(a), Math.sqrt(1 - a));
-    return R * c;
-  };
+  const departmentData = [
+    { department: "HR", employees: 12 },
+    { department: "IT", employees: 35 },
+    { department: "Sales", employees: 18 },
+    { department: "Accounts", employees: 10 },
+    { department: "Support", employees: 16 },
+  ];
 
-  const markAttendance = async () => {
-    setIsMarking(true);
-    setError("");
-    setAttendanceStatus(null);
+  const COLORS = ["#16A34A", "#DC2626", "#F59E0B"];
 
-    try {
-      const userLocation = await getCurrentLocation();
-      const distance = calculateDistance(
-        userLocation.lat,
-        userLocation.lng,
-        officeLocation.lat,
-        officeLocation.lng,
-      );
-
-      const now = new Date();
-      const checkInTime = now.toLocaleTimeString("en-IN", {
-        hour: "2-digit",
-        minute: "2-digit",
-      });
-
-      if (distance <= 100) {
-        // ✅ Within Range - Mark Attendance
-        const attendanceData = {
-          employeeId: user.id,
-          employeeName: user.name,
-          department: "Engineering",
-          date: now.toISOString().split("T")[0],
-          checkInTime,
-          latitude: userLocation.lat,
-          longitude: userLocation.lng,
-          address: officeLocation.address,
-          attendanceType: "Office",
-          status: "Present",
-          distance: Math.round(distance),
-        };
-
-        localStorage.setItem("todayAttendance", JSON.stringify(attendanceData));
-
-        setAttendanceStatus({
-          success: true,
-          title: "Attendance Marked Successfully! 🎉",
-          message: `You are ${Math.round(distance)} meters from office.`,
-          type: "success",
-        });
-      } else {
-        // ❌ Outside Range
-        setAttendanceStatus({
-          success: false,
-          title: "You are too far from the office",
-          message: `You are ${Math.round(distance)} meters away.\nYou must be within 100 meters to mark attendance.`,
-          type: "error",
-        });
-      }
-    } catch (err) {
-      setError(
-        "Unable to get your location. Please allow location access and try again.",
-      );
-    } finally {
-      setIsMarking(false);
-    }
-  };
-
-  const handleLogout = () => {
-    localStorage.clear();
-    router.push("/login");
-  };
-
-  if (loading)
+  if (loading) {
     return (
-      <div className="min-h-screen bg-[#F8FAFC] flex items-center justify-center">
+      <div className="min-h-screen flex items-center justify-center bg-[#F8FAFC]">
         Loading Portal...
       </div>
     );
+  }
+
   if (!user) return null;
 
   return (
-    <div className="min-h-screen bg-[#F8FAFC] p-6">
-      <div className="max-w-5xl mx-auto">
-        <div className="flex justify-between items-center mb-8">
-          <div>
-            <h1 className="text-4xl font-bold text-[#14532D]">
-              Employee Portal
-            </h1>
-            <p className="text-[#6B7280]">
-              PENTA AUTOMATION • Attendance System
-            </p>
-          </div>
-          <button
-            onClick={handleLogout}
-            className="flex items-center gap-2 bg-red-600 hover:bg-red-700 text-white px-6 py-3 rounded-2xl transition"
-          >
-            <LogOut size={20} /> Logout
-          </button>
-        </div>
+    <div className="min-h-screen flex flex-col">
+      <Navbar user={user} />
 
-        <div className="grid grid-cols-1 lg:grid-cols-12 gap-6">
-          {/* Mark Attendance Section */}
-          <div className="lg:col-span-7">
-            <div className="bg-white border border-[#DCFCE7] rounded-3xl shadow-xl p-8">
-              <h2 className="text-2xl font-semibold text-[#14532D] mb-6 flex items-center gap-3">
-                <MapPin className="text-[#16A34A]" /> Mark Today's Attendance
+      <div className="flex flex-1">
+        <Sidebar />
+
+        <main className="flex-1 p-8 overflow-auto bg-[#F8FAFC]">
+          <div className="max-w-7xl mx-auto">
+            {/* Header */}
+            <div className="mb-10">
+              <h1 className="text-4xl font-bold text-[#14532D]">
+                Welcome back, {user.name.split(" ")[0]} 👋
+              </h1>
+
+              <p className="text-gray-600 mt-2">
+                Here's what's happening today
+              </p>
+            </div>
+
+            {/* Statistics Cards */}
+            <div className="grid grid-cols-1 md:grid-cols-2 xl:grid-cols-4 gap-6 mb-10">
+              <div className="bg-white rounded-xl shadow p-6">
+                <h3 className="text-gray-500 text-sm">Total Employees</h3>
+                <h2 className="text-4xl font-bold text-[#14532D] mt-2">120</h2>
+              </div>
+
+              <div className="bg-white rounded-xl shadow p-6">
+                <h3 className="text-gray-500 text-sm">Present Today</h3>
+                <h2 className="text-4xl font-bold text-green-600 mt-2">103</h2>
+              </div>
+
+              <div className="bg-white rounded-xl shadow p-6">
+                <h3 className="text-gray-500 text-sm">On Leave</h3>
+                <h2 className="text-4xl font-bold text-yellow-500 mt-2">5</h2>
+              </div>
+
+              <div className="bg-white rounded-xl shadow p-6">
+                <h3 className="text-gray-500 text-sm">Absent</h3>
+                <h2 className="text-4xl font-bold text-red-500 mt-2">12</h2>
+              </div>
+            </div>
+
+            {/* Charts */}
+            <div className="grid grid-cols-1 xl:grid-cols-2 gap-8">
+              {/* Line Chart */}
+              <div className="bg-white rounded-xl shadow p-6">
+                <h2 className="text-xl font-semibold text-[#14532D] mb-6">
+                  Weekly Attendance
+                </h2>
+
+                <ResponsiveContainer width="100%" height={320}>
+                  <LineChart data={attendanceData}>
+                    <CartesianGrid strokeDasharray="3 3" />
+                    <XAxis dataKey="day" />
+                    <YAxis />
+                    <Tooltip />
+
+                    <Line
+                      type="monotone"
+                      dataKey="attendance"
+                      stroke="#16A34A"
+                      strokeWidth={4}
+                    />
+                  </LineChart>
+                </ResponsiveContainer>
+              </div>
+
+              {/* Pie Chart */}
+              <div className="bg-white rounded-xl shadow p-6">
+                <h2 className="text-xl font-semibold text-[#14532D] mb-6">
+                  Employee Status
+                </h2>
+
+                <ResponsiveContainer width="100%" height={320}>
+                  <PieChart>
+                    <Pie
+                      data={employeeData}
+                      dataKey="value"
+                      nameKey="name"
+                      outerRadius={110}
+                      label
+                    >
+                      {employeeData.map((entry, index) => (
+                        <Cell
+                          key={index}
+                          fill={COLORS[index % COLORS.length]}
+                        />
+                      ))}
+                    </Pie>
+
+                    <Tooltip />
+                    <Legend />
+                  </PieChart>
+                </ResponsiveContainer>
+              </div>
+            </div>
+
+            {/* Bar Chart */}
+            <div className="bg-white rounded-xl shadow p-6 mt-8">
+              <h2 className="text-xl font-semibold text-[#14532D] mb-6">
+                Employees by Department
               </h2>
 
-              <div className="bg-[#F8FAFC] p-6 rounded-2xl mb-8">
-                <p className="font-medium text-[#14532D]">Office Location</p>
-                <p className="text-[#6B7280] mt-2 leading-relaxed">
-                  {officeLocation.name}
-                  <br />
-                  {officeLocation.address}
-                </p>
-                <p className="text-xs text-[#16A34A] mt-3">
-                  ✅ You must be within 100 meters
-                </p>
-              </div>
+              <ResponsiveContainer width="100%" height={350}>
+                <BarChart data={departmentData}>
+                  <CartesianGrid strokeDasharray="3 3" />
 
-              <button
-                onClick={markAttendance}
-                disabled={isMarking}
-                className="w-full bg-[#16A34A] hover:bg-[#14532D] disabled:bg-gray-400 text-white py-5 rounded-2xl text-lg font-semibold transition-all flex items-center justify-center gap-3 shadow-lg"
-              >
-                {isMarking ? "Fetching Location..." : "Mark Attendance Now"}
-              </button>
+                  <XAxis dataKey="department" />
+                  <YAxis />
 
-              {error && (
-                <p className="text-red-600 mt-4 text-center font-medium">
-                  {error}
-                </p>
-              )}
+                  <Tooltip />
+
+                  <Bar
+                    dataKey="employees"
+                    fill="#16A34A"
+                    radius={[8, 8, 0, 0]}
+                  />
+                </BarChart>
+              </ResponsiveContainer>
             </div>
           </div>
-
-          {/* User Info + Status */}
-          <div className="lg:col-span-5">
-            <div className="bg-white border border-[#DCFCE7] rounded-3xl p-8">
-              <div className="flex items-center gap-6 mb-6">
-                <div className="w-24 h-24 bg-[#16A34A] rounded-3xl flex items-center justify-center">
-                  <User size={52} className="text-white" />
-                </div>
-                <div>
-                  <h3 className="text-3xl font-bold text-[#14532D]">
-                    {user.name}
-                  </h3>
-                  <p className="text-[#16A34A]">{user.role}</p>
-                  <p className="text-[#6B7280]">ID: {user.id}</p>
-                </div>
-              </div>
-            </div>
-
-            {/* Attendance Status Message */}
-            {attendanceStatus && (
-              <div
-                className={`mt-6 p-6 rounded-3xl border ${attendanceStatus.success ? "bg-green-50 border-green-200" : "bg-red-50 border-red-200"}`}
-              >
-                <div className="flex gap-4">
-                  {attendanceStatus.success ? (
-                    <CheckCircle className="text-green-600 mt-1" size={32} />
-                  ) : (
-                    <XCircle className="text-red-600 mt-1" size={32} />
-                  )}
-                  <div>
-                    <h3
-                      className={`font-bold text-xl ${attendanceStatus.success ? "text-green-700" : "text-red-700"}`}
-                    >
-                      {attendanceStatus.title}
-                    </h3>
-                    <p className="mt-2 text-gray-600 whitespace-pre-line">
-                      {attendanceStatus.message}
-                    </p>
-                  </div>
-                </div>
-              </div>
-            )}
-          </div>
-        </div>
+        </main>
       </div>
+
+      <Footer />
     </div>
   );
 }
