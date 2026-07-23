@@ -5,6 +5,7 @@
       "password": "password123",
       "name": "Rahul Sharma",
       "role": "Software Engineer",
+      "department": "Engineering",
       "id": "EMP001"
     },
     {
@@ -12,6 +13,7 @@
       "password": "manager123",
       "name": "Priya Patel",
       "role": "Project Manager",
+      "department": "Management",
       "id": "EMP002"
     }
   ]
