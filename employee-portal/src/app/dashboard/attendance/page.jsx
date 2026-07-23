@@ -3,7 +3,7 @@ import { useEffect, useState } from "react";
 import Navbar from "@/components/Navbar";
 import Sidebar from "@/components/Sidebar";
 import Footer from "@/components/Footer";
-import AttendanceSection from "../AttendanceSection";
+import AttendanceSection from "./AttendanceSection";
 import employeesData from "../../../../public/data/employees.json";
 
 export default function AttendancePage() {
